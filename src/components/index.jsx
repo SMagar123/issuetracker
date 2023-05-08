@@ -1,3 +1,4 @@
 import { Button } from "./Button";
 import { InputField } from "./InputField";
-export { Button, InputField };
+import { IssueList } from "./IssueList";
+export { Button, InputField, IssueList };
