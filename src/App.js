@@ -1,7 +1,14 @@
 import "./App.scss";
+import {User} from './pages'
+
 
 function App() {
-  return <div className="App">app</div>;
+  return(
+    <>
+    <User/>
+    </>
+  )
+  
 }
 
 export default App;
