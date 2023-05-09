@@ -1,14 +1,62 @@
 .issuelist {
   padding: $general-padding;
+
   .issuelist__display {
+    // background-color: rgb(0, 0, 0);
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     border-top: 1px solid black;
     border-right: 1px solid black;
+    color: black;
+    text-align: center;
     span {
       padding: 8px 4px;
       border-left: 1px solid black;
       border-bottom: 1px solid black;
+    }
+    .feasible {
+      padding: 8px 4px;
+      border-left: 1px solid black;
+      border-bottom: 1px solid black;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 16px;
+      a {
+        button {
+          padding: 5px 10px;
+          color: white;
+          outline: none;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: 250ms ease;
+          &:nth-child(1) {
+            background-color: $primary-color1;
+            border: 1px solid $primary-color1;
+            &:hover {
+              background-color: white;
+              color: $primary-color1;
+            }
+          }
+        }
+        &:nth-child(2) {
+          button {
+            padding: 5px 10px;
+            color: white;
+            outline: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 250ms ease;
+
+            background-color: $primary-color2;
+            border: 1px solid $primary-color2;
+            &:hover {
+              background-color: white;
+              color: $primary-color2;
+            }
+          }
+        }
+      }
     }
   }
 }

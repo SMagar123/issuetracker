@@ -1,2 +1,4 @@
-import { Admin_Heropage } from "./Admin_Heropage";
-export { Admin_Heropage };
+import { AdminHeropage } from "./AdminHeropage";
+import { NegotiateForm } from "./NegotiateForm";
+import { SorryMessage } from "./SorryMessage";
+export { AdminHeropage, NegotiateForm, SorryMessage };

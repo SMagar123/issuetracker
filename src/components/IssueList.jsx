@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import issueData from "../database/issues.json";
+import { Button } from "./Button";
+import { Link, useNavigate } from "react-router-dom";
 const issueInfoTitle = [
   "User_id",
   "Issue",
@@ -7,13 +9,11 @@ const issueInfoTitle = [
   "Starting Date",
   "Solved Date",
   "Status",
-  "Solvabale",
-  "Negotiation",
+  "Feasible",
 ];
 const issueDataList = issueData.issues;
-console.log(issueDataList);
 export const IssueList = ({ issueType }) => {
-  console.log(issueType);
+  const navigate = useNavigate();
   return (
     <div className="issuelist">
       <div className="issuelist__display">
@@ -24,22 +24,38 @@ export const IssueList = ({ issueType }) => {
             </span>
           );
         })}
-        {issueDataList
-          .filter((item) => item.status === `${issueType}`)
-          .map((item) => {
-            return (
-              <>
-                <span>{item.source.id}</span>
-                <span>{item.desc.slice(0, 20)}</span>
-                <span>{item.field}</span>
-                <span>{item.startingDate}</span>
-                <span>{item.endingDate}</span>
-                <span>{item.status}</span>
-                <span>{item.solvable}</span>
-                <span>{item.negotiable["solved date"]}</span>
-              </>
-            );
-          })}
+        {issueDataList.filter((item) => item.status === `${issueType}`)
+          .length === 0
+          ? "No results found !!!"
+          : issueDataList
+              .filter((item) => item.status === `${issueType}`)
+              .map((item) => {
+                return (
+                  <>
+                    <span>{item.id}</span>
+                    <span>{item.desc.slice(0, 20)}</span>
+                    <span>{item.field}</span>
+                    <span>{item.startingDate}</span>
+                    <span>{item.endingDate}</span>
+                    <span>{item.status}</span>
+
+                    {item.status === "Solved" || item.status === "Reject" ? (
+                      <div className="feasible">
+                        <h4>Done it</h4>
+                      </div>
+                    ) : (
+                      <div className="feasible">
+                        <Link to={`/negotiate-form/${item.id}`}>
+                          <Button name="Yes" />
+                        </Link>
+                        <Link to={`/cannot-resolve/${item.id}`}>
+                          <Button name="No" />
+                        </Link>
+                      </div>
+                    )}
+                  </>
+                );
+              })}
       </div>
     </div>
   );
