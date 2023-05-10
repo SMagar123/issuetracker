@@ -1,12 +1,13 @@
 button {
   padding: 5px 10px;
-  background-color: $button-color1;
+  background-color: $primary-color2;
   color: $text-color1;
-  font-size: $font-size;
+  font-size: 15px;
   transition: 250ms ease;
   margin: 2px;
   &:hover {
     cursor: pointer;
+    background-color: lighten($primary-color2, 10);
     text-shadow: 0 0.3px $text-color1;
     transition: 250ms ease;
   }
