@@ -59,6 +59,11 @@
     background-color: rgb(230, 228, 228);
     ul {
       padding: 5px $general-padding;
+      li {
+        a {
+          text-decoration: none;
+        }
+      }
     }
   }
 }
@@ -73,14 +78,24 @@
     nav {
       ul {
         li {
+          a {
+            text-decoration: none;
+            &:hover {
+              color: rgb(133, 133, 133);
+            }
+            &:focus {
+              color: rgb(133, 133, 133);
+              border-bottom: 1px solid rgb(133, 133, 133);
+            }
+            // &.active {
+            //   color: red;
+            // }
+          }
           list-style: none;
           line-height: 2.5;
           font-weight: 600;
           cursor: pointer;
           transition: 250ms ease;
-          &:hover {
-            background-color: rgb(133, 133, 133);
-          }
         }
       }
     }
@@ -97,15 +112,22 @@
         align-items: center;
         justify-content: space-between;
         li {
+          a {
+            text-decoration: none;
+            &:hover {
+              color: rgb(133, 133, 133);
+            }
+            &:focus {
+              color: rgb(133, 133, 133);
+              border-bottom: 1px solid rgb(133, 133, 133);
+            }
+          }
           list-style: none;
           line-height: 2.5;
           font-weight: 600;
           cursor: pointer;
           transition: 250ms ease;
           padding: 2px 10px;
-          &:hover {
-            color: rgb(133, 133, 133);
-          }
         }
       }
     }

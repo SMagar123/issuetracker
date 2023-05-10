@@ -1,5 +1,10 @@
 import "./App.scss";
-import { AdminHeropage, NegotiateForm, SorryMessage } from "./pages";
+import {
+  AdminHeropage,
+  NegotiateForm,
+  SorryMessage,
+  CompletionForm,
+} from "./pages";
 import { Navbar } from "./components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
@@ -10,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<AdminHeropage />} />
           <Route path="/negotiate-form/:id" element={<NegotiateForm />} />
+          <Route path="/completion-form/:id" element={<CompletionForm />} />
           <Route path="/cannot-resolve/:id" element={<SorryMessage />} />
         </Routes>
       </div>

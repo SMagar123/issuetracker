@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { IssueList } from "../components/IssueList";
+import { NavLink } from "react-router-dom";
 const issueTypes = ["New", "Pending", "Solved", "Reject"];
 export const AdminHeropage = () => {
   const [issueType, setIssueType] = useState("New");
@@ -14,8 +15,15 @@ export const AdminHeropage = () => {
           <ul>
             {issueTypes.map((item) => {
               return (
-                <li key={item} value={item} onClick={handleTypes}>
-                  {item}
+                <li key={item}>
+                  <NavLink
+                    
+                    key={item}
+                    value={item}
+                    onClick={handleTypes}
+                  >
+                    {item}
+                  </NavLink>
                 </li>
               );
             })}

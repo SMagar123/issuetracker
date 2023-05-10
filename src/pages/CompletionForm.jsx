@@ -3,11 +3,11 @@ import { useNavigate, useParams } from "react-router-dom";
 import { InputField } from "../components/InputField";
 import { Button } from "../components/Button";
 import { getSingleIssue, editIssueDetail } from "../service/api";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
+import Select from "@mui/material/Select";
 const initialIssues = {
   desc: "",
   field: "",
@@ -19,7 +19,7 @@ const initialIssues = {
   payment: "",
   acceptance: "",
 };
-export const NegotiateForm = () => {
+export const CompletionForm = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [issueList, setIssueList] = useState(initialIssues);
@@ -42,55 +42,44 @@ export const NegotiateForm = () => {
   return (
     <div className="negotiate">
       <div className="negotiate__form">
-        <h4>Negotiation Information</h4>
+        <h4>Completion Information</h4>
         <div className="form">
           <form onSubmit={handleNegotiationQuery}>
             <label>Issue Registered Date</label>
             <p>{issueList.startingDate}</p>
             <InputField
               type="date"
-              name="solvingtime"
-              label="Date To Solve"
+              name="endingDate"
+              label="Completed Date"
               handleInput={(e) => handleIssueDetail(e)}
-              value={issueList.solvingtime}
+              value={issueList.endingDate}
               required
             />
-            <InputField
-              type="number"
-              name="payment"
-              label="Payment"
+            <label htmlFor="complete-message">Message</label>
+            <textarea
+              name="completionMessage"
+              onChange={(e) => handleIssueDetail(e)}
+              cols="30"
+              rows="5"
               required
-              handleInput={(e) => handleIssueDetail(e)}
-              value={issueList.payment}
-            />
-            <FormControl>
-              <FormLabel id="demo-row-radio-buttons-group-label">
-                Feasible
-              </FormLabel>
-              <RadioGroup
-                row
-                aria-labelledby="demo-row-radio-buttons-group-label"
-                name="feasible"
-              >
-                <FormControlLabel
-                  value="Yes"
-                  control={<Radio />}
-                  label="Yes"
+            ></textarea>
+            <Box sx={{ minWidth: 120 }}>
+              <FormControl fullWidth>
+                <InputLabel id="demo-simple-select-label">Status</InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  label="Status"
+                  name="status"
                   onChange={(e) => handleIssueDetail(e)}
-                />
-                <FormControlLabel
-                  value="No"
-                  control={<Radio />}
-                  label="No"
-                  onChange={(e) => handleIssueDetail(e)}
-                />
-              </RadioGroup>
-            </FormControl>
-            <Button
-              type="submit"
-              name="Query for Negotiation"
-              className="submit-button"
-            />
+                >
+                  <MenuItem value={"Pending"}>Pending</MenuItem>
+                  <MenuItem value={"Solved"}>Solved</MenuItem>
+                  <MenuItem value={"Reject"}>Rejected</MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
+            <Button type="submit" name="Completed" className="submit-button" />
           </form>
         </div>
       </div>

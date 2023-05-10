@@ -1,6 +1,6 @@
 .issuelist {
   padding: $general-padding;
-
+  position: relative;
   .issuelist__display {
     // background-color: rgb(0, 0, 0);
     display: grid;
@@ -9,10 +9,28 @@
     border-right: 1px solid black;
     color: black;
     text-align: center;
+    position: relative;
     span {
       padding: 8px 4px;
       border-left: 1px solid black;
       border-bottom: 1px solid black;
+    }
+    .description {
+      cursor: pointer;
+    }
+    .description-model {
+      display: none;
+      position: absolute;
+      background-color: white;
+      color: black;
+      height: 80vh;
+      width: 100%;
+      top: 0;
+      .text {
+        margin: 0 auto;
+        max-width: 500px;
+        border: 1px solid black;
+      }
     }
     .feasible {
       padding: 8px 4px;

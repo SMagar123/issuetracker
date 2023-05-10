@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { InputField } from "../components";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 import { Button } from "../components/Button";
 import { getSingleIssue, editIssueDetail } from "../service/api";
 const initialIssues = {
@@ -53,13 +57,21 @@ export const SorryMessage = () => {
               rows="10"
               required
             ></textarea>
-            <InputField
-              type="text"
-              name="status"
-              label="Status"
-              value={issueList.status}
-              handleInput={(e) => handleIssueDetail(e)}
-            />
+            <Box sx={{ minWidth: 120 }}>
+              <FormControl fullWidth>
+                <InputLabel id="demo-simple-select-label">Status</InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  label="Status"
+                  name="status"
+                  onChange={(e) => handleIssueDetail(e)}
+                >
+                  <MenuItem value={"Pending"}>Pending</MenuItem>
+                  <MenuItem value={"Reject"}>Rejected</MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
             <Button
               type="submit"
               name="Sorry Message"
