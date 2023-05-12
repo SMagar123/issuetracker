@@ -1,22 +1,32 @@
 .user {
   border: 1px solid black;
   padding: $general-padding;
-  .user__title {
+  .user__header {
     background-color: $primary-color2;
     color: $text-color1;
+    display: flex;
+    justify-content: space-between;
+  
+  }
+  .user__button {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0;
   }
   .user__table {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     border-top: 1px solid black;
     border-right: 1px solid black;
-    grid-gap: 10px;
-    box-shadow: 0;
+    box-shadow: 0 0.15rem 1.75rem rgb(33, 40, 50, 0.15);
     span{
         padding: 8px 4px;
         border-left: 1px solid black;
         border-bottom: 1px solid black;
         text-align: left;
+        .table-head{
+          border:5px solid black
+        }
     }
    
   }
@@ -26,10 +36,6 @@
   .user__title {
     text-align: center;
   }
-  .user__button {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 10px;
-  }
+
 
 }
