@@ -22,7 +22,7 @@ const inputList = {
   sorryMessage: "",
   completionMessage:""  
 };
-const issueData = " http://127.0.0.1:3006/issues";
+const issueData = " http://127.0.0.1:3006/issues/";
 export const AddIssue = () => {
   const navigate = useNavigate();
   const [issueList, setIssueList] = useState(inputList);
