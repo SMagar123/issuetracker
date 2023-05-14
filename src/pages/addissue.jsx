@@ -5,8 +5,7 @@ import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-// import {getissueData} from "../service/api";
+import Select from "@mui/material/Select";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 const inputList = {
@@ -21,28 +20,24 @@ const inputList = {
   payment: "",
   acceptance: "",
   sorryMessage: "",
-  completionMessage:""
+  completionMessage:""  
 };
 const issueData = " http://127.0.0.1:3006/issues";
 export const AddIssue = () => {
   const navigate = useNavigate();
   const [issueList, setIssueList] = useState(inputList);
-  const date = new Date();
+  // const date = new Date();
   const handleInputDetail = (e) => {
     setIssueList({ ...issueList, [e.target.name]: e.target.value });
   };
-  // const getissueDetail = async(e)=>{
-  //   let response =await getissueData();
-  //   setIssueList(response);
-  // }
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post(`${issueData}`, issueList);
     navigate("/");
   };
-  // useEffect(()=>{
-  //   getissueDetail();
-  // },[])
+
+ 
+
   return (
     <div className="add__issue">
     <div className="issue__form">
