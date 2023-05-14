@@ -11,7 +11,10 @@
       "solvingtime": "2023-05-15",
       "payment": "160",
       "acceptance": "",
-      "sorryMessage": "sorry due to lack of infrastructure we are unable to include the feautre you want."
+      "sorryMessage": "sorry due to lack of infrastructure we are unable to include the feautre you want.",
+      "requirement": [
+        "sample.pdf"
+      ]
     },
     {
       "id": "2",
@@ -19,12 +22,15 @@
       "field": "transportation",
       "status": "New",
       "startingDate": "2021-02-01",
-      "endingDate": "2021-04-06",
+      "endingDate": "",
       "feasible": "1",
       "payment": "450",
       "acceptance": "",
       "sorryMessage": "",
-      "solvingtime": "2023-05-20"
+      "solvingtime": "2023-05-20",
+      "requirement":[
+        "largefile.pdf"
+      ]
     },
     {
       "id": "3",
@@ -85,7 +91,7 @@
       "field": "eductaion",
       "status": "New",
       "startingDate": "2023-02-01",
-      "endingDate": "2023-04-06",
+      "endingDate": "",
       "feasible": "Yes",
       "solvingtime": "2023-02-15",
       "payment": "25",
@@ -98,7 +104,7 @@
       "field": "eductaion",
       "status": "New",
       "startingDate": "2023-02-01",
-      "endingDate": "2023-04-06",
+      "endingDate": "",
       "feasible": 1,
       "solvingtime": "",
       "payment": "",

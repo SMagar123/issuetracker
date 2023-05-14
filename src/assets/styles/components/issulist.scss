@@ -10,6 +10,27 @@
     color: black;
     text-align: center;
     position: relative;
+    .view-button {
+      padding: 8px 4px;
+      border-left: 1px solid black;
+      border-bottom: 1px solid black;
+      //
+      button {
+        background-color: $primary-color2;
+        outline: none;
+        color: white;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        border: 1px solid $primary-color2;
+        transition: 250ms ease;
+        font-weight: 700;
+        &:hover {
+          background-color: white;
+          color: $primary-color2;
+        }
+      }
+    }
     span {
       padding: 8px 4px;
       border-left: 1px solid black;
