@@ -1,0 +1,58 @@
+.add__issue {
+//   margin: 0 auto;
+
+  .issue__form {
+    // border: 1px solid #777777;
+    padding: $general-padding;
+    text-align: center;
+    // background-color: $primary-color2;
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+    // align-items: center;
+    h1 {
+      // width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      form {
+        display: flex;
+        gap: 12px;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        width: 500px;
+        // border: 1px solid black;
+        box-shadow: 0 0 5px gray;
+        border-radius: 10px;
+        label {
+          font-size: 18px;
+          font-weight: 600;
+        }
+        textarea {
+          outline: none;
+          font-size: 16px;
+          padding: 5px 10px;
+          width: 100%;
+          text-align: center;
+        }
+        input {
+          padding: 5px 10px;
+          text-align: center;
+          outline: none;
+          width: 100%;
+          font-size: 18px;
+        }
+      }
+    }
+
+    button {
+    //   font-size: 24px;
+    }
+  }
+}
