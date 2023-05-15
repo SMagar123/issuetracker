@@ -36,7 +36,18 @@ export const IssueList = ({ issueType }) => {
                     <span>{item.field}</span>
                     <span>{item.startingDate}</span>
                     <span>{item.endingDate}</span>
-                    <span>{item.status}</span>
+                    <div className="status">
+                      {item.status === "New" ? (
+                        <span className="status-new">{item.status}</span>
+                      ) : item.status === "Pending" ? (
+                        <span className="status-pending">{item.status}</span>
+                      ) : item.status === "Solved" ? (
+                        <span className="status-solved">{item.status}</span>
+                      ) : (
+                        <span className="status-reject">{item.status}</span>
+                      )}
+                    </div>
+
                     <div className="view-button">
                       <Link to={`/requirement/${item.id}`}>
                         <button>View</button>

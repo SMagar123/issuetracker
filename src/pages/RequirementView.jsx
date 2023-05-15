@@ -23,7 +23,7 @@ export const RequirementView = () => {
   };
 
   return (
-    <div>
+    <div className="requirement__view">
       {requirementList === undefined ? (
         ""
       ) : (

@@ -7,7 +7,7 @@
       "status": "New",
       "startingDate": "2023-02-01",
       "endingDate": "",
-      "feasible": "Yes",
+      "feasible": "No",
       "solvingtime": "2023-05-15",
       "payment": "160",
       "acceptance": "",
@@ -28,7 +28,7 @@
       "acceptance": "",
       "sorryMessage": "",
       "solvingtime": "2023-05-20",
-      "requirement":[
+      "requirement": [
         "largefile.pdf"
       ]
     },
