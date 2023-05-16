@@ -27,13 +27,14 @@ export const ViewNegotiable = () => {
   useEffect(() => {
     getIssueDetail();
   }, []);
-
+  const handleAcceptance = (e) => {
+    setIssueList({ ...issueList, ["acceptance"]: e.target.value });
+  };
   const handleUpdate = () => {
     updateIssueData(issueList, id);
     alert("You updated your value");
     navigate("/");
   };
-
   return (
     <div className="view">
       <div className="view__wrapper">
@@ -41,7 +42,7 @@ export const ViewNegotiable = () => {
           <div className="view-title">
             <h1>View Negotiable</h1>
           </div>
-          <form>
+          <form onSubmit={handleUpdate}>
             <div className="view-details">
               <label>Solving Time</label>
               <p>{issueList.solvingtime}</p>
@@ -49,13 +50,13 @@ export const ViewNegotiable = () => {
               <p>{issueList.payment}</p>
               <Button
                 name="Accept"
-                value={(issueList.acceptance = "Yes")}
-                handleClick={handleUpdate}
+                value="Yes"
+                handleClick={(e) => handleAcceptance(e)}
               />
               <Button
                 name="Reject"
-                value={(issueList.acceptance = "No")}
-                handleClick={handleUpdate}
+                value="No"
+                handleClick={(e) => handleAcceptance(e)}
                 className="reject-button"
               />
             </div>
@@ -65,4 +66,3 @@ export const ViewNegotiable = () => {
     </div>
   );
 };
-

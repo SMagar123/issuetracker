@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../components/Button";
 import { AccountCircleIcon } from "../assets/icons/icons";
 import issueData from "../database/issues.json";
 import { Link } from "react-router-dom";
+import { UserProfile } from "../components/UserProfile";
 
 const tableHead = [
   "S.N.",
@@ -14,13 +15,18 @@ const tableHead = [
   "Negotiation",
 ];
 const data = issueData.issues;
+
 export const User = () => {
+  const [viewProfile, setViewProfile] = useState(false);
   return (
     <div className="user">
       <div className="user__title">
         <h1>Issue Tracker</h1>
         <div className="user__name">
-          <AccountCircleIcon fontSize="large" />
+          <i onClick={() => setViewProfile(!viewProfile)}>
+            {/* {viewProfile && <UserProfile/>} */}
+            <AccountCircleIcon fontSize="large" />
+          </i>
           <p>User_Name</p>
         </div>
       </div>
@@ -52,7 +58,7 @@ export const User = () => {
                     <Button name="View" />
                   </Link>
                 ) : (
-                  <Button name="View" />
+                  <Button name="Disabled" disabled />
                 )}
               </div>
             </>

@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import { AddIssue, Login, User, ViewNegotiable } from "./pages";
+import { UserProfile } from "./components/UserProfile";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login/>}/>
         <Route path="/" element={<User />} />
+        <Route path="/viewprofile" element={<UserProfile/>}/>
         <Route path="/addissue" element={<AddIssue />} />
         <Route path="/viewpage/:id" element={<ViewNegotiable />} />
       </Routes>

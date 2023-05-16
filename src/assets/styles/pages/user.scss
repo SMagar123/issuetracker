@@ -1,6 +1,7 @@
 .user {
   max-width: 1400px;
   padding: $general-padding;
+  margin: 0 auto;
   .user__title {
     padding: $general-padding;
     background-color: $primary-color2;
@@ -8,15 +9,22 @@
     width: 100%;
     display: flex;
     align-items: center;
+    position: sticky;
+    // z-index: 9;
+    top: 0;
+ 
     h1{
       width: 100%;
     }  
     .user__name{ 
       display: flex;
       justify-content: flex-end;
-      width: 100%;
+      // width: 100%;
+      cursor: pointer;
       &.hover{
-        cursor: pointer;
+      }
+      i{
+
       }
     } 
   }
@@ -53,6 +61,9 @@
 @media (min-width: 320px) and (max-width: 576px) {
   .user__title {
     text-align: center;
+  }
+  .user__table{
+    grid-template-columns: 1fr;
   }
   .user__button {
     display: flex;
