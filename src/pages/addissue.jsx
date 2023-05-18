@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { InputField } from "../components/InputField";
 import { Button } from "../components/Button";
-import Box from "@mui/material/Box";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+
+// import Box from "@mui/material/Box";
+// import InputLabel from "@mui/material/InputLabel";
+// import MenuItem from "@mui/material/MenuItem";
+// import FormControl from "@mui/material/FormControl";
+// import Select from "@mui/material/Select";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 const inputList = {
@@ -39,7 +40,7 @@ export const AddIssue = () => {
     setFileName(e.target.files[0].name);
     issueList.requirement.push(fileName);
   };
-  const handleUplaodPdf = async (e) => {
+  const handleUplaodPdf = async (e) => {/*uploading pdf file */
     e.preventDefault();
     const formData = new FormData();
     formData.append("file", file);
@@ -62,7 +63,6 @@ export const AddIssue = () => {
   };
 
   return (
-    <div className="add__issue">
       <div className="issue__form">
         <div className="form-title">
           <h1>Add Your Issue</h1>
@@ -75,14 +75,21 @@ export const AddIssue = () => {
               cols="28"
               rows="8"
               onChange={(e) => handleInputDetail(e)}
-            ></textarea>
+            required></textarea>
             <InputField
               label="Field"
               placeholder="Type of issue"
               handleInput={(e) => handleInputDetail(e)}
-              name="field"
+              name="field" required
             />
-            <Box sx={{ minWidth: 450 }}>
+             <InputField
+              label="Status"
+              value="New"
+              handleInput={(e) => handleInputDetail(e)}
+              disabled
+              name="status" required
+            />
+            {/* <Box sx={{ minWidth: 450 }}>
               <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label" color="primary">
                   Status
@@ -97,23 +104,22 @@ export const AddIssue = () => {
                   <MenuItem value="New">New</MenuItem>
                 </Select>
               </FormControl>
-            </Box>
+            </Box> */}
             <InputField
-              label="Enter Today's Date"
+              label=" Today's Date"
               type="date"
               name="startingDate"
               handleInput={(e) => handleInputDetail(e)}
-            />
+             required/>
             <InputField
               label={fileName}
               type="file"
-              handleInput={(e) => handlePdfUploading(e)}
-              name="requirements"
+              handleInput={(e) => handlePdfUploading(e)} className="form-file"
+              name="requirements" required
             />
-            <Button type="submit" name="Submit" />
+            <Button type="submit" name="Submit" className="submit-button"/>
           </form>
         </div>
       </div>
-    </div>
   );
 };

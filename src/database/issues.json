@@ -7,7 +7,7 @@
       "status": "New",
       "startingDate": "2023-02-01",
       "endingDate": "",
-      "feasible": "No",
+      "feasible": "Yes",
       "solvingtime": "2023-05-15",
       "payment": "160",
       "acceptance": "",
@@ -68,7 +68,7 @@
       "status": "Solved",
       "startingDate": "2023-02-01",
       "endingDate": "2023-04-06",
-      "feasible": 1,
+      "feasible": "Yes",
       "solvingtime": "",
       "payment": "",
       "acceptance": "",
@@ -139,7 +139,7 @@
       "status": "Pending",
       "startingDate": "2023-02-01",
       "endingDate": "2023-04-06",
-      "feasible": 1,
+      "feasible": "Yes",
       "solvingtime": "",
       "payment": "",
       "acceptance": "",
@@ -292,6 +292,21 @@
       "requirement": [
         "upload.pdf"
       ]
+    },
+    {
+      "id": "UDUfaks",
+      "desc": "",
+      "field": "",
+      "status": "",
+      "startingDate": "",
+      "endingDate": "",
+      "feasible": "",
+      "solvingtime": "",
+      "payment": "",
+      "acceptance": "",
+      "sorryMessage": "",
+      "completionMessage": "",
+      "requirement": []
     }
   ]
 }
