@@ -1,83 +1,91 @@
+.user__title {
+  padding: $general-padding;
+  background-color: #4da167;
+  color: $text-color1;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+
+  h1 {
+    width: 100%;
+  }
+  .user__name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    // width: 100%;
+    cursor: pointer;
+  }
+}
+
 .user {
   max-width: 1400px;
   padding: $general-padding;
   margin: 0 auto;
-  .user__title {
-    padding: $general-padding;
-    background-color: $primary-color2;
-    color: $text-color1;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    position: -webkit-sticky;
-    position: sticky;
-    // z-index: 9;
-    top: 0;
- 
-    h1{
-      width: 100%;
-    }  
-    .user__name{ 
-      display: flex;
-      justify-content: flex-end;
-      // width: 100%;
-      cursor: pointer;
-    
-    } 
-  }
-  .user__button{
-    text-align: center;
+  // background-color: whitesmoke;
+
+  .user__button {
+    // text-align: right;
     // gap: 25px;
-    .addissue{
-      border-radius: 50px;
-      padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    .addissue {
+      // border-radius: 8px;
+      // padding: 5px 10px;
     }
   }
 
   .user__table {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    box-shadow: 0 0.15rem 1.75rem rgb(33,40,50,0.15);
-    span{
-        padding: 8px 4px;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-        text-align: center;
-     }
-     .negotiation-button{
+    // background-color:white;
+    border-top: 1px solid #d1d1d1;
+    border-right: 1px solid #d1d1d1;
+    // box-shadow: 0 0.15rem 1.75rem rgb(33, 40, 50, 0.15);
+    span {
       padding: 8px 4px;
-      border-left: 1px solid black;
-      border-bottom: 1px solid black;
+      border-left: 1px solid #d1d1d1;
+      border-bottom: 1px solid #d1d1d1;
       text-align: center;
-      .hover-text{
+      // color: whitesmoke;
+    }
+    .negotiation-button {
+      padding: 8px 4px;
+      border-left: 1px solid #d1d1d1;
+      border-bottom: 1px solid #d1d1d1;
+      text-align: center;
+      .hover-text {
         position: relative;
-        display: inline-block; 
+        display: inline-block;
         span {
           display: none;
           position: absolute;
           top: 100%;
-          font-size: 12px;
+          font-size: 15px;
           left: 0;
           font-family: bold;
-          border: 1px solid #fcb8b8;
-          background-color: rgb(241, 207, 207);
+          border: 1px solid $primary-color2;
+          z-index: 2;
+          background-color: white;
         }
-        &:hover{
-          span{
-          display: block; 
-          }   
+        &:hover {
+          span {
+            display: block;
+          }
         }
       }
-     }
-    .table-title{
-      background-color: rgba(5, 5, 36, 0.664);
+    }
+    .table-title {
+      background-color: #4DA167;
       color: white;
-      font-size: 22px;
-      border: #777777;
-    }   
-
+      font-size: 18px;
+    }
   }
 }
 
@@ -85,7 +93,7 @@
   .user__title {
     text-align: center;
   }
-  .user__table{
+  .user__table {
     grid-template-columns: 1fr;
   }
   .user__button {
@@ -93,5 +101,4 @@
     justify-content: flex-end;
     margin-top: 10px;
   }
-  
 }

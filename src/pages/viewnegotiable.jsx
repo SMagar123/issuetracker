@@ -28,7 +28,11 @@ export const ViewNegotiable = () => {
     getIssueDetail();
   }, []);
   const handleAcceptance = (e) => {
-    setIssueList({ ...issueList, ["acceptance"]: e.target.value });
+    setIssueList({
+      ...issueList,
+      ["acceptance"]: e.target.value,
+      ["status"]: "Pending",
+    });
   };
   const handleUpdate = () => {
     updateIssueData(issueList, id);
