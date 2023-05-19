@@ -8,6 +8,8 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const initialIssues = {
   desc: "",
   field: "",
@@ -37,7 +39,20 @@ export const NegotiateForm = () => {
   };
   const handleNegotiationQuery = () => {
     editIssueDetail(issueList, id);
+    notify();
     navigate("/");
+  };
+  const notify = () => {
+    toast.info("Negotiation request is sent to user", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
   };
   return (
     <div className="negotiate">
@@ -94,6 +109,7 @@ export const NegotiateForm = () => {
           </form>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

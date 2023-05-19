@@ -7,10 +7,10 @@
       "status": "New",
       "startingDate": "2023-02-01",
       "endingDate": "",
-      "feasible": "No",
+      "feasible": "Yes",
       "solvingtime": "2023-05-15",
-      "payment": "160",
-      "acceptance": "",
+      "payment": "350",
+      "acceptance": "Yes",
       "sorryMessage": "sorry due to lack of infrastructure we are unable to include the feautre you want.",
       "requirement": [
         "sample.pdf"
@@ -23,7 +23,7 @@
       "status": "New",
       "startingDate": "2021-02-01",
       "endingDate": "",
-      "feasible": "1",
+      "feasible": "Yes",
       "payment": "450",
       "acceptance": "",
       "sorryMessage": "",
@@ -76,14 +76,15 @@
       "id": "6",
       "desc": "description of issue is given here Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
       "field": "eductaion",
-      "status": "Pending",
+      "status": "Solved",
       "startingDate": "2023-02-01",
-      "endingDate": "2023-04-06",
+      "endingDate": "2023-04-15",
       "feasible": 1,
       "solvingtime": "",
       "payment": "",
       "acceptance": "",
-      "sorryMessage": "sorry "
+      "sorryMessage": "sorry ",
+      "completionMessage": "Your task has been done."
     },
     {
       "id": "7",

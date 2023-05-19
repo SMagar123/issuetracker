@@ -3,6 +3,7 @@ import { CloseIcon } from "../assets/icons/icons";
 import { NavLink } from "react-router-dom";
 import { Button } from "./Button";
 import { getAdminDetail } from "../service/api";
+// import "../assets/styles/components/navbar.scss";
 export const Navbar = () => {
   const [adminDetail, setAdminDetail] = useState([]);
   const [closeModal, setCloseModal] = useState(false);
@@ -13,7 +14,6 @@ export const Navbar = () => {
     let response = await getAdminDetail();
     setAdminDetail(response.data);
   };
-  console.log(closeModal);
   return (
     <>
       <div className="hero__admindetails">
