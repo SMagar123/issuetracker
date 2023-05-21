@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { getissueData, updateIssueData } from "../service/api";
 import { Button } from "../components/Button";
 
-export const ViewNegotiable = () => {
+export const ViewNegotiable = ({onClose}) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [issueList, setIssueList] = useState({
@@ -33,6 +33,7 @@ export const ViewNegotiable = () => {
       ["acceptance"]: e.target.value,
       ["status"]: "Pending",
     });
+    onClose();
   };
   const handleUpdate = () => {
     updateIssueData(issueList, id);

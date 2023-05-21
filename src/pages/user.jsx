@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { Button } from "../components/Button";
 import { AccountCircleIcon } from "../assets/icons/icons";
 import issueData from "../database/issues.json";
-import { Link } from "react-router-dom";
+import { Link, useNavigation, useParams } from "react-router-dom";
 import Data from "../database/users.json";
-
-import { UserProfile } from "../components/UserProfile";
+import { createPortal } from "react-dom";
+import { ViewNegotiable } from "./viewnegotiable";
 
 const tableHead = [
   "S.N.",
@@ -29,31 +29,33 @@ export const User = () => {
     setIsHovered(false);
   };
 
+  const [showModal, setShowModal] = useState(false);
+  const { id } = useParams();
+  // const navigation = useNavigation();
   return (
     <>
+      {/* ....top-navbar........ */}
       <div className="user__title">
         <h1>Issue Tracker</h1>
+        <div className="user-nav">
+          <span>
+            <Link to="/addissue">Add Issue</Link>
+          </span>
+          <span>
+            <Link to="/issueinfo">Issue Info</Link>
+          </span>
+        </div>
         <div className="user__name">
           <i onClick={() => setViewProfile(!viewProfile)}>
-            {viewProfile && <span>${userData.name}</span>}
+            <Link to="/login">{viewProfile && <span>Log Out</span>}</Link>
             <AccountCircleIcon fontSize="large" />
           </i>
           <p>User_Name</p>
         </div>
       </div>
       <div className="user">
-        {/* ....top-navbar........ */}
-        {/* .....add issue button......... */}
-        <div className="user__button">
-          <h2>Negotiation List</h2>
+        <h1>Negotiation List</h1>
 
-          <Link to="/addissue">
-            <Button className="addissue" name="Add Issue" />
-          </Link>
-          <Link to="/issueinfo">
-            <Button className="addissue" name="Issue Info" />
-          </Link>
-        </div>
         {/* .....issue list in table........ */}
         <div className="user__table">
           {tableHead.map((item) => {
@@ -76,10 +78,15 @@ export const User = () => {
                 {/* ....button for viewing...... */}
                 <div className="negotiation-button">
                   {item.feasible === "Yes" ? (
-                    <Link to={`/viewPage/${item.id}`}>
-                      <Button name="View" />
-                    </Link>
+                    // <Link to={`/${item.id}`}>
+                    <Button name="View" onClick={() => setShowModal(true)}>
+                      {showModal &&
+                        createPortal(
+                          <ViewNegotiable onClose={() => setShowModal(false)} />
+                        )}
+                    </Button>
                   ) : (
+                    //  </Link>
                     <div className="hover-text">
                       <Button
                         onMouseEnter={handleMouseEnter}
@@ -87,9 +94,7 @@ export const User = () => {
                         name="On Process"
                         className="button-disabled"
                       />
-                      {isHovered && (
-                        <span>Will be activated soon </span>
-                      )}
+                      {isHovered && <span>Will be activated soon </span>}
                     </div>
                   )}
                 </div>

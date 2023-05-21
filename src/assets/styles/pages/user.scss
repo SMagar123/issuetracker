@@ -3,44 +3,57 @@
   background-color: #4da167;
   color: $text-color1;
   width: 100%;
-
   display: flex;
+  gap: 16px;
   align-items: center;
-  position: -webkit-sticky;
   position: sticky;
   z-index: 1;
   top: 0;
-
   h1 {
     width: 100%;
+  }
+  .user-nav{
+    display: flex;
+    width: 100%;
+    gap: 16px;
+    justify-content: flex-end;
+    font-size: 16px;
+    a{
+      color: white; 
+      &:hover{
+        font-size: 18px;
+      }
+
+    }
+    
   }
   .user__name {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
-    // width: 100%;
+    position: relative;
     cursor: pointer;
+    span{
+      width: 100%;
+      width: max-content;
+    display: flex;
+    position: absolute;
+    top: 34px;
+    background-color: #56db7f;
+    opacity: 4;
+    padding: 5px 10px;
+    right: 82px;
+    }
   }
 }
-
 .user {
   max-width: 1400px;
   padding: $general-padding;
   margin: 0 auto;
-  // background-color: whitesmoke;
+  h1{
 
-  .user__button {
-    // text-align: right;
-    // gap: 25px;
-    display: flex;
-    justify-content: space-between;
-    .addissue {
-      // border-radius: 8px;
-      // padding: 5px 10px;
-    }
   }
-
   .user__table {
     display: grid;
     grid-template-columns: repeat(7, 1fr);

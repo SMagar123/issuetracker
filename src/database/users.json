@@ -1,32 +1,20 @@
 {
-    "user":[
+    "users":[
         {
-            "id": "na1",
-            "username":"user1",
-            "name":"Smriti",
-            "password":"smriti",
-            "email":"youremail@gmail.com"
+            "id": "adminuser",
+            "username":"Admin",            
+            "password":"admin",
+            "email":"youremail@gmail.com",
+            "role":"admin"
         },
         {
-            "id": "2",
-            "username":"user2",
-            "name":"Smriti",
-            "password":"smriti",            
-            "email":"youremail@gmail.com"
-        },
-        {
-            "id": "3",
-            "username":"user3",
-            "name":"Smriti",
+            "id": "user",
+            "username":"Smriti",
             "password":"smriti",
-            "email":"youremail@gmail.com"
-        },
-        {
-            "id": "4",
-            "username":"user4",
-            "name":"Smriti",
-            "password":"smriti",
-            "email":"youremail@gmail.com"
+            "email":"youremail@gmail.com"  ,
+            "role": "user"
         }
+        
     ]
+    
 }
