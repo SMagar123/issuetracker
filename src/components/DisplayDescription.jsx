@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getSingleIssue } from "../service/api";
-
+import { Link } from "react-router-dom";
 export const DisplayDescription = ({ user_id }) => {
   const [issueDesc, setIssueDesc] = useState();
   const getIssueDescriptionofUser = async () => {
@@ -10,16 +10,55 @@ export const DisplayDescription = ({ user_id }) => {
   useEffect(() => {
     getIssueDescriptionofUser();
   }, [user_id]);
-
-  console.log(issueDesc);
-  console.log(user_id);
   return (
     <>
       {issueDesc === undefined ? (
         ""
       ) : (
-        <div className="descripton-model">
-          <p>{issueDesc.desc}</p>
+        <div className="description-model">
+          <div className="field">
+            <h3>{issueDesc.field}</h3>
+          </div>
+          <div className="details">
+            <div className="details-viewing">
+              <div className="id">
+                <label htmlFor="id">User_id</label>
+                <h5>{issueDesc.id}</h5>
+              </div>
+              <div className="registeredDate">
+                <label htmlFor="Registered Date">Registered Date</label>
+                <h5>{issueDesc.startingDate}</h5>
+              </div>
+              <div className="solvedDate">
+                <label htmlFor="Solved Date">Solved Date</label>
+                {issueDesc.endingDate === "" ? (
+                  <h5>----</h5>
+                ) : (
+                  <h5>{issueDesc.endingDate}</h5>
+                )}
+              </div>
+              <div className="status">
+                <label htmlFor="Status">Status</label>
+                <h5>{issueDesc.status}</h5>
+              </div>
+            </div>
+            <div className="details-handling">
+              <div className="description">
+                <label htmlFor="description">Description</label>
+                <p>{issueDesc.desc}</p>
+              </div>
+              <div className="viewRequirements">
+                <Link to={`/requirement/${issueDesc.id}`}>
+                  <button>View Requirements</button>
+                </Link>
+              </div>
+              <div className="feasible">
+                <label htmlFor="feasible">Feasible</label>
+                <button>Yes</button>
+                <button>No</button>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </>

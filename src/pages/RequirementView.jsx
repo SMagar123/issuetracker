@@ -21,11 +21,10 @@ export const RequirementView = () => {
     let response = await getSingleIssue(id);
     setRequirementList(response.data);
   };
-
   return (
     <div className="requirement__view">
       {requirementList === undefined ? (
-        ""
+        <h4>Sorry no file found !!!"</h4>
       ) : (
         <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
           <Viewer

@@ -121,9 +121,11 @@
   padding: $general-padding;
   max-width: 1400px;
   margin: 0px auto;
+ position: relative;
   h2 {
     color: $primary-color2;
-    padding-bottom: $general-padding;
+   
+    // padding-bottom: $general-padding;
   }
   nav {
     background-color: rgb(230, 228, 228);
@@ -140,6 +142,7 @@
 .hero__issuelist {
   max-width: 1400px;
   margin: 0px auto;
+  
 }
 @media (min-width: 320px) and (max-width: 768px) {
   .hero__issuedisplay {

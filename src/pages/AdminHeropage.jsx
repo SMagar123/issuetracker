@@ -10,8 +10,8 @@ export const AdminHeropage = () => {
   return (
     <div className="heropage">
       <div className="hero__issuedisplay">
-        <h2>Issues List</h2>
-        <nav>
+        <h2>Feature Request List</h2>
+        {/* <nav>
           <ul>
             {issueTypes.map((item) => {
               return (
@@ -28,7 +28,7 @@ export const AdminHeropage = () => {
               );
             })}
           </ul>
-        </nav>
+        </nav> */}
       </div>
       <div className="hero__issuelist">
         <IssueList issueType={issueType} />

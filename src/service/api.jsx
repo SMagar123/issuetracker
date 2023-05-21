@@ -6,7 +6,7 @@ export const getSingleIssue = async (data) => {
   try {
     return await axios.get(`${issueAPI_URL}/${data}`);
   } catch (error) {
-    console.error(error);
+    return error;
   }
 };
 //edit single issue with user_id "id"
