@@ -1,5 +1,6 @@
 .view {
-  margin: 0 auto;
+  // margin: 0 auto;
+  background-color: white;
   .view__wrapper {
     padding: $general-padding;
     text-align: center;
@@ -14,7 +15,7 @@
             justify-content: center;
             margin-top: 10px;
             
-            .view-details{
+            .view-Details{
                 display: flex;
                 gap: 12px;
                 flex-direction: column;

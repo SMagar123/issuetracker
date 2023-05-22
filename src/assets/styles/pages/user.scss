@@ -9,7 +9,7 @@
   position: sticky;
   z-index: 1;
   top: 0;
-  h1 {
+  h2 {
     width: 100%;
   }
   .user-nav{
@@ -51,9 +51,8 @@
   max-width: 1400px;
   padding: $general-padding;
   margin: 0 auto;
-  h1{
-
-  }
+  position: relative;
+  
   .user__table {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -99,6 +98,17 @@
       color: white;
       font-size: 18px;
     }
+  }
+  .view-details {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.808);
+    inset: 0;
+    height: 100vh;
+    padding: $general-padding;
+    svg{
+      color: white;
+    }
+   
   }
 }
 

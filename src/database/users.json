@@ -8,9 +8,23 @@
             "role":"admin"
         },
         {
-            "id": "user",
+            "id": "1",
             "username":"Smriti",
             "password":"smriti",
+            "email":"youremail@gmail.com"  ,
+            "role": "user"
+        },
+        {
+            "id": "100",
+            "username":"yamima",
+            "password":"yamimamt",
+            "email":"youremail@gmail.com"  ,
+            "role": "user"
+        },
+        {
+            "id":"30",
+            "username":"Kajol",
+            "password":"kajoldd",
             "email":"youremail@gmail.com"  ,
             "role": "user"
         }

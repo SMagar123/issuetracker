@@ -3,8 +3,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import { getissueData, updateIssueData } from "../service/api";
 import { Button } from "../components/Button";
 
-export const ViewNegotiable = ({onClose}) => {
-  const { id } = useParams();
+export const ViewNegotiable = ({ id, meronam }) => {
+  // const { id } = useParams();
+  console.log("Id yeta cha", id);
+  console.log(meronam);
   const navigate = useNavigate();
   const [issueList, setIssueList] = useState({
     id: id,
@@ -33,22 +35,23 @@ export const ViewNegotiable = ({onClose}) => {
       ["acceptance"]: e.target.value,
       ["status"]: "Pending",
     });
-    onClose();
+    // onClose();
   };
+
   const handleUpdate = () => {
     updateIssueData(issueList, id);
     alert("You updated your value");
-    navigate("/");
+    navigate(`/user/${id}`);
   };
   return (
     <div className="view">
       <div className="view__wrapper">
         <div className="view-form">
-          <div className="view-title">
+          {/* <div className="view-title">
             <h1>View Negotiable</h1>
-          </div>
+          </div> */}
           <form onSubmit={handleUpdate}>
-            <div className="view-details">
+            <div className="view-Details">
               <label>Solving Time</label>
               <p>{issueList.solvingtime}</p>
               <label>Payment Amount</label>

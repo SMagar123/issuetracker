@@ -27,7 +27,7 @@
     "start": "react-scripts start",
     "json-server": "json-server --watch src/database/issues.json --host 127.0.0.1 --port 3006",
     "json-server1": "json-server --watch src/database/users.json --host 127.0.0.1 --port 3005",
-    "json-server2": "json-server --watch src/database/admin.json --host 127.0.0.1 --port 3004",
+    "json-server2": "json-server --watch src/database/practice.json --host 127.0.0.1 --port 3004",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

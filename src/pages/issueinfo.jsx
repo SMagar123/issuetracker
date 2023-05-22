@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export const IssueInfo=()=> {
   return (
     <div className='issue__info'>
-        <Link to="/">
+        <Link to="/user">
         <Button name="Go Back"/>  
         
         </Link>
