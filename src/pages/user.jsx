@@ -51,10 +51,10 @@ export const User = () => {
     return item.id === `${id}`;
   });
 
-  const displayDetails = (id) => {
-    // setUserId(id);
-    setViewDetails(!viewDetails);
-  };
+  // const displayDetails = (id) => {
+  //   setUserId(id);
+  //   setViewDetails(!viewDetails);
+  // };
   // const [showModal, setShowModal] = useState(false);
 
   //obtaining data of the user from existing database

@@ -8,6 +8,9 @@ import { Button } from "../components/Button";
 const data = userData.users;
 // console.log("heeree", data);
 export const Login = () => {
+  const loginasUser = () =>{
+    localStorage.setItem('login',true)
+  }
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -17,13 +20,13 @@ export const Login = () => {
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
-  const RoleRoute = ({ role, roles = [], ...props }) => {
-    return !roles.length || roles.includes(role) ? (
-      <Route {...props} />
-    ) : (
-      <Link to=".." />
-    );
-  };
+    // const RoleRoute = ({ role, roles = [], ...props }) => {
+    //   return !roles.length || roles.includes(role) ? (
+    //     <Route {...props} />
+    //   ) : (
+    //     <Link to=".." />
+    //   );
+    // };
 
   const roles = ["user", "admin"];
   const [role, setRole] = useState(roles[0]);
