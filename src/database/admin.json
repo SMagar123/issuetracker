@@ -1,7 +1,10 @@
 {
     "admin":[
         {
-            "username":"admin123"
+            "username":"Smriti-MHz",
+            "name":"Smriti Maharjan",
+            "email":"smriti@gmail.com",
+            "profile_url":"images/admin.jpg"
         }
     ]
 }
