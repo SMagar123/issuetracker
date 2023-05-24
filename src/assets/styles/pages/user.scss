@@ -1,41 +1,41 @@
-  .user__title {
-  padding: $general-padding;
-  background-color: #4da167;
-  color: $text-color1;
-  width: 100%;
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  position: sticky;
-  position: -webkit-sticky;
-  z-index: 1;
-  top: 0;
-  h2 {
-    width: 100%;
-  }
+//   .user__title {
+//   padding: $general-padding;
+//   background-color: #4da167;
+//   color: $text-color1;
+//   width: 100%;
+//   display: flex;
+//   gap: 16px;
+//   align-items: center;
+//   position: sticky;
+//   position: -webkit-sticky;
+//   z-index: 1;
+//   top: 0;
+//   h2 {
+//     width: 100%;
+//   }
  
-  .user__name {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    position: relative;
-    cursor: pointer;
-    span{
-      width: max-content;
-    position: absolute;
-    top: 34px;
-    background-color: #56db7f;
-    opacity: 4;
-    padding: 5px 10px;
-    &:hover{
-      background-color:whitesmoke;
-      color:black;
-      text-shadow: 0 0 2px;
-    }
-    }
-  }
-}
+//   .user__name {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     gap: 15px;
+//     position: relative;
+//     cursor: pointer;
+//     span{
+//       width: max-content;
+//     position: absolute;
+//     top: 34px;
+//     background-color: #56db7f;
+//     opacity: 4;
+//     padding: 5px 10px;
+//     &:hover{
+//       background-color:whitesmoke;
+//       color:black;
+//       text-shadow: 0 0 2px;
+//     }
+//     }
+//   }
+// }
 .user {
   max-width: 1400px;
   padding: $general-padding;
@@ -44,41 +44,33 @@
   .user-title{
     display: flex;
     justify-content: center;
-    h2{
+    h1{
       margin-bottom: 16px;
       text-align: center;
     }
-    .user-nav{  
+    .user-add{  
       display: flex;
       justify-content: flex-end;
       margin-top: 16px;
       position: absolute;
       right: 16px;
-      top: -5px;
+      top: 0;
+
       svg{
-        // border: 1px solid green;
-        // padding: 5px 10px;
         border-radius: 25px;
         font-size: 38px;
-        background-color: #4DA167;
+        background-color: $primary-color2;
         color: white;
         &:hover{
-          background-color:#d1d1d1;
+          background-color:whitesmoke;
+          border: 1px solid $primary-color2;
           color: #333333;
+          transition: 250ms ease-out;
         }
     
       }
   }
-    span{
-      // text-align:center;
-      // border:1px solid #4da167;
-      // width:40px;
-      // height:40px;
-      // background-color: #4da167;
-      // border-radius: 50px;
-      
-      
-    }
+ 
     
   }
   
@@ -124,7 +116,7 @@
       }
     }
     .table-title {
-      background-color: #4DA167;
+      background-color: $primary-color2;
       color: white;
       font-size: 18px;
     }
@@ -137,6 +129,7 @@
     padding: $general-padding;
     svg{
       color: white;
+      cursor: pointer;
     }
    
   }

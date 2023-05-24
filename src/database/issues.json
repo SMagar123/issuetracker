@@ -290,23 +290,7 @@
         "dummy.pdf"
       ]
     },
-    {
-      "id": "VQZkXtL",
-      "desc": "Login button upload huna paryo",
-      "field": "Login Button",
-      "status": "New",
-      "startingDate": "2023-05-16",
-      "endingDate": "",
-      "feasible": "",
-      "solvingtime": "",
-      "payment": "",
-      "acceptance": "",
-      "sorryMessage": "",
-      "completionMessage": "",
-      "requirement": [
-        "upload.pdf"
-      ]
-    },
+  
     {
       "id": "ulsevVR",
       "desc": "Hello world",

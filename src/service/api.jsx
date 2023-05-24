@@ -72,3 +72,12 @@ export const addMultipleEntry = async (id) => {
     console.error(error);
   }
 };
+
+export const addUser = async (id)=>{
+  try{
+    return await axios.post(`${userData}/${id}`);
+  }
+  catch(error){
+    console.error(error);
+  }
+}

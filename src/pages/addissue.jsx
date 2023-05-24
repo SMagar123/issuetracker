@@ -11,6 +11,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { addMultipleEntry, getissueData } from "../service/api";
 import { LoginContext } from "../App";
+import { Navbar } from "../components";
 const inputList = {
   id: "",
   details: [],
@@ -108,6 +109,7 @@ export const AddIssue = () => {
   } else {
     return (
       <div className="issue__form">
+          <Navbar/>
         <div className="form-title">
           <h1>Add Your Issue</h1>
         </div>

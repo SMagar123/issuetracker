@@ -1,19 +1,39 @@
 import React, { useEffect, useState } from "react";
-import { CloseIcon } from "../assets/icons/icons";
-import { NavLink } from "react-router-dom";
+import { CloseIcon, AccountCircleIcon } from "../assets/icons/icons";
+import { NavLink, Link,useParams} from "react-router-dom";
 import { Button } from "./Button";
+import { getSingleUserData } from "../service/api";
 import { getAdminDetail } from "../service/api";
-// import "../assets/styles/components/navbar.scss";
 export const Navbar = () => {
   const [adminDetail, setAdminDetail] = useState([]);
   const [closeModal, setCloseModal] = useState(false);
+  const [viewProfile, setViewProfile] = useState(false);
+  const [userData, setUserData] = useState();
+  console.log(userData);
+
+  const getUsersData = async () => {
+    const response = await getSingleUserData(id);
+    console.log(id);
+    setUserData(response?.data);
+  };
   useEffect(() => {
-    obtainAdminDetail();
+    // obtainAdminDetail();
+    getUsersData();
   }, []);
   const obtainAdminDetail = async () => {
     let response = await getAdminDetail();
     setAdminDetail(response.data);
   };
+  const handleLogout = () => {
+  console.log('Logoutttttt');
+  getLoggeout();
+};
+function getLoggeout() {
+  sessionStorage.clear();
+  window.location.reload();
+}
+
+const { id } = useParams();
   return (
     <>
       <div className="hero__admindetails">
@@ -21,6 +41,15 @@ export const Navbar = () => {
           <NavLink to="/">
             <h2>Negotiator App</h2>
           </NavLink>
+            <div className="user__name">
+            <i onClick={() => setViewProfile(!viewProfile)}>
+              <Link onClick={() => handleLogout()}>
+                {viewProfile && <span>Log Out</span>}
+              </Link>
+              <AccountCircleIcon fontSize="large" />
+            </i>
+            <p>{userData?.username}</p>
+          </div>
         </div>
         <div className="admin">
           {adminDetail.map((item) => {

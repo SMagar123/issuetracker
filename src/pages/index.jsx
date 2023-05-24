@@ -11,6 +11,7 @@ import { Login } from "./login";
 import { IssueInfo } from "./issueinfo";
 import { Admin } from "./admin";
 import { PageNotFound } from "./pageNotFound";
+import { Register } from "./Register";
 export {
   AdminHeropage,
   NegotiateForm,
@@ -23,6 +24,8 @@ export {
   IssueInfo,
   Admin,
   PageNotFound,
+  
+  Register
 };
 
 
