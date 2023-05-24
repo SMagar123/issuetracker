@@ -1,7 +1,9 @@
 import axios from "axios";
 
 const issueAPI_URL = "http://127.0.0.1:3006/issues";
-const adminAPI_URL = " http://127.0.0.1:3004/admin-detail";
+const adminAPI_URL = " http://127.0.0.1:3007/admin-detail";
+const issueData = " http://127.0.0.1:3004/issues";
+const userData = "http://127.0.0.1:3005/users";
 //get single issue data
 export const getSingleIssue = async (data) => {
   try {
@@ -26,10 +28,9 @@ export const getAdminDetail = async () => {
     return await axios.get(`${adminAPI_URL}`);
   } catch (e) {
     console.log("Error while ", e.message);
+  }
+};
 
-
-const issueData = " http://127.0.0.1:3004/issues";
-const userData = "http://127.0.0.1:3005/users";
 
 //obtaining user ids of the issues database
 export const getIDsOfUser = async () => {
@@ -69,6 +70,5 @@ export const addMultipleEntry = async (id) => {
     return await axios.post(`${issueData}/${id}`);
   } catch (error) {
     console.error(error);
-
   }
 };
