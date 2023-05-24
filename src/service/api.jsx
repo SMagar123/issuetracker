@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const issueAPI_URL = "http://127.0.0.1:3006/issues";
-const adminAPI_URL = " http://127.0.0.1:3007/admin-detail";
+const adminAPI_URL = " http://127.0.0.1:3007/admin";
 const issueData = " http://127.0.0.1:3004/issues";
 const userData = "http://127.0.0.1:3005/users";
 //get single issue data
@@ -30,7 +30,6 @@ export const getAdminDetail = async () => {
     console.log("Error while ", e.message);
   }
 };
-
 
 //obtaining user ids of the issues database
 export const getIDsOfUser = async () => {

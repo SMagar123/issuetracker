@@ -10,7 +10,7 @@ import { getSingleUserData, getissueData, getIDsOfUser } from "../service/api";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { LoginContext } from "../App";
-
+import { Navbar } from "../components";
 const tableHead = [
   "Issue",
   "Field",
@@ -21,7 +21,7 @@ const tableHead = [
 ];
 // const data = issueData.issues;
 export const User = () => {
-  const loginContext = useContext(LoginContext);
+  const { tokenString, userRole } = useContext(LoginContext);
   const navigate = useNavigate();
   const [currentIssueField, setCurrentIssueField] = useState("");
 
@@ -81,7 +81,7 @@ export const User = () => {
   const userDataLength = Object.keys(issueData).length;
 
   const handleLogout = () => {
-    console.log('Logoutttttt');
+    console.log("Logoutttttt");
     getLoggeout();
   };
   function getLoggeout() {
@@ -104,16 +104,17 @@ export const User = () => {
     setViewDetails(!viewDetails);
     setCurrentIssueField(field);
   };
-  if (!loginContext) {
+  if (!tokenString && userRole !== "user") {
     navigate("/");
     notifyError();
   } else {
     return (
       <>
         {/* ....top-navbar........ */}
-        <div className="user__title">
+        <Navbar />
+        {/* <div className="user__title">
           <h2>Issue Tracker</h2>
-   
+
           <div className="user__name">
             <i onClick={() => setViewProfile(!viewProfile)}>
               <Link onClick={() => handleLogout()}>
@@ -123,19 +124,23 @@ export const User = () => {
             </i>
             <p>{userData?.username}</p>
           </div>
-        </div>
+        </div> */}
         <div className="user">
           <div className="user-title">
-          <h2>Negotiation List</h2>
-          <div className="user-nav">
-            <span>
-              <Link to={`/addissue/${id}`}><i><AddIcon/></i></Link>
-            </span>
+            <h2>Negotiation List</h2>
+            <div className="user-nav">
+              <span>
+                <Link to={`/addissue/${id}`}>
+                  <i>
+                    <AddIcon />
+                  </i>
+                </Link>
+              </span>
 
-            {/* <span>
+              {/* <span>
               <Link to="/issueinfo">Issue Info</Link>
             </span> */}
-          </div>
+            </div>
           </div>
           {/* .....issue list in table........ */}
           <div className="user__table">
@@ -159,7 +164,13 @@ export const User = () => {
                         <span>{item?.desc?.slice(0, 50)}</span>
                         <span>{item.field}</span>
                         <span>{item.startingDate}</span>
-                        <span>{item.endingDate === ""?(<>------</>):(<>{item.endingDate}</>)}</span>
+                        <span>
+                          {item.endingDate === "" ? (
+                            <>------</>
+                          ) : (
+                            <>{item.endingDate}</>
+                          )}
+                        </span>
                         <span>{item.status}</span>
                         {/* ....button for viewing...... */}
                         <div className="negotiation-button">
@@ -191,7 +202,6 @@ export const User = () => {
                 )}
               </>
             }
-          
           </div>
           {viewDetails ? (
             <div className="view-details">
@@ -201,9 +211,8 @@ export const User = () => {
           ) : (
             " "
           )}
-             
         </div>
-       
+
         <ToastContainer />
       </>
     );

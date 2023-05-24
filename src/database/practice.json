@@ -208,6 +208,22 @@
           "requirement": [
             "Upload Requirement File"
           ]
+        },
+        {
+          "desc": "yamima ko naya issue",
+          "field": "qa",
+          "status": "New",
+          "startingDate": "2023-05-25",
+          "endingDate": "",
+          "feasible": "",
+          "solvingtime": "",
+          "payment": "",
+          "acceptance": "",
+          "sorryMessage": "",
+          "completionMessage": "",
+          "requirement": [
+            "Upload Requirement File"
+          ]
         }
       ]
     },
@@ -251,4 +267,3 @@
     }
   ]
 }
-

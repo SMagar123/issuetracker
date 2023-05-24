@@ -49,7 +49,7 @@ export const DisplayDescription = ({ user_id }) => {
                 <p>{issueDesc.desc}</p>
               </div>
               <div className="viewRequirements">
-                <Link to={`/requirement/${issueDesc.id}`}>
+                <Link to={`/admin/requirement/${issueDesc.id}`}>
                   <button>View Requirements</button>
                 </Link>
               </div>
@@ -64,19 +64,19 @@ export const DisplayDescription = ({ user_id }) => {
                   </>
                 ) : `${issueDesc.status}` === "Pending" ? (
                   <>
-                    <Link to={`/completion-form/${issueDesc.id}`}>
+                    <Link to={`/admin/completion-form/${issueDesc.id}`}>
                       <Button name="Yes" className="pending-yes" />
                     </Link>
-                    <Link to={`/cannot-resolve/${issueDesc.id}`}>
+                    <Link to={`/admin/cannot-resolve/${issueDesc.id}`}>
                       <Button name="No" className="pending-no" />
                     </Link>
                   </>
                 ) : (
                   <>
-                    <Link to={`/negotiate-form/${issueDesc.id}`}>
+                    <Link to={`/admin/negotiate-form/${issueDesc.id}`}>
                       <Button name="Yes" className="pending-yes" />
                     </Link>
-                    <Link to={`/cannot-resolve/${issueDesc.id}`}>
+                    <Link to={`/admin/cannot-resolve/${issueDesc.id}`}>
                       <Button name="No" className="pending-no" />
                     </Link>
                   </>
