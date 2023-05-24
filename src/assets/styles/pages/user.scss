@@ -41,10 +41,47 @@
   padding: $general-padding;
   margin: 0 auto;
   position: relative;
-  h2{
-    margin-bottom: 16px;
-    text-align: center;
+  .user-title{
+    display: flex;
+    justify-content: center;
+    h2{
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .user-nav{  
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 16px;
+      position: absolute;
+      right: 16px;
+      top: -5px;
+      svg{
+        // border: 1px solid green;
+        // padding: 5px 10px;
+        border-radius: 25px;
+        font-size: 38px;
+        background-color: #4DA167;
+        color: white;
+        &:hover{
+          background-color:#d1d1d1;
+          color: #333333;
+        }
+    
+      }
   }
+    span{
+      // text-align:center;
+      // border:1px solid #4da167;
+      // width:40px;
+      // height:40px;
+      // background-color: #4da167;
+      // border-radius: 50px;
+      
+      
+    }
+    
+  }
+  
   
   .user__table {
     display: grid;
@@ -104,35 +141,6 @@
    
   }
 
-}
-.user-nav{  
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 16px;
-  svg{
-    // border: 1px solid green;
-    // padding: 5px 10px;
-    border-radius: 25px;
-    font-size: 52px;
-    background-color: #4DA167;
-    color: white;
-    &:hover{
-      background-color: #d1d1d1;
-      color: #333333;
-    }
-
-  }
-  span{
-    // text-align:center;
-    // border:1px solid #4da167;
-    // width:40px;
-    // height:40px;
-    // background-color: #4da167;
-    // border-radius: 50px;
-    
-    
-  }
-  
 }
 
 @media (min-width: 320px) and (max-width: 576px) {

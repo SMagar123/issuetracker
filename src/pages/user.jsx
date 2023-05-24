@@ -124,8 +124,18 @@ export const User = () => {
           </div>
         </div>
         <div className="user">
+          <div className="user-title">
           <h2>Negotiation List</h2>
+          <div className="user-nav">
+            <span>
+              <Link to={`/addissue/${id}`}><i><AddIcon/></i></Link>
+            </span>
 
+            {/* <span>
+              <Link to="/issueinfo">Issue Info</Link>
+            </span> */}
+          </div>
+          </div>
           {/* .....issue list in table........ */}
           <div className="user__table">
             {tableHead.map((item) => {
@@ -190,15 +200,7 @@ export const User = () => {
           ) : (
             " "
           )}
-             <div className="user-nav">
-            <span>
-              <Link to={`/addissue/${id}`}><i><AddIcon/></i></Link>
-            </span>
-
-            {/* <span>
-              <Link to="/issueinfo">Issue Info</Link>
-            </span> */}
-          </div>
+             
         </div>
        
         <ToastContainer />
