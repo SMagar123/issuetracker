@@ -1,10 +1,26 @@
 import React from "react";
 
-export const InputField = ({ type, name, value, handleInput, label }) => {
+export const InputField = ({
+  type,
+  name,
+  value,
+  handleInput,
+  label,
+  required,
+  className,
+}) => {
   return (
     <>
       <label htmlFor={name}>{label}</label>
-      <input type={type} name={name} value={value} onChange={handleInput} />
+      <input
+        type={type}
+        name={name}
+        value={value}
+        onChange={handleInput}
+        required={required}
+        placeholder={`Enter ${label}`}
+        className={className}
+      />
     </>
   );
 };
