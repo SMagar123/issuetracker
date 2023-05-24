@@ -1,0 +1,162 @@
+.description-model {
+  //   box-shadow: 0 0 5px gray;
+  //   border-radius: 5px;
+  padding: 16px;
+  .field {
+    background-color: $primary-color2;
+    padding: 16px;
+    text-align: center;
+    color: white;
+    border-radius: 5px 5px 0 0;
+  }
+  .details {
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 0 5px gray;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    // gap: 10px;
+    .details-viewing {
+      padding: 16px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      .id,
+      .registeredDate,
+      .solvedDate,
+      .status {
+        border-radius: 5px;
+        // border: 1px solid black;
+        box-shadow: 0 0 5px gray;
+        padding: 10px 15px;
+
+        label {
+          color: $primary-color2;
+          font-size: 15px;
+          font-weight: 600;
+        }
+        h5 {
+          font-weight: 400;
+          color: gray;
+          font-size: 16px;
+        }
+      }
+    }
+    .details-handling {
+      padding: 16px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      .description,
+      .viewRequirements,
+      .feasible {
+        // border: 1px solid black;
+        padding: 10px 15px;
+        box-shadow: 0 0 5px gray;
+        border-radius: 5px;
+        label {
+          color: $primary-color2;
+          font-size: 15px;
+          font-weight: 600;
+        }
+        p {
+          font-weight: 300;
+          color: gray;
+          text-align: justify;
+        }
+      }
+      .viewRequirements {
+        button {
+          width: 100%;
+          padding: 8px 10px;
+          background-color: $primary-color2;
+          border: 1px solid $primary-color2;
+          color: white;
+          outline: none;
+          cursor: pointer;
+          border-radius: 5px;
+          transition: 250ms ease;
+          &:hover {
+            background-color: white;
+            color: $primary-color2;
+          }
+        }
+      }
+      .feasible {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        a {
+          button {
+            padding: 8px 10px;
+            outline: none;
+            border: none;
+            transition: 250ms ease;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+          }
+          .pending-yes {
+            border: 1px solid $primary-color1;
+            background-color: $primary-color1;
+            color: white;
+            &:hover {
+              background-color: white;
+              color: $primary-color1;
+            }
+          }
+          .pending-no {
+            border: 1px solid $primary-color2;
+            background-color: $primary-color2;
+            color: white;
+            &:hover {
+              background-color: white;
+              color: $primary-color2;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .description-model {
+    .details {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      .details-viewing {
+        width: 450px;
+      }
+      .details-handling {
+        width: 450px;
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  .description-model {
+    .details {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      .details-viewing {
+        width: 650px;
+      }
+      .details-handling {
+        width: 650px;
+        .feasible {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-evenly;
+          a {
+            width: 30%;
+          }
+        }
+      }
+    }
+  }
+}

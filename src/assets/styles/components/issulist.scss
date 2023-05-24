@@ -1,0 +1,302 @@
+// .issuelist {
+//   padding: $general-padding;
+//   position: relative;
+//   .issuelist__display {
+//     // background-color: rgb(0, 0, 0);
+//     display: grid;
+//     grid-template-columns: repeat(7, 1fr);
+//     border-top: 1px solid black;
+//     border-right: 1px solid black;
+//     color: black;
+//     text-align: center;
+//     position: relative;
+//     overflow: scroll;
+//     .view-button {
+//       padding: 8px 4px;
+//       border-left: 1px solid black;
+//       border-bottom: 1px solid black;
+//       //
+//       button {
+//         background-color: $primary-color2;
+//         outline: none;
+//         color: white;
+//         padding: 8px 4px;
+//         width: 100%;
+//         height: 100%;
+//         cursor: pointer;
+//         border: 1px solid $primary-color2;
+//         transition: 250ms ease;
+//         font-weight: 700;
+//         &:hover {
+//           background-color: white;
+//           color: $primary-color2;
+//         }
+//       }
+//     }
+//     span {
+//       padding: 8px 4px;
+//       border-left: 1px solid black;
+//       border-bottom: 1px solid black;
+//     }
+//     .status {
+//       padding: 15px 4px;
+//       border-left: 1px solid black;
+//       border-bottom: 1px solid black;
+//       span {
+//         font-size: 15px;
+//         border: none;
+//         border-radius: 5px;
+//         padding: 5px 25px;
+//       }
+//     }
+//     .status-new {
+//       color: white;
+//       background-color: green;
+//       border: none;
+//     }
+//     .status-pending {
+//       color: white;
+//       background-color: gray;
+//     }
+//     .status-solved {
+//       color: black;
+//       background-color: rgb(231, 197, 4);
+//     }
+//     .status-reject {
+//       color: white;
+//       background-color: black;
+//     }
+//     .description {
+//       cursor: pointer;
+//     }
+//     .description-model {
+//       display: none;
+//       position: absolute;
+//       background-color: white;
+//       color: black;
+//       height: 80vh;
+//       width: 100%;
+//       top: 0;
+//       .text {
+//         margin: 0 auto;
+//         max-width: 500px;
+//         border: 1px solid black;
+//       }
+//     }
+//     .feasible {
+//       padding: 8px 4px;
+//       border-left: 1px solid black;
+//       border-bottom: 1px solid black;
+//       display: flex;
+//       align-items: center;
+//       justify-content: space-around;
+//       gap: 16px;
+//       a {
+//         button {
+//           padding: 5px 20px;
+//           color: white;
+//           outline: none;
+//           border-radius: 8px;
+//           cursor: pointer;
+//           transition: 250ms ease;
+//           &:nth-child(1) {
+//             background-color: $primary-color1;
+//             border: 1px solid $primary-color1;
+//             &:hover {
+//               background-color: white;
+//               color: $primary-color1;
+//             }
+//           }
+//         }
+//         &:nth-child(2) {
+//           button {
+//             padding: 5px 20px;
+//             color: white;
+//             outline: none;
+//             border-radius: 8px;
+//             cursor: pointer;
+//             transition: 250ms ease;
+
+//             background-color: $primary-color2;
+//             border: 1px solid $primary-color2;
+//             &:hover {
+//               background-color: white;
+//               color: $primary-color2;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+.issueList {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  // position: relative;
+  // background-color: rgb(22, 22, 22);
+  .status-new {
+    box-shadow: 0 0 3px gray;
+    h4 {
+      color: blue;
+    }
+  }
+  .status-pending {
+    box-shadow: 0 0 3px gray;
+    h4 {
+      color: orange;
+    }
+  }
+  .status-solved {
+    box-shadow: 0 0 3px gray;
+    h4 {
+      color: green;
+    }
+  }
+  .status-reject {
+    box-shadow: 0 0 3px gray;
+    color: red;
+  }
+  .viewDetails {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.808);
+    padding: 16px;
+    min-height: 100%;
+    text-align: end;
+    margin-top: 53px;
+
+    svg {
+      color: white;
+      cursor: pointer;
+      transform: rotateZ(0deg);
+      transition: 500ms ease;
+      &:hover {
+        transform: rotateZ(360deg);
+      }
+    }
+  }
+}
+@media (min-width: 320px) {
+  .issueList {
+    flex-direction: column;
+    gap: 32px;
+    .viewDetails {
+      height: 315%;
+    }
+    .status-new,
+    .status-pending,
+    .status-solved,
+    .status-reject {
+      width: 100%;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      border-radius: 8px;
+      background-color: white;
+      h4 {
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .individualIssue {
+        box-shadow: 0 0 3px gray;
+        padding: 16px;
+        border-radius: 8px;
+        position: relative;
+
+        h5 {
+          font-size: 16px;
+          color: $primary-color2;
+        }
+        p {
+          color: grey;
+          font-size: 15px;
+          text-align: justify;
+          font-weight: 300;
+        }
+        i {
+          color: rgb(56, 56, 56);
+          position: absolute;
+          right: 16px;
+          bottom: 5px;
+          padding: 5px;
+          cursor: pointer;
+          transition: 300ms ease;
+          .on-icon {
+            display: none;
+          }
+          &:hover {
+            .on-icon {
+              display: block;
+              color: rgb(99, 99, 99);
+            }
+            .off-icon {
+              display: none;
+            }
+          }
+        }
+        &:hover {
+          box-shadow: 0 0 6px gray;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .issueList {
+    flex-direction: initial;
+    align-items: flex-start;
+    .viewDetails {
+      height: 190%;
+    }
+    .status-new,
+    .status-pending,
+    .status-solved,
+    .status-reject {
+      width: 343px;
+      gap: 16px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .issueList {
+    flex-direction: initial;
+    align-items: flex-start;
+    .viewDetails {
+      height: 190%;
+    }
+    .status-new,
+    .status-pending,
+    .status-solved,
+    .status-reject {
+      width: 290px;
+      gap: 16px;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .issueList {
+    flex-direction: initial;
+    align-items: flex-start;
+    .viewDetails {
+      height: 100%;
+    }
+    .status-new,
+    .status-pending,
+    .status-solved,
+    .status-reject {
+      width: 300px;
+      gap: 16px;
+    }
+  }
+}
