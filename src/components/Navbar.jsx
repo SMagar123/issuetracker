@@ -19,7 +19,7 @@ export const Navbar = () => {
       <div className="hero__admindetails">
         <div className="project-title">
           <NavLink to="/">
-            <h2>Issue Tracker</h2>
+            <h2>Negotiator App</h2>
           </NavLink>
         </div>
         <div className="admin">

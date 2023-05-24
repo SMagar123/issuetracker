@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getSingleIssue } from "../service/api";
 import { Link } from "react-router-dom";
+import { Button } from "./Button";
 export const DisplayDescription = ({ user_id }) => {
   const [issueDesc, setIssueDesc] = useState();
   const getIssueDescriptionofUser = async () => {
@@ -54,8 +55,32 @@ export const DisplayDescription = ({ user_id }) => {
               </div>
               <div className="feasible">
                 <label htmlFor="feasible">Feasible</label>
-                <button>Yes</button>
-                <button>No</button>
+                {/* <button>Yes</button>
+                <button>No</button> */}
+                {issueDesc.status === "Solved" ||
+                issueDesc.status === "Rejected" ? (
+                  <>
+                    <h4>Done it</h4>
+                  </>
+                ) : `${issueDesc.status}` === "Pending" ? (
+                  <>
+                    <Link to={`/completion-form/${issueDesc.id}`}>
+                      <Button name="Yes" className="pending-yes" />
+                    </Link>
+                    <Link to={`/cannot-resolve/${issueDesc.id}`}>
+                      <Button name="No" className="pending-no" />
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <Link to={`/negotiate-form/${issueDesc.id}`}>
+                      <Button name="Yes" className="pending-yes" />
+                    </Link>
+                    <Link to={`/cannot-resolve/${issueDesc.id}`}>
+                      <Button name="No" className="pending-no" />
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           </div>
