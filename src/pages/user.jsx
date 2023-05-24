@@ -81,6 +81,7 @@ export const User = () => {
   const userDataLength = Object.keys(issueData).length;
 
   const handleLogout = () => {
+    console.log('Logoutttttt');
     getLoggeout();
   };
   function getLoggeout() {
@@ -115,7 +116,7 @@ export const User = () => {
    
           <div className="user__name">
             <i onClick={() => setViewProfile(!viewProfile)}>
-              <Link onClick={() => handleLogout}>
+              <Link onClick={() => handleLogout()}>
                 {viewProfile && <span>Log Out</span>}
               </Link>
               <AccountCircleIcon fontSize="large" />

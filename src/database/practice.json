@@ -1,8 +1,4 @@
 {
-
-  
-      
-
   "issues": [
     {
       "id": "1",
@@ -129,9 +125,7 @@
             "Upload Requirement File"
           ]
         }
-      ],
-      "acceptance": "No",
-      "status": "Pending"
+      ]
     },
     {
       "id": "2",
