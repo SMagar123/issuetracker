@@ -2,44 +2,58 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getissueData, updateIssueData } from "../service/api";
 import { Button } from "../components/Button";
-
-export const ViewNegotiable = ({ id, meronam }) => {
-  // const { id } = useParams();
-  console.log("Id yeta cha", id);
-  console.log(meronam);
+import axios from "axios";
+const issuedata = " http://127.0.0.1:3004/issues/";
+const inputList = {
+  id: "",
+  details: [],
+};
+const detailsList = {
+  desc: "",
+  field: "",
+  status: "",
+  startingDate: "",
+  endingDate: "",
+  feasible: "",
+  solvingtime: "",
+  payment: "",
+  acceptance: "",
+  sorryMessage: "",
+  completionMessage: "",
+  requirement: [],
+};
+export const ViewNegotiable = ({ id, issueField }) => {
   const navigate = useNavigate();
-  const [issueList, setIssueList] = useState({
-    id: id,
-    desc: "",
-    field: "",
-    status: "",
-    startingDate: "",
-    endingDate: "",
-    feasible: "",
-    solvingtime: "",
-    payment: "",
-    acceptance: "",
-    sorryMessage: "",
-    completionMessage: "",
-  });
+
+  const [issueList, setIssueList] = useState([]); //purano data ho
+
   const getIssueDetail = async () => {
+    console.log("hello");
     let response = await getissueData(id);
     setIssueList(response.data);
   };
+
   useEffect(() => {
     getIssueDetail();
   }, []);
+
+  const requiredIssueDetails = issueList?.details?.filter((item) => {
+    return item.field === issueField;
+  });
+
+  const [updateList, setUpdateList] = useState(detailsList);
+
   const handleAcceptance = (e) => {
-    setIssueList({
-      ...issueList,
+    setUpdateList({
+      ...updateList,
       ["acceptance"]: e.target.value,
       ["status"]: "Pending",
     });
-    // onClose();
   };
 
   const handleUpdate = () => {
-    updateIssueData(issueList, id);
+    issueList.details.push(updateList);
+    axios.put(`${issuedata}/${id}`, issueList);
     alert("You updated your value");
     navigate(`/user/${id}`);
   };
@@ -53,9 +67,9 @@ export const ViewNegotiable = ({ id, meronam }) => {
           <form onSubmit={handleUpdate}>
             <div className="view-Details">
               <label>Solving Time</label>
-              <p>{issueList.solvingtime}</p>
+              <p>{requiredIssueDetails[0]?.solvingtime}</p>
               <label>Payment Amount</label>
-              <p>{issueList.payment}</p>
+              <p>{requiredIssueDetails[0]?.payment}</p>
               <Button
                 name="Accept"
                 value="Yes"

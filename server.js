@@ -1,8 +1,11 @@
 const express = require("express");
+const cors =require("cors");
 const fileUpload = require("express-fileupload");
 
 const app = express();
 app.use(fileUpload());
+
+
 app.get("/", (req, res) => {
   res.send("Hello world!");
 });
