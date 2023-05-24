@@ -1,7 +1,34 @@
 {
-    "user-detail":[
+    "users":[
         {
-            "username":"admin123"
+            "id": "adminuser",
+            "username":"Admin",            
+            "password":"admin",
+            "email":"youremail@gmail.com",
+            "role":"admin"
+        },
+        {
+            "id": "1",
+            "username":"Smriti",
+            "password":"smriti",
+            "email":"youremail@gmail.com"  ,
+            "role": "user"
+        },
+        {
+            "id": "100",
+            "username":"yamima",
+            "password":"yamimamt",
+            "email":"youremail@gmail.com"  ,
+            "role": "user"
+        },
+        {
+            "id":"30",
+            "username":"Kajol",
+            "password":"kajoldd",
+            "email":"youremail@gmail.com"  ,
+            "role": "user"
         }
+        
     ]
+    
 }
