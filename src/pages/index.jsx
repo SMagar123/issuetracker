@@ -1,4 +1,3 @@
-
 import { AdminHeropage } from "./AdminHeropage";
 import { NegotiateForm } from "./NegotiateForm";
 import { SorryMessage } from "./SorryMessage";
@@ -9,7 +8,6 @@ import { AddIssue } from "./addissue";
 import { ViewNegotiable } from "./viewnegotiable";
 import { Login } from "./login";
 import { IssueInfo } from "./issueinfo";
-import { Admin } from "./admin";
 import { PageNotFound } from "./pageNotFound";
 import { Register } from "./Register";
 export {
@@ -17,18 +15,13 @@ export {
   NegotiateForm,
   SorryMessage,
   CompletionForm,
-  RequirementView,User,
+  RequirementView,
+  User,
   AddIssue,
   ViewNegotiable,
   Login,
   IssueInfo,
-  Admin,
   PageNotFound,
   
   Register
 };
-
-
-
-
-

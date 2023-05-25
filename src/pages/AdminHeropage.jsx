@@ -1,17 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { IssueList } from "../components/IssueList";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { LoginContext } from "../App";
+import { Navbar } from "../components";
 const issueTypes = ["New", "Pending", "Solved", "Reject"];
 export const AdminHeropage = () => {
+  const navigate = useNavigate();
+  const { tokenString, userRole } = useContext(LoginContext);
   const [issueType, setIssueType] = useState("New");
   const handleTypes = (e) => {
     setIssueType(e.target.getAttribute("value"));
   };
+  useEffect(() => {
+    if (!tokenString && userRole !== "admin") {
+      navigate("/");
+    }
+  }, []);
+
   return (
-    <div className="heropage">
-      <div className="hero__issuedisplay">
-        <h2>Feature Request List</h2>
-        {/* <nav>
+    <>
+      <Navbar />
+      <div className="heropage">
+        <div className="hero__issuedisplay">
+          <h2>Feature Request List</h2>
+          {/* <nav>
           <ul>
             {issueTypes.map((item) => {
               return (
@@ -29,10 +41,11 @@ export const AdminHeropage = () => {
             })}
           </ul>
         </nav> */}
+        </div>
+        <div className="hero__issuelist">
+          <IssueList issueType={issueType} />
+        </div>
       </div>
-      <div className="hero__issuelist">
-        <IssueList issueType={issueType} />
-      </div>
-    </div>
+    </>
   );
 };

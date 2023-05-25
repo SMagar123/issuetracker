@@ -40,7 +40,7 @@ export const NegotiateForm = () => {
   const handleNegotiationQuery = () => {
     editIssueDetail(issueList, id);
     notify();
-    navigate("/");
+    navigate("/admin");
   };
   const notify = () => {
     toast.info("Negotiation request is sent to user", {

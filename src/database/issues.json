@@ -3,7 +3,6 @@
     {
       "id": "1",
       "desc": "description of issue is given here Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-
       "field": "QR Payment",
       "status": "New",
       "startingDate": "2023-02-01",
@@ -16,7 +15,6 @@
       "requirement": [
         "sample.pdf"
       ]
-
     },
     {
       "id": "2",
@@ -29,7 +27,7 @@
       "payment": "450",
       "acceptance": "",
       "sorryMessage": "",
-      "solvingtime": "2023-05-20",
+      "solvingtime": "2023-05-25",
       "requirement": [
         "largefile.pdf"
       ]
@@ -46,28 +44,22 @@
       "acceptance": "",
       "sorryMessage": "",
       "solvingtime": "",
-
       "completionMessage": "your task is done",
       "requirement": []
-
     },
     {
       "id": "4",
       "desc": "description of issue is given here Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
       "field": "eductaion",
-
       "status": "New",
-
       "startingDate": "2022-06-01",
       "endingDate": "",
       "feasible": "Yes",
       "solvingtime": "2023-05-13",
       "payment": "250",
-
       "acceptance": "No",
       "sorryMessage": "We are sorry again.",
       "requirement": []
-
     },
     {
       "id": "5",
@@ -76,60 +68,47 @@
       "status": "Solved",
       "startingDate": "2023-02-01",
       "endingDate": "2023-04-06",
-
       "feasible": "Yes",
       "solvingtime": "",
       "payment": "",
       "acceptance": "",
       "sorryMessage": "Done your task. Features will be delivered soon.",
       "requirement": []
-
     },
     {
       "id": "6",
       "desc": "description of issue is given here Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
       "field": "eductaion",
-
       "status": "Solved",
       "startingDate": "2023-02-01",
       "endingDate": "2023-04-15",
-
       "feasible": 1,
       "solvingtime": "",
       "payment": "",
       "acceptance": "",
       "sorryMessage": "sorry ",
-
       "completionMessage": "Your task has been done.",
-
       "requirement": []
-
     },
     {
       "id": "7",
       "desc": "description of issue is given here Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
       "field": "eductaion",
-
       "status": "Rejected",
-
       "startingDate": "2023-02-01",
       "endingDate": "",
       "feasible": "Yes",
       "solvingtime": "2023-02-15",
       "payment": "25",
       "acceptance": "",
-
       "sorryMessage": "",
       "requirement": []
-
     },
     {
       "id": "8",
       "desc": "description of issue is given here Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
       "field": "eductaion",
-
       "status": "New",
-
       "startingDate": "2023-02-01",
       "endingDate": "",
       "feasible": 1,
@@ -137,18 +116,14 @@
       "payment": "",
       "acceptance": "",
       "sorryMessage": "",
-
       "completionMessage": "heelo",
       "requirement": []
-
     },
     {
       "id": "9",
       "desc": "description of issue is given here Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
       "field": "eductaion",
-
       "status": "Solved",
-
       "startingDate": "2023-02-01",
       "endingDate": "2023-04-27",
       "feasible": 1,
@@ -165,9 +140,7 @@
       "status": "Pending",
       "startingDate": "2023-02-01",
       "endingDate": "2023-04-06",
-
       "feasible": "Yes",
-
       "solvingtime": "",
       "payment": "",
       "acceptance": "",
@@ -189,10 +162,8 @@
     {
       "id": "12",
       "desc": "description of issue is given here Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-
       "field": "eductaion",
       "status": "Solved",
-
       "startingDate": "2023-05-10",
       "endingDate": "2023-05-26",
       "feasible": "Yes",
@@ -201,7 +172,6 @@
       "acceptance": "Yes",
       "sorryMessage": "",
       "completionMessage": "sorry we are late by 1 day as estimated but your feature has been updated."
-
     },
     {
       "id": "h_x7-se",
@@ -221,7 +191,7 @@
       "id": "XL7xBtw",
       "desc": "issue aayo hai",
       "field": "transaction",
-      "status": "New",
+      "status": "Pending",
       "startingDate": "2023-05-11",
       "endingDate": "",
       "feasible": "",
@@ -235,36 +205,8 @@
       "id": "injCRkC",
       "desc": "naya issue thapyo hai",
       "field": "naya issue nai ho la",
-      "status": "New",
+      "status": "Rejected",
       "startingDate": "2023-05-12",
-      "endingDate": "",
-      "feasible": "",
-      "solvingtime": "",
-      "payment": "",
-      "acceptance": "",
-      "sorryMessage": "",
-      "completionMessage": ""
-    },
-    {
-      "id": "bAwCN65",
-      "desc": "",
-      "field": "",
-      "status": "",
-      "startingDate": "",
-      "endingDate": "",
-      "feasible": "",
-      "solvingtime": "",
-      "payment": "",
-      "acceptance": "",
-      "sorryMessage": "",
-      "completionMessage": ""
-    },
-    {
-      "id": "c5FXm3A",
-      "desc": "Pdf upload garna lako awastha.............",
-      "field": "PDF",
-      "status": "New",
-      "startingDate": "2023-05-16",
       "endingDate": "",
       "feasible": "",
       "solvingtime": "",
@@ -277,7 +219,7 @@
       "id": "klSK_x-",
       "desc": "pdf upload bhako awastha",
       "field": "PDF",
-      "status": "New",
+      "status": "Pending",
       "startingDate": "2023-05-16",
       "endingDate": "",
       "feasible": "",
@@ -290,7 +232,25 @@
         "dummy.pdf"
       ]
     },
-  
+
+    {
+      "id": "VQZkXtL",
+      "desc": "Login button upload huna paryo",
+      "field": "Login Button",
+      "status": "Pending",
+      "startingDate": "2023-05-16",
+      "endingDate": "",
+      "feasible": "",
+      "solvingtime": "",
+      "payment": "",
+      "acceptance": "",
+      "sorryMessage": "",
+      "completionMessage": "",
+      "requirement": [
+        "upload.pdf"
+      ]
+    },
+
     {
       "id": "ulsevVR",
       "desc": "Hello world",
@@ -309,55 +269,6 @@
       ]
     },
     {
-      "id": "UDUfaks",
-      "desc": "",
-      "field": "",
-      "status": "",
-      "startingDate": "",
-      "endingDate": "",
-      "feasible": "",
-      "solvingtime": "",
-      "payment": "",
-      "acceptance": "",
-      "sorryMessage": "",
-      "completionMessage": "",
-      "requirement": []
-    },
-    {
-      "id": "eQDx_P9",
-      "desc": "hnjgf",
-      "field": "ghd",
-      "status": "",
-      "startingDate": "2023-05-19",
-      "endingDate": "",
-      "feasible": "",
-      "solvingtime": "",
-      "payment": "",
-      "acceptance": "",
-      "sorryMessage": "",
-      "completionMessage": "",
-      "requirement": [
-        "Upload Requirement File"
-      ]
-    },
-    {
-      "id": "FRYhrBF",
-      "desc": "id 2 bata issue aayo hai yamimaley vaneko",
-      "field": "test",
-      "status": "",
-      "startingDate": "2023-05-21",
-      "endingDate": "",
-      "feasible": "",
-      "solvingtime": "",
-      "payment": "",
-      "acceptance": "",
-      "sorryMessage": "",
-      "completionMessage": "",
-      "requirement": [
-        "Upload Requirement File"
-      ]
-    },
-    {
       "id": "15",
       "desc": "edfasdfasdfas",
       "field": "dsafasdf",
@@ -373,24 +284,6 @@
       "requirement": [
         "Upload Requirement File"
       ]
-    },
-    {
-      "id": "7v_3pZt",
-      "desc": "asfaZSDfsadfsdfssdfsdfds",
-      "field": "dsfsdfsdfds",
-      "status": "",
-      "startingDate": "2023-05-23",
-      "endingDate": "",
-      "feasible": "",
-      "solvingtime": "",
-      "payment": "",
-      "acceptance": "",
-      "sorryMessage": "",
-      "completionMessage": "",
-      "requirement": [
-        "Upload Requirement File"
-      ]
-
     }
   ]
 }

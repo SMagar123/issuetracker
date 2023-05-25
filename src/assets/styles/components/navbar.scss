@@ -1,41 +1,31 @@
 .hero__admindetails {
   .project-title {
-    padding: $general-padding;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: $primary-color2;
-    color: $text-color1;
-    box-shadow: 0 0 5px black;
-    position: sticky;
-    top: 0;
-    z-index: 9;
-    width: 100%;
-    gap: 16px;
+
     h2 {
       color: white;
     }
-    .user__name {
-      display: flex;
-      align-items: center;
-      justify-content: center;  
-      gap: 15px;
-      position: relative;
-      cursor: pointer;
-      span {
-        width: max-content;
-        position: absolute;
-        top: 36px;
-        background-color: #4158A2;
-        opacity: 4;
-        left: -16px;
-        color: white;
-        padding: 5px 10px;
-        &:hover {
-          background-color: whitesmoke;
-          color: black;
-          text-shadow: 0 0 2px grey;
-        }
+  }
+  .user__name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+    cursor: pointer;
+    span {
+      width: max-content;
+      position: absolute;
+      top: 36px;
+      background-color: #4158a2;
+      opacity: 4;
+      left: -16px;
+      color: white;
+      padding: 5px 10px;
+      &:hover {
+        background-color: whitesmoke;
+        color: black;
+        text-shadow: 0 0 2px grey;
+
       }
     }
   }
@@ -76,7 +66,7 @@
       background-color: $primary-color2;
       display: none;
       button {
-        width: 100%;
+        width: 95%;
         border: none;
         outline: none;
         background-color: transparent;
@@ -101,6 +91,13 @@
     height: 100vh;
     .close-icon {
       cursor: pointer;
+      svg {
+        transform: rotate(0deg);
+        transition: 300ms ease;
+        &:hover {
+          transform: rotate(180deg);
+        }
+      }
     }
     .admin-card {
       margin: auto;

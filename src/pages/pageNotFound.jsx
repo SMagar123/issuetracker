@@ -1,9 +1,13 @@
 import React from "react";
-
+import { Navbar } from "../components";
 export const PageNotFound = () => {
   return (
-    <div>
-      <h3>OPPS!!! 404 ERROR PAGE NOT FOUND</h3>
-    </div>
+    <>
+      <Navbar />
+      <div>
+        <h3>OPPS!!! 404 ERROR PAGE NOT FOUND</h3>
+      </div>
+    </>
+    
   );
 };

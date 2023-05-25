@@ -22,7 +22,7 @@ const tableHead = [
 ];
 // const data = issueData.issues;
 export const User = () => {
-  const loginContext = useContext(LoginContext);
+  const { tokenString, userRole } = useContext(LoginContext);
   const navigate = useNavigate();
   const [currentIssueField, setCurrentIssueField] = useState("");
 
@@ -81,14 +81,16 @@ export const User = () => {
   }, [userID.length]);
   const userDataLength = Object.keys(issueData).length;
 
-  // const handleLogout = () => {
-  //   console.log('Logoutttttt');
-  //   getLoggeout();
-  // };
-  // function getLoggeout() {
-  //   sessionStorage.clear();
-  //   window.location.reload();
-  // }
+
+  const handleLogout = () => {
+    console.log('Logoutttttt');
+    getLoggeout();
+  };
+  function getLoggeout() {
+    sessionStorage.clear();
+    window.location.reload();
+  }
+
   const notifyError = () => {
     toast.error("You must login first!!!", {
       position: "top-right",
@@ -105,16 +107,19 @@ export const User = () => {
     setViewDetails(!viewDetails);
     setCurrentIssueField(field);
   };
-  if (!loginContext) {
+  if (!tokenString && userRole !== "user") {
     navigate("/");
     notifyError();
   } else {
     return (
-      <>        
-        <Navbar/>
+
+      <>
+        {/* ....top-navbar........ */}
+        <Navbar />
+
         {/* <div className="user__title">
           <h2>Issue Tracker</h2>
-   
+
           <div className="user__name">
             <i onClick={() => setViewProfile(!viewProfile)}>
               <Link onClick={() => handleLogout()}>
@@ -127,16 +132,18 @@ export const User = () => {
         </div> */}
         <div className="user">
           <div className="user-title">
+
           <h1>Negotiation List</h1>
           <div className="user-add">
             <span>
               <Link to={`/addissue/${id}`}><i><AddIcon/></i></Link>
             </span>
 
-            {/* <span>
+
+              {/* <span>
               <Link to="/issueinfo">Issue Info</Link>
             </span> */}
-          </div>
+            </div>
           </div>
           {/* .....issue list in table........ */}
           <div className="user__table">
@@ -160,7 +167,13 @@ export const User = () => {
                         <span>{item?.desc?.slice(0, 50)}</span>
                         <span>{item.field}</span>
                         <span>{item.startingDate}</span>
-                        <span>{item.endingDate === ""?(<>------</>):(<>{item.endingDate}</>)}</span>
+                        <span>
+                          {item.endingDate === "" ? (
+                            <>------</>
+                          ) : (
+                            <>{item.endingDate}</>
+                          )}
+                        </span>
                         <span>{item.status}</span>
                         {/* ....button for viewing...... */}
                         <div className="negotiation-button">
@@ -192,7 +205,6 @@ export const User = () => {
                 )}
               </>
             }
-          
           </div>
           {viewDetails ? (
             <div className="view-details">
@@ -201,8 +213,11 @@ export const User = () => {
             </div>
           ) : (
             " "
-          )}             
-        </div>       
+
+          )}
+        </div>
+
+
         <ToastContainer />
       </>
     );

@@ -224,10 +224,12 @@
           ]
         },
         {
-          "desc": "naya issue merge gare paxi",
-          "field": "merging issue",
+
+          "desc": "yamima ko naya issue",
+          "field": "qa",
           "status": "New",
-          "startingDate": "2023-05-24",
+          "startingDate": "2023-05-25",
+
           "endingDate": "",
           "feasible": "",
           "solvingtime": "",
