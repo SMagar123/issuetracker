@@ -67,6 +67,14 @@
       "email": "suraj8@hotmail.com",
       "role": "user",
       "name": "Suraj"
+    },
+    {
+      "id": "tb3pu2u",
+      "username": "pulamiSuraj",
+      "password": "suraj",
+      "email": "suraj@gmail.com",
+      "role": "user",
+      "name": "Suraj Pulami Magar"
     }
   ]
 }
