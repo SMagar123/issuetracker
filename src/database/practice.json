@@ -23,7 +23,7 @@
           "startingDate": "2021-02-01",
           "endingDate": "",
           "feasible": "Yes",
-          "payment": "450",
+          "payment": "200",
           "acceptance": "",
           "sorryMessage": "",
           "solvingtime": "2023-05-20",
@@ -32,109 +32,15 @@
           ]
         },
         {
-          "desc": "naya test",
-          "field": "test3",
-          "status": "new",
-          "startingDate": "2023-05-23",
-          "endingDate": "",
-          "feasible": "",
-          "solvingtime": "",
-          "payment": "",
-          "acceptance": "",
-          "sorryMessage": "",
-          "completionMessage": "",
-          "requirement": [
-            "Upload Requirement File"
-          ]
-        },
-        {
-          "desc": "Smritile pani bistarai bujhdai cha",
-          "field": "Confusion Test",
+          "desc": "We require phone loan feature in our mobile banking.",
+          "field": "Phone Loan ",
           "status": "New",
-          "startingDate": "2023-05-23",
+          "startingDate": "2023-05-25",
           "endingDate": "",
           "feasible": "",
           "solvingtime": "",
           "payment": "",
           "acceptance": "",
-          "sorryMessage": "",
-          "completionMessage": "",
-          "requirement": [
-            "Upload Requirement File"
-          ]
-        },
-        {
-          "desc": "Naya task thapeko maile",
-          "field": "test 5",
-          "status": "New",
-          "startingDate": "2023-05-23",
-          "endingDate": "",
-          "feasible": "",
-          "solvingtime": "",
-          "payment": "",
-          "acceptance": "",
-          "sorryMessage": "",
-          "completionMessage": "",
-          "requirement": [
-            "Upload Requirement File"
-          ]
-        },
-        {
-          "desc": "Feri pani naya wala test",
-          "field": "test 4",
-          "status": "New",
-          "startingDate": "2023-05-22",
-          "endingDate": "",
-          "feasible": "",
-          "solvingtime": "",
-          "payment": "",
-          "acceptance": "",
-          "sorryMessage": "",
-          "completionMessage": "",
-          "requirement": []
-        },
-        {
-          "desc": "hello world",
-          "field": "transaction",
-          "status": "New",
-          "startingDate": "2023-05-23",
-          "endingDate": "",
-          "feasible": "",
-          "solvingtime": "",
-          "payment": "",
-          "acceptance": "",
-          "sorryMessage": "",
-          "completionMessage": "",
-          "requirement": [
-            "Upload Requirement File"
-          ]
-        },
-        {
-          "desc": "naya issue ho testko lagi",
-          "field": "naya test",
-          "status": "New",
-          "startingDate": "2023-05-23",
-          "endingDate": "",
-          "feasible": "",
-          "solvingtime": "",
-          "payment": "",
-          "acceptance": "",
-          "sorryMessage": "",
-          "completionMessage": "",
-          "requirement": [
-            "Upload Requirement File"
-          ]
-        },
-        {
-          "desc": "",
-          "field": "",
-          "status": "Pending",
-          "startingDate": "",
-          "endingDate": "",
-          "feasible": "",
-          "solvingtime": "",
-          "payment": "",
-          "acceptance": "Yes",
           "sorryMessage": "",
           "completionMessage": "",
           "requirement": []
@@ -169,6 +75,20 @@
           "acceptance": "Yes",
           "sorryMessage": "",
           "completionMessage": "sorry we are late by 1 day as estimated but your feature has been updated."
+        },
+        {
+          "desc": "",
+          "field": "",
+          "status": "Pending",
+          "startingDate": "",
+          "endingDate": "",
+          "feasible": "",
+          "solvingtime": "",
+          "payment": "",
+          "acceptance": "Yes",
+          "sorryMessage": "",
+          "completionMessage": "",
+          "requirement": []
         }
       ]
     },
@@ -212,24 +132,6 @@
           "field": "Daath Dhukhing",
           "status": "New",
           "startingDate": "2023-05-26",
-          "endingDate": "",
-          "feasible": "",
-          "solvingtime": "",
-          "payment": "",
-          "acceptance": "",
-          "sorryMessage": "",
-          "completionMessage": "",
-          "requirement": [
-            "Upload Requirement File"
-          ]
-        },
-        {
-
-          "desc": "yamima ko naya issue",
-          "field": "qa",
-          "status": "New",
-          "startingDate": "2023-05-25",
-
           "endingDate": "",
           "feasible": "",
           "solvingtime": "",
@@ -319,6 +221,41 @@
           "completionMessage": "",
           "requirement": [
             "Upload Requirement File"
+          ]
+        },
+        {
+          "desc": "good guy",
+          "field": "Ravi",
+          "status": "New",
+          "startingDate": "2023-05-25",
+          "endingDate": "",
+          "feasible": "",
+          "solvingtime": "",
+          "payment": "",
+          "acceptance": "",
+          "sorryMessage": "",
+          "completionMessage": "",
+          "requirement": []
+        }
+      ]
+    },
+    {
+      "id": "tb3pu2u",
+      "details": [
+        {
+          "desc": "We need phone loan feature in our mobile banking.",
+          "field": "Phone Loan ",
+          "status": "New",
+          "startingDate": "2023-05-25",
+          "endingDate": "",
+          "feasible": "",
+          "solvingtime": "",
+          "payment": "",
+          "acceptance": "",
+          "sorryMessage": "",
+          "completionMessage": "",
+          "requirement": [
+            "phoneloanrequirement.pdf"
           ]
         }
       ]

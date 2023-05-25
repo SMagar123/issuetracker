@@ -57,12 +57,6 @@ export const User = () => {
     return item.id === `${id}`;
   });
 
-  // const displayDetails = (id) => {
-  //   setUserId(id);
-  //   setViewDetails(!viewDetails);
-  // };
-  // const [showModal, setShowModal] = useState(false);
-
   //obtaining data of the user from existing database
 
   const getRelatedIndividualData = async () => {
@@ -81,9 +75,8 @@ export const User = () => {
   }, [userID.length]);
   const userDataLength = Object.keys(issueData).length;
 
-
   const handleLogout = () => {
-    console.log('Logoutttttt');
+    console.log("Logoutttttt");
     getLoggeout();
   };
   function getLoggeout() {
@@ -112,33 +105,21 @@ export const User = () => {
     notifyError();
   } else {
     return (
-
       <>
         {/* ....top-navbar........ */}
         <Navbar />
 
-        {/* <div className="user__title">
-          <h2>Issue Tracker</h2>
-
-          <div className="user__name">
-            <i onClick={() => setViewProfile(!viewProfile)}>
-              <Link onClick={() => handleLogout()}>
-                {viewProfile && <span>Log Out</span>}
-              </Link>
-              <AccountCircleIcon fontSize="large" />
-            </i>
-            <p>{userData?.username}</p>
-          </div>
-        </div> */}
         <div className="user">
           <div className="user-title">
-
-          <h1>Negotiation List</h1>
-          <div className="user-add">
-            <span>
-              <Link to={`/addissue/${id}`}><i><AddIcon/></i></Link>
-            </span>
-
+            <h1>Negotiation List</h1>
+            <div className="user-add">
+              <span>
+                <Link to={`/addissue/${id}`}>
+                  <i>
+                    <AddIcon />
+                  </i>
+                </Link>
+              </span>
 
               {/* <span>
               <Link to="/issueinfo">Issue Info</Link>
@@ -213,10 +194,8 @@ export const User = () => {
             </div>
           ) : (
             " "
-
           )}
         </div>
-
 
         <ToastContainer />
       </>

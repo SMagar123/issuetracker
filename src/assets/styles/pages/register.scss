@@ -1,58 +1,70 @@
 .register {
-  margin: auto;
-//   height: 100vh;
-  background-color: whitesmoke;
-  width: 450px;
-  position: relative;
-  padding: $general-padding;
-  top: 150px;
-  box-shadow: 0 0 5px gray;
-  border-radius: 10px;
-  .register-head {
-    margin-bottom: 25px;
-    h1 {
-        text-align: center;
-      font-weight: 700;
-      position: relative;
-      &::after {
-        content: "";
-        border: 2px solid rgb(255, 166, 166);
-        position: absolute;
-        width: 8%;
-        top: 40px;
-        left: 140px;
-      }
-    }
-  }
-  .register-form {
+  margin: 0 auto;
+  background-color: #eeeeee;
+  height: 100vh;
+  .register-wrapper {
+    margin: auto;
+    position: relative;
+    top: 100px;
     display: flex;
-    padding: 0px 24px;
+    padding: 20px 0;
     flex-direction: column;
-    form {
-        
-      label {
-        font-size: 18px;
-        margin-bottom: 10px;
+    align-items: center;
+    width: 450px;
+    box-shadow: 0 0 8px #b9b9b9;
+    border-radius: 10px;
+    background-color: #f0f0f0ec;
+    .register-head {
+      margin-bottom: 25px;
+      h1 {
+        // text-align: center;
+        font-weight: 700;
+        position: relative;
+        &::after {
+          content: "";
+          border: 2px solid lighten($color: $primary-color2, $amount: 10);
+          position: absolute;
+          width: 25%;
+          top: 40px;
+          left: 4px;
+        }
       }
-      input {
-        outline: none;
-        border: none;
-        width: 100%;
-        border-bottom: 1px solid $text-color2;
-        background-color: whitesmoke;
-        padding: 8px;
-        margin-bottom: 16px;
-      }        
     }
-    .register-button{
+    .register-form {
+      display: flex;
+      padding: 0px 24px;
+      flex-direction: column;
+
+      form {
+        label {
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+        input {
+          outline: none;
+          border: none;
+          width: 100%;
+          border-bottom: 1px solid $text-color2;
+          background-color: transparent;
+          padding: 8px;
+          margin-bottom: 16px;
+        }
+      }
+      .register-button {
         border-radius: 8px;
-        display:flex;
+        display: flex;
         width: 100%;
         justify-content: center;
-        &:hover{
-          font-weight: 600;
-          font-size: 16px;
-        } 
+        transition: 250ms ease;
+        font-size: 16px;
+        overflow: hidden;
+        border: 1px solid $primary-color2;
+        &:hover {
+          border: 1px solid $primary-color2;
+          color: $primary-color2;
+          font-weight: 400;
+        }
+      }
     }
   }
 }

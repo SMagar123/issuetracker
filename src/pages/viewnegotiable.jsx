@@ -6,7 +6,10 @@ import "react-toastify/dist/ReactToastify.css";
 import { Button } from "../components/Button";
 import axios from "axios";
 const issuedata = " http://127.0.0.1:3004/issues/";
-
+const inputList = {
+  id: "",
+  details: [],
+};
 const detailsList = {
   desc: "",
   field: "",
@@ -24,10 +27,10 @@ const detailsList = {
 export const ViewNegotiable = ({ id, issueField }) => {
   const navigate = useNavigate();
 
-  const [issueList, setIssueList] = useState([]); //purano data ho
+  const [issueList, setIssueList] = useState({}); //purano data ho
+  const [updateList, setUpdateList] = useState(detailsList);
 
   const getIssueDetail = async () => {
-    console.log("hello there");
     let response = await getissueData(id);
     setIssueList(response.data);
   };
@@ -37,11 +40,9 @@ export const ViewNegotiable = ({ id, issueField }) => {
   }, []);
 
   const requiredIssueDetails = issueList?.details?.filter((item) => {
-    console.log(issueField, "Yei ho la");
-    console.log(item.field, "naya yei ho hai");
     return item.field === issueField;
   });
-  console.log(requiredIssueDetails, "isuueeeee");
+
   const notifyError = () => {
     toast.error("You accepted the admin condition", {
       position: "top-right",
@@ -54,8 +55,6 @@ export const ViewNegotiable = ({ id, issueField }) => {
       theme: "dark",
     });
   };
-
-  const [updateList, setUpdateList] = useState(detailsList);
 
   const handleAcceptance = (e) => {
     setUpdateList({
@@ -71,6 +70,21 @@ export const ViewNegotiable = ({ id, issueField }) => {
     axios.put(`${issuedata}/${id}`, issueList);
     navigate(`/user/${id}`);
   };
+
+  // let practiceArray = [];
+  // practiceArray = issueList.details;
+  // console.log(issueList);
+  // console.log(practiceArray);
+  // const index = practiceArray.findIndex((obj) => {
+  //   return obj.field === issueField;
+  // });
+  console.log(issueField);
+  console.log(issueList);
+  // console.log(
+  //   issueList.details.findIndex((obj) => {
+  //     return obj.field === "education";
+  //   })
+  // );
 
   return (
     <div className="view">
@@ -96,7 +110,7 @@ export const ViewNegotiable = ({ id, issueField }) => {
               )}
               <Button
                 name="Accept"
-                value="Yes"                
+                value="Yes"
                 handleClick={(e) => handleAcceptance(e)}
               />
               <Button

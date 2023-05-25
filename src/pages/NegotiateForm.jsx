@@ -10,6 +10,7 @@ import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Navbar } from "../components";
 const initialIssues = {
   desc: "",
   field: "",
@@ -55,61 +56,64 @@ export const NegotiateForm = () => {
     });
   };
   return (
-    <div className="negotiate">
-      <div className="negotiate__form">
-        <h4>Negotiation Information</h4>
-        <div className="form">
-          <form onSubmit={handleNegotiationQuery}>
-            <label>Issue Registered Date</label>
-            <p>{issueList.startingDate}</p>
-            <InputField
-              type="date"
-              name="solvingtime"
-              label="Date To Solve"
-              handleInput={(e) => handleIssueDetail(e)}
-              value={issueList.solvingtime}
-              required
-            />
-            <InputField
-              type="number"
-              name="payment"
-              label="Payment"
-              required
-              handleInput={(e) => handleIssueDetail(e)}
-              value={issueList.payment}
-            />
-            <FormControl>
-              <FormLabel id="demo-row-radio-buttons-group-label">
-                Feasible
-              </FormLabel>
-              <RadioGroup
-                row
-                aria-labelledby="demo-row-radio-buttons-group-label"
-                name="feasible"
-              >
-                <FormControlLabel
-                  value="Yes"
-                  control={<Radio />}
-                  label="Yes"
-                  onChange={(e) => handleIssueDetail(e)}
-                />
-                <FormControlLabel
-                  value="No"
-                  control={<Radio />}
-                  label="No"
-                  onChange={(e) => handleIssueDetail(e)}
-                />
-              </RadioGroup>
-            </FormControl>
-            <Button
-              type="submit"
-              name="Query for Negotiation"
-              className="submit-button"
-            />
-          </form>
+    <>
+      <Navbar />
+      <div className="negotiate">
+        <div className="negotiate__form">
+          <h4>Negotiation Information</h4>
+          <div className="form">
+            <form onSubmit={handleNegotiationQuery}>
+              <label>Issue Registered Date</label>
+              <p>{issueList.startingDate}</p>
+              <InputField
+                type="date"
+                name="solvingtime"
+                label="Date To Solve"
+                handleInput={(e) => handleIssueDetail(e)}
+                value={issueList.solvingtime}
+                required
+              />
+              <InputField
+                type="number"
+                name="payment"
+                label="Payment"
+                required
+                handleInput={(e) => handleIssueDetail(e)}
+                value={issueList.payment}
+              />
+              <FormControl>
+                <FormLabel id="demo-row-radio-buttons-group-label">
+                  Feasible
+                </FormLabel>
+                <RadioGroup
+                  row
+                  aria-labelledby="demo-row-radio-buttons-group-label"
+                  name="feasible"
+                >
+                  <FormControlLabel
+                    value="Yes"
+                    control={<Radio />}
+                    label="Yes"
+                    onChange={(e) => handleIssueDetail(e)}
+                  />
+                  <FormControlLabel
+                    value="No"
+                    control={<Radio />}
+                    label="No"
+                    onChange={(e) => handleIssueDetail(e)}
+                  />
+                </RadioGroup>
+              </FormControl>
+              <Button
+                type="submit"
+                name="Query for Negotiation"
+                className="submit-button"
+              />
+            </form>
+          </div>
         </div>
+        <ToastContainer />
       </div>
-      <ToastContainer />
-    </div>
+    </>
   );
 };

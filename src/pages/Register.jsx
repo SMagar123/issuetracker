@@ -26,52 +26,55 @@ export const Register = (id) => {
       theme: "dark",
     });
   };
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      axios.post(`http://127.0.0.1:3005/users`, userList);
-      notify();
-      navigate("/");
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post(`http://127.0.0.1:3005/users`, userList);
+    notify();
+    navigate("/");
+  };
 
-    const handleInputUser = (e) => {
-      setUserList({ ...userList, [e.target.name]: e.target.value });
-    };
+  const handleInputUser = (e) => {
+    setUserList({ ...userList, [e.target.name]: e.target.value });
+  };
 
-    return (
-      <>
-        <div className="register">
+  return (
+    <>
+      <div className="register">
+        <div className="register-wrapper">
           <div className="register-head">
             <h1>Register</h1>
           </div>
           <div className="register-form">
             <form onSubmit={handleSubmit}>
-              <label>Name</label>
               <InputField
-              name="name"
-                placeholder="Enter your full-name"
+                name="name"
+                label="Full Name"
                 type="text"
                 handleInput={(e) => handleInputUser(e)}
                 required
               />
-              <label>Username</label>
+
               <InputField
                 name="username"
-                placeholder="Enter your username"
-                type="text" handleInput={(e) => handleInputUser(e)}
+                label="Username"
+                type="text"
+                handleInput={(e) => handleInputUser(e)}
                 required
               />
-              <label>Password</label>
+
               <InputField
                 name="password"
-                placeholder="Enter password"
-                type="password" handleInput={(e) => handleInputUser(e)}
+                label="Password"
+                type="password"
+                handleInput={(e) => handleInputUser(e)}
                 required
               />
-              <label>Email</label>
+
               <InputField
                 name="email"
-                placeholder="Enter email"
-                type="email" handleInput={(e) => handleInputUser(e)}
+                label="Email"
+                type="email"
+                handleInput={(e) => handleInputUser(e)}
                 required
               />
               <Button
@@ -82,8 +85,8 @@ export const Register = (id) => {
             </form>
           </div>
         </div>
-        <ToastContainer />
-      </>
-    );
-  
+      </div>
+      <ToastContainer />
+    </>
+  );
 };

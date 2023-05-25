@@ -1,13 +1,12 @@
-
 import React, { useEffect, useState, useContext } from "react";
 import { CloseIcon, AccountCircleIcon } from "../assets/icons/icons";
-import { NavLink, Link, useParams } from "react-router-dom";
+import { NavLink, Link, useParams, useNavigate } from "react-router-dom";
 import { Button } from "./Button";
 import { getSingleUserData } from "../service/api";
 import { getAdminDetail } from "../service/api";
 import { LoginContext } from "../App";
 import secureLocalStorage from "react-secure-storage";
-
+import logo from "../assets/images/logo.ico";
 export const Navbar = () => {
   const { id } = useParams();
   const { userRole } = useContext(LoginContext);
@@ -15,15 +14,13 @@ export const Navbar = () => {
   const [closeModal, setCloseModal] = useState(false);
   const [viewProfile, setViewProfile] = useState(false);
   const [userData, setUserData] = useState();
-
-
+  const navigate = useNavigate();
   const getUsersData = async () => {
     const response = await getSingleUserData(id);
     setUserData(response?.data);
   };
   useEffect(() => {
     userRole === "user" ? getUsersData() : obtainAdminDetail();
-
   }, []);
 
   const obtainAdminDetail = async () => {
@@ -31,43 +28,42 @@ export const Navbar = () => {
     setAdminDetail(response.data);
   };
   const handleLogout = () => {
-
-    console.log("Logout");
     getLoggeout();
   };
   function getLoggeout() {
     secureLocalStorage.clear();
+    navigate("/");
     window.location.reload();
   }
-
 
   return (
     <>
       <div className="hero__admindetails">
         <div className="project-title">
-
           {userRole === "user" ? (
             <NavLink to={`/user/${id}`}>
-              <h2>Negotiator App</h2>
+              <img src={logo} />
+              <h2>NTS</h2>
             </NavLink>
           ) : userRole === "admin" ? (
             <NavLink to="/admin">
-              <h2>Negotiator App</h2>
+              <img src={logo} />
+              <h2>NTS</h2>
             </NavLink>
           ) : (
             <NavLink to="/">
-              <h2>Negotiator App</h2>
+              <img src={logo} />
+              <h2>NTS</h2>
             </NavLink>
           )}
-
         </div>
         {userRole === "user" ? (
           <div className="user__name">
             <i onClick={() => setViewProfile(!viewProfile)}>
+              <AccountCircleIcon fontSize="large" />
               <Link onClick={() => handleLogout()}>
                 {viewProfile && <span>Log Out</span>}
               </Link>
-              <AccountCircleIcon fontSize="large" />
             </i>
             <p>{userData?.username}</p>
           </div>

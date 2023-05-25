@@ -33,8 +33,6 @@ export const Login = ({ user }) => {
   const { role, setRole } = useRole();
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
-  const roles = ["user", "admin"];
-  // const [role, setRole] = useState(roles[0]);
   const navigate = useNavigate();
   const notifyError = () => {
     toast.error("OOPPSS!!! Wrong credentials", {
@@ -79,7 +77,6 @@ export const Login = ({ user }) => {
     }
   };
   return (
-
     <div className="login">
       <div className="login__wrapper">
         <div className="login-head">
@@ -87,8 +84,6 @@ export const Login = ({ user }) => {
         </div>
         <div className="login-form">
           <form onSubmit={handleSubmit}>
-            {/* <label>UserName</label> */}
-            {/* <i><AccountCircleIcon/></i> */}
             <InputField
               name="username"
               placeholder="Type your username"
@@ -97,8 +92,7 @@ export const Login = ({ user }) => {
               handleInput={(e) => setUsername(e.target.value)}
               required
             />
-            {/* <label>Password</label> */}
-            {/* <i><LockIcon/></i> */}
+
             <InputField
               name="password"
               placeholder="Type your password"
@@ -107,7 +101,9 @@ export const Login = ({ user }) => {
               handleInput={(e) => setPassword(e.target.value)}
               required
             />
-            <p>Don't have an account? <Link to='/register'>    Register Now</Link></p>
+            <p>
+              Don't have an account? <Link to="/register"> Register Here</Link>
+            </p>
             <Button type="submit" name="Login" className="login-button" />
           </form>
         </div>

@@ -7,6 +7,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { Button } from "../components/Button";
 import { getSingleIssue, editIssueDetail } from "../service/api";
+import { Navbar } from "../components";
 const initialIssues = {
   desc: "",
   field: "",
@@ -40,46 +41,49 @@ export const SorryMessage = () => {
     navigate("/");
   };
   return (
-    <div className="negotiate">
-      <div className="negotiate__form">
-        <h4>Negotiation Information</h4>
-        <div className="form">
-          <form onSubmit={handleNegotiationQuery}>
-            <label>Issue Registered Date</label>
-            <p>{issueList.startingDate}</p>
-            <label>Issue Raised</label>
-            <p>{issueList.desc}</p>
-            <label htmlFor="sorry-message">Message</label>
-            <textarea
-              name="sorryMessage"
-              onChange={(e) => handleIssueDetail(e)}
-              cols="30"
-              rows="10"
-              required
-            ></textarea>
-            <Box sx={{ minWidth: 120 }}>
-              <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Status</InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  label="Status"
-                  name="status"
-                  onChange={(e) => handleIssueDetail(e)}
-                >
-                  <MenuItem value={"Pending"}>Pending</MenuItem>
-                  <MenuItem value={"Reject"}>Rejected</MenuItem>
-                </Select>
-              </FormControl>
-            </Box>
-            <Button
-              type="submit"
-              name="Sorry Message"
-              className="submit-button"
-            />
-          </form>
+    <>
+      <Navbar />
+      <div className="negotiate">
+        <div className="negotiate__form">
+          <h4>Negotiation Information</h4>
+          <div className="form">
+            <form onSubmit={handleNegotiationQuery}>
+              <label>Issue Registered Date</label>
+              <p>{issueList.startingDate}</p>
+              <label>Issue Raised</label>
+              <p>{issueList.desc}</p>
+              <label htmlFor="sorry-message">Message</label>
+              <textarea
+                name="sorryMessage"
+                onChange={(e) => handleIssueDetail(e)}
+                cols="30"
+                rows="10"
+                required
+              ></textarea>
+              <Box sx={{ minWidth: 120 }}>
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">Status</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    label="Status"
+                    name="status"
+                    onChange={(e) => handleIssueDetail(e)}
+                  >
+                    <MenuItem value={"Pending"}>Pending</MenuItem>
+                    <MenuItem value={"Reject"}>Rejected</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
+              <Button
+                type="submit"
+                name="Sorry Message"
+                className="submit-button"
+              />
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };

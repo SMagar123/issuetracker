@@ -12,7 +12,15 @@
   width: 100%;
   gap: 16px;
   .project-title {
-
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    img {
+      height: 40px;
+      width: 40px;
+    }
     h2 {
       color: white;
     }
@@ -21,23 +29,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 3px;
     position: relative;
     cursor: pointer;
     span {
       width: max-content;
       position: absolute;
       top: 36px;
-      background-color: #4158a2;
+      background-color: lighten($color: $primary-color2, $amount: 10);
+      border: 1px solid $primary-color2;
       opacity: 4;
       left: -16px;
       color: white;
       padding: 5px 10px;
       &:hover {
         background-color: whitesmoke;
-        color: black;
+        color: $primary-color2;
         text-shadow: 0 0 2px grey;
-
       }
     }
   }

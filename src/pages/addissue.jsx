@@ -1,12 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { InputField } from "../components/InputField";
 import { Button } from "../components/Button";
-
-// import Box from "@mui/material/Box";
-// import InputLabel from "@mui/material/InputLabel";
-// import MenuItem from "@mui/material/MenuItem";
-// import FormControl from "@mui/material/FormControl";
-// import Select from "@mui/material/Select";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { addMultipleEntry, getissueData } from "../service/api";
@@ -35,7 +29,6 @@ export const AddIssue = () => {
   const loginContext = useContext(LoginContext);
   const navigate = useNavigate();
   const { id } = useParams();
-  console.log(id);
   const [issueList, setIssueList] = useState(detailsList);
 
   //adding more records to details of already records having user
@@ -65,8 +58,8 @@ export const AddIssue = () => {
   //Adding record for new user
   const [addingList, setAddingList] = useState(inputList);
   const addList = () => {
-    // setAddingList(...addingList);
     addingList.id = `${id}`;
+    issueList.requirement.push(fileName);
     addingList.details.push(issueList);
     axios.post(`${issuedata}`, addingList);
     navigate(`/user/${id}`);
@@ -76,12 +69,11 @@ export const AddIssue = () => {
   const [file, setFile] = useState("");
   const [fileName, setFileName] = useState("Upload Requirement File");
   const [uploadedFile, setUploadedFile] = useState({});
-  // const date = new Date();
 
   const handlePdfUploading = (e) => {
     setFile(e.target.files[0]);
     setFileName(e.target.files[0].name);
-    issueList.requirement.push(fileName);
+    console.log(e.target.files[0].name);
   };
   const handleUplaodPdf = async (e) => {
     /*uploading pdf file */
@@ -109,13 +101,20 @@ export const AddIssue = () => {
   } else {
     return (
       <div className="issue__form">
-          <Navbar/>
+        <Navbar />
         <div className="form-title">
-          <h1>Add Your Issue</h1>
+          <h1>Add the Feature Required</h1>
         </div>
         <div className="form">
           <form onSubmit={handleSubmit}>
-            <label>Issue</label>
+            <InputField
+              label="Feature"
+              placeholder="Type of issue"
+              handleInput={(e) => handleInputDetail(e)}
+              name="field"
+              required
+            />
+            <label>Description</label>
             <textarea
               name="desc"
               cols="28"
@@ -124,13 +123,6 @@ export const AddIssue = () => {
               required
             ></textarea>
             <InputField
-              label="Field"
-              placeholder="Type of issue"
-              handleInput={(e) => handleInputDetail(e)}
-              name="field"
-              required
-            />
-            <InputField
               label="Status"
               value="New"
               handleInput={(e) => handleInputDetail(e)}
@@ -138,22 +130,6 @@ export const AddIssue = () => {
               name="status"
               required
             />
-            {/* <Box sx={{ minWidth: 450 }}>
-              <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label" color="primary">
-                  Status
-                </InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  label="Status"
-                  name="status"
-                  onChange={(e) => handleInputDetail(e)}
-                >
-                  <MenuItem value="New">New</MenuItem>
-                </Select>
-              </FormControl>
-            </Box> */}
             <InputField
               label=" Today's Date"
               type="date"
@@ -161,12 +137,12 @@ export const AddIssue = () => {
               handleInput={(e) => handleInputDetail(e)}
               required
             />
+
             <InputField
-              label={fileName}
+              label="Upload Requirement File"
               type="file"
               handleInput={(e) => handlePdfUploading(e)}
               className="form-file"
-              name="requirements"
               required
             />
             <Button type="submit" name="Submit" className="submit-button" />
