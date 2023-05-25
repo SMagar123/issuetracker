@@ -7,6 +7,7 @@ import { Button } from "../components/Button";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useToken from "../service/useToken";
+import useRole from "../service/useRole";
 const data = userData.users;
 
 async function LoginUser(credentials) {
@@ -29,10 +30,11 @@ async function LoginAdmin(credentials) {
 }
 export const Login = ({ user }) => {
   const { token, setToken } = useToken();
+  const { role, setRole } = useRole();
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
   const roles = ["user", "admin"];
-  const [role, setRole] = useState(roles[0]);
+  // const [role, setRole] = useState(roles[0]);
   const navigate = useNavigate();
   const notifyError = () => {
     toast.error("OOPPSS!!! Wrong credentials", {
@@ -60,6 +62,7 @@ export const Login = ({ user }) => {
       });
       setToken(token);
       user(result[0].role);
+      setRole(result[0].role);
       navigate(`/user/${result[0].id}`);
     } else if (result.length !== 0 && result[0].role === "admin") {
       const token = await LoginAdmin({
@@ -68,6 +71,7 @@ export const Login = ({ user }) => {
       });
       setToken(token);
       user(result[0].role);
+      setRole(result[0].role);
       navigate(`/admin`);
     } else {
       notifyError();
@@ -80,23 +84,25 @@ export const Login = ({ user }) => {
         <div className="login-head">
           <h1>Login</h1>
         </div>
-        <div className="login-form" onChange={(e) => setRole(e.target.value)}>
+        <div className="login-form">
           <form onSubmit={handleSubmit}>
-            <label>UserName</label>
+            {/* <label>UserName</label> */}
             {/* <i><AccountCircleIcon/></i> */}
             <InputField
               name="username"
               placeholder="Type your username"
               type="text"
+              label="Username"
               handleInput={(e) => setUsername(e.target.value)}
               required
             />
-            <label>Password</label>
+            {/* <label>Password</label> */}
             {/* <i><LockIcon/></i> */}
             <InputField
               name="password"
               placeholder="Type your password"
               type="password"
+              label="Password"
               handleInput={(e) => setPassword(e.target.value)}
               required
             />

@@ -80,14 +80,6 @@ export const User = () => {
   }, [userID.length]);
   const userDataLength = Object.keys(issueData).length;
 
-  const handleLogout = () => {
-    console.log("Logoutttttt");
-    getLoggeout();
-  };
-  function getLoggeout() {
-    sessionStorage.clear();
-    window.location.reload();
-  }
   const notifyError = () => {
     toast.error("You must login first!!!", {
       position: "top-right",

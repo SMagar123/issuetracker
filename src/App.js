@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { createContext, useState } from "react";
 import "./App.scss";
+import secureLocalStorage from "react-secure-storage";
 import {
   AdminHeropage,
   NegotiateForm,
@@ -13,20 +14,18 @@ import {
   User,
   PageNotFound,
 } from "./pages";
-import { Navbar } from "./components";
 
 const LoginContext = createContext();
-// const adminToken = { token: "testToken" };
 function App() {
-  const tokenString = sessionStorage.getItem("token");
+  const tokenString = secureLocalStorage.getItem("token");
   const [userRole, setUserRole] = useState("");
   const getUserRole = (role) => {
     setUserRole(role);
   };
+
   return (
     <LoginContext.Provider value={{ tokenString, userRole }}>
       <Routes>
-        {/* <Route path="/" element={<Login />}> */}
         <Route path="/" element={<Login user={getUserRole} />} />
         <Route path="/user/:id" element={<User />} />
         <Route path="/addissue/:id" element={<AddIssue />} />
@@ -37,7 +36,6 @@ function App() {
         <Route path="/admin/cannot-resolve/:id" element={<SorryMessage />} />
         <Route path="/admin/requirement/:id" element={<RequirementView />} />
         <Route path="*" element={<PageNotFound />} />
-        {/* </Route> */}
       </Routes>
     </LoginContext.Provider>
   );

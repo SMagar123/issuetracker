@@ -1,4 +1,4 @@
-  .user__title {
+.user__title {
   padding: $general-padding;
   background-color: #4da167;
   color: $text-color1;
@@ -13,7 +13,7 @@
   h2 {
     width: 100%;
   }
- 
+
   .user__name {
     display: flex;
     align-items: center;
@@ -21,18 +21,18 @@
     gap: 15px;
     position: relative;
     cursor: pointer;
-    span{
+    span {
       width: max-content;
-    position: absolute;
-    top: 34px;
-    background-color: #56db7f;
-    opacity: 4;
-    padding: 5px 10px;
-    &:hover{
-      background-color:whitesmoke;
-      color:black;
-      text-shadow: 0 0 2px;
-    }
+      position: absolute;
+      top: 34px;
+      background-color: #56db7f;
+      opacity: 4;
+      padding: 5px 10px;
+      &:hover {
+        background-color: whitesmoke;
+        color: black;
+        text-shadow: 0 0 2px;
+      }
     }
   }
 }
@@ -41,48 +41,43 @@
   padding: $general-padding;
   margin: 0 auto;
   position: relative;
-  .user-title{
+  .user-title {
     display: flex;
     justify-content: center;
-    h2{
+    h2 {
       margin-bottom: 16px;
       text-align: center;
     }
-    .user-nav{  
+    .user-nav {
       display: flex;
       justify-content: flex-end;
       margin-top: 16px;
       position: absolute;
       right: 16px;
       top: -5px;
-      svg{
+      svg {
         // border: 1px solid green;
         // padding: 5px 10px;
         border-radius: 25px;
         font-size: 38px;
-        background-color: #4DA167;
+        background-color: #4da167;
         color: white;
-        &:hover{
-          background-color:#d1d1d1;
+        &:hover {
+          background-color: #d1d1d1;
           color: #333333;
         }
-    
       }
-  }
-    span{
+    }
+    span {
       // text-align:center;
       // border:1px solid #4da167;
       // width:40px;
       // height:40px;
       // background-color: #4da167;
       // border-radius: 50px;
-      
-      
     }
-    
   }
-  
-  
+
   .user__table {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -124,7 +119,7 @@
       }
     }
     .table-title {
-      background-color: #4DA167;
+      background-color: #4da167;
       color: white;
       font-size: 18px;
     }
@@ -135,12 +130,10 @@
     inset: 0;
     height: 100vh;
     padding: $general-padding;
-    svg{
+    svg {
       color: white;
     }
-   
   }
-
 }
 
 @media (min-width: 320px) and (max-width: 576px) {

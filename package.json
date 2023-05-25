@@ -5,8 +5,10 @@
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
+    "@mui/base": "^5.0.0-beta.2",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.12.3",
+    "@mui/system": "^5.13.2",
     "@react-pdf-viewer/core": "^3.12.0",
     "@react-pdf-viewer/default-layout": "^3.12.0",
     "@testing-library/jest-dom": "^5.16.5",
@@ -22,6 +24,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.1",
     "react-scripts": "5.0.1",
+    "react-secure-storage": "^1.2.2",
     "react-toastify": "^9.1.3",
     "sass": "^1.62.1",
     "web-vitals": "^2.1.4"

@@ -5,8 +5,9 @@ import { Button } from "./Button";
 import { getSingleUserData } from "../service/api";
 import { getAdminDetail } from "../service/api";
 import { LoginContext } from "../App";
+import secureLocalStorage from "react-secure-storage";
 export const Navbar = () => {
-  const { tokenString, userRole } = useContext(LoginContext);
+  const { userRole } = useContext(LoginContext);
   const [adminDetail, setAdminDetail] = useState([]);
   const [closeModal, setCloseModal] = useState(false);
   const [viewProfile, setViewProfile] = useState(false);
@@ -31,7 +32,7 @@ export const Navbar = () => {
     getLoggeout();
   };
   function getLoggeout() {
-    sessionStorage.clear();
+    secureLocalStorage.clear();
     window.location.reload();
   }
 
@@ -43,6 +44,8 @@ export const Navbar = () => {
           <NavLink to="/">
             <h2>Negotiator App</h2>
           </NavLink>
+        </div>
+        {userRole === "user" ? (
           <div className="user__name">
             <i onClick={() => setViewProfile(!viewProfile)}>
               <Link onClick={() => handleLogout()}>
@@ -52,55 +55,58 @@ export const Navbar = () => {
             </i>
             <p>{userData?.username}</p>
           </div>
-        </div>
-        <div className="admin">
-          {adminDetail.map((item) => {
-            return (
-              <>
-                <div className="admin-image">
-                  <img src={item.profile_url} alt="profile" />
-                </div>
-                <p>{item.username}</p>
-              </>
-            );
-          })}
-          <div className="admin-edit">
-            <Button
-              name="Profile"
-              handleClick={() => setCloseModal(!closeModal)}
-            />
-            <Button name="Logout" />
-          </div>
-        </div>
-        {closeModal ? (
-          <div className="admin-details">
-            <div className="close-icon">
-              <CloseIcon
-                fontSize="large"
-                onClick={() => setCloseModal(!closeModal)}
-              />
-            </div>
-
-            <div className="admin-card">
+        ) : (
+          <>
+            <div className="admin">
               {adminDetail.map((item) => {
                 return (
                   <>
-                    <div className="profile">
+                    <div className="admin-image">
                       <img src={item.profile_url} alt="profile" />
                     </div>
-                    <div className="profile-info">
-                      <label htmlFor="username">Username</label>
-                      <p>{item.username}</p>
-                      <label htmlFor="email">Email</label>
-                      <p>{item.email}</p>
-                    </div>
+                    <p>{item.username}</p>
                   </>
                 );
               })}
+              <div className="admin-edit">
+                <Button
+                  name="Profile"
+                  handleClick={() => setCloseModal(!closeModal)}
+                />
+                <Button name="Logout" handleClick={() => handleLogout()} />
+              </div>
             </div>
-          </div>
-        ) : (
-          ""
+            {closeModal ? (
+              <div className="admin-details">
+                <div className="close-icon">
+                  <CloseIcon
+                    fontSize="large"
+                    onClick={() => setCloseModal(!closeModal)}
+                  />
+                </div>
+
+                <div className="admin-card">
+                  {adminDetail.map((item) => {
+                    return (
+                      <>
+                        <div className="profile">
+                          <img src={item.profile_url} alt="profile" />
+                        </div>
+                        <div className="profile-info">
+                          <label htmlFor="username">Username</label>
+                          <p>{item.username}</p>
+                          <label htmlFor="email">Email</label>
+                          <p>{item.email}</p>
+                        </div>
+                      </>
+                    );
+                  })}
+                </div>
+              </div>
+            ) : (
+              ""
+            )}
+          </>
         )}
       </div>
     </>
