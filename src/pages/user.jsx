@@ -1,10 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Button } from "../components/Button";
 import { AccountCircleIcon, AddIcon, CloseIcon } from "../assets/icons/icons";
-// import issueData from "../database/issues.json";
 import { Link, useNavigation, useParams, useNavigate } from "react-router-dom";
-// import Data from "../database/users.json";
-// import { createPortal } from "react-dom";
 import { ViewNegotiable } from "./viewnegotiable";
 import { getSingleUserData, getissueData, getIDsOfUser } from "../service/api";
 import { ToastContainer, toast } from "react-toastify";

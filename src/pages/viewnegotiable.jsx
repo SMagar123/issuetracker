@@ -5,11 +5,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Button } from "../components/Button";
 import axios from "axios";
+import issueData from "../database/practice.json";
 const issuedata = " http://127.0.0.1:3004/issues/";
-const inputList = {
-  id: "",
-  details: [],
-};
 const detailsList = {
   desc: "",
   field: "",
@@ -26,10 +23,10 @@ const detailsList = {
 };
 export const ViewNegotiable = ({ id, issueField }) => {
   const navigate = useNavigate();
-
+  const [elementIndex, setElementIndex] = useState();
   const [issueList, setIssueList] = useState({}); //purano data ho
   const [updateList, setUpdateList] = useState(detailsList);
-
+  //obtaining the data from database of respective ID
   const getIssueDetail = async () => {
     let response = await getissueData(id);
     setIssueList(response.data);
@@ -39,12 +36,13 @@ export const ViewNegotiable = ({ id, issueField }) => {
     getIssueDetail();
   }, []);
 
+  //obtaining data of the given issueField
   const requiredIssueDetails = issueList?.details?.filter((item) => {
     return item.field === issueField;
   });
 
-  const notifyError = () => {
-    toast.error("You accepted the admin condition", {
+  const notifyAcceptance = () => {
+    toast.info("You have updated the acceptance status", {
       position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
@@ -56,43 +54,49 @@ export const ViewNegotiable = ({ id, issueField }) => {
     });
   };
 
-  const handleAcceptance = (e) => {
-    setUpdateList({
-      ...updateList,
-      ["acceptance"]: e.target.value,
-      ["status"]: "Pending",
-    });
-    notifyError();
-  };
-
-  const handleUpdate = () => {
-    console.log(
-      issueList.details.findIndex((obj) => {
-        return obj.field === "education";
+  //obtaining the index of the element in details
+  const dataIndex = issueData.issues.findIndex((obj) => {
+    return obj.id === id;
+  });
+  const indexFinder = () => {
+    setElementIndex(
+      issueData.issues[dataIndex].details.findIndex((obj) => {
+        return obj.field === issueField;
       })
     );
-    issueList.details.push(updateList);
+  };
+  useEffect(() => {
+    indexFinder();
+  }, []);
+
+  //assigning the new value to the list to be passed as updated list
+  const handleAcceptance = (e) => {
+    e.target.value === "Yes"
+      ? setUpdateList({
+          ...issueList.details[elementIndex],
+          ["acceptance"]: e.target.value,
+          ["status"]: "Pending",
+        })
+      : setUpdateList({
+          ...issueList.details[elementIndex],
+          ["acceptance"]: e.target.value,
+          ["status"]: "Rejected",
+        });
+
+    notifyAcceptance();
+  };
+  //making the update request through axios
+  const handleUpdate = () => {
+    issueList.details.splice(elementIndex, 1);
+    issueList.details.splice(elementIndex, 0, updateList);
     axios.put(`${issuedata}/${id}`, issueList);
     navigate(`/user/${id}`);
   };
-
-  // let practiceArray = [];
-  // practiceArray = issueList.details;
-  // console.log(issueList);
-  // console.log(practiceArray);
-  // const index = practiceArray.findIndex((obj) => {
-  //   return obj.field === issueField;
-  // });
-  console.log(issueField);
-  console.log(issueList);
 
   return (
     <div className="view">
       <div className="view__wrapper">
         <div className="view-form">
-          {/* <div className="view-title">
-            <h1>View Negotiable</h1>
-          </div> */}
           <form onSubmit={handleUpdate}>
             <div className="view-Details">
               <label>Solving Time</label>
