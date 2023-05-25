@@ -13,6 +13,7 @@ import {
   Login,
   User,
   PageNotFound,
+  Register,
 } from "./pages";
 import { Navbar } from "./components";
 
@@ -21,10 +22,10 @@ function App() {
   const tokenString = sessionStorage.getItem("token");
   return (
     <LoginContext.Provider value={tokenString}>
-      {/* <Navbar /> */}
       <Routes>
         {/* <Route path="/" element={<Login />}> */}
         <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register/>}/>
         <Route path="/user/:id" element={<User />} />
         <Route path="/addissue/:id" element={<AddIssue />} />
         <Route path="/issueinfo" element={<IssueInfo />} />
@@ -33,6 +34,7 @@ function App() {
         <Route path="/admin/completion-form/:id" element={<CompletionForm />} />
         <Route path="/admin/cannot-resolve/:id" element={<SorryMessage />} />
         <Route path="/admin/requirement/:id" element={<RequirementView />} /> */}
+
         <Route path="*" element={<PageNotFound />} />
         {/* </Route> */}
       </Routes>

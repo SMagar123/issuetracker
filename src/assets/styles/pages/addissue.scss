@@ -1,16 +1,11 @@
-    .issue__form {
-      max-width: 1400px;
-      margin: 0 auto;
-      // border: 1px solid #dd2626;
-      padding: $general-padding;
+    .issue__form {    
       text-align: center;
       background-color: whitesmoke;
       display: flex;
-      // gap: 12px;
       flex-direction: column;
-      // align-items: center;
-      h1 {
-        margin-bottom: $general-margin;
+      .form-title{
+        margin: $general-margin 0;
+       
       }
       .form {
         display: flex;
@@ -45,7 +40,7 @@
         }
         .submit-button {
           font-size: 18px;
-          background-color: green;
+          // background-color: green;
           border-radius: 25px;
           width: 100%;
         }

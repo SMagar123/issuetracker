@@ -10,6 +10,7 @@ import { getSingleUserData, getissueData, getIDsOfUser } from "../service/api";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { LoginContext } from "../App";
+import { Navbar } from "../components";
 
 const tableHead = [
   "Issue",
@@ -27,7 +28,7 @@ export const User = () => {
 
   const { id } = useParams();
 
-  const [viewProfile, setViewProfile] = useState(false);
+  // const [viewProfile, setViewProfile] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [issueData, setIssueData] = useState({});
   const [userData, setUserData] = useState();
@@ -80,14 +81,14 @@ export const User = () => {
   }, [userID.length]);
   const userDataLength = Object.keys(issueData).length;
 
-  const handleLogout = () => {
-    console.log('Logoutttttt');
-    getLoggeout();
-  };
-  function getLoggeout() {
-    sessionStorage.clear();
-    window.location.reload();
-  }
+  // const handleLogout = () => {
+  //   console.log('Logoutttttt');
+  //   getLoggeout();
+  // };
+  // function getLoggeout() {
+  //   sessionStorage.clear();
+  //   window.location.reload();
+  // }
   const notifyError = () => {
     toast.error("You must login first!!!", {
       position: "top-right",
@@ -109,9 +110,9 @@ export const User = () => {
     notifyError();
   } else {
     return (
-      <>
-        {/* ....top-navbar........ */}
-        <div className="user__title">
+      <>        
+        <Navbar/>
+        {/* <div className="user__title">
           <h2>Issue Tracker</h2>
    
           <div className="user__name">
@@ -123,11 +124,11 @@ export const User = () => {
             </i>
             <p>{userData?.username}</p>
           </div>
-        </div>
+        </div> */}
         <div className="user">
           <div className="user-title">
-          <h2>Negotiation List</h2>
-          <div className="user-nav">
+          <h1>Negotiation List</h1>
+          <div className="user-add">
             <span>
               <Link to={`/addissue/${id}`}><i><AddIcon/></i></Link>
             </span>
@@ -200,10 +201,8 @@ export const User = () => {
             </div>
           ) : (
             " "
-          )}
-             
-        </div>
-       
+          )}             
+        </div>       
         <ToastContainer />
       </>
     );
