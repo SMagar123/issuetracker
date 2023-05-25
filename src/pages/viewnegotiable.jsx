@@ -66,6 +66,11 @@ export const ViewNegotiable = ({ id, issueField }) => {
   };
 
   const handleUpdate = () => {
+    console.log(
+      issueList.details.findIndex((obj) => {
+        return obj.field === "education";
+      })
+    );
     issueList.details.push(updateList);
     axios.put(`${issuedata}/${id}`, issueList);
     navigate(`/user/${id}`);
@@ -80,11 +85,6 @@ export const ViewNegotiable = ({ id, issueField }) => {
   // });
   console.log(issueField);
   console.log(issueList);
-  // console.log(
-  //   issueList.details.findIndex((obj) => {
-  //     return obj.field === "education";
-  //   })
-  // );
 
   return (
     <div className="view">
