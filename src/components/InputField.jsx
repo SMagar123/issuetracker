@@ -8,6 +8,7 @@ export const InputField = ({
   label,
   required,
   className,
+   disabled,
 }) => {
   return (
     <>
@@ -20,7 +21,9 @@ export const InputField = ({
         required={required}
         placeholder={`Enter ${label}`}
         className={className}
+        disabled={disabled}
       />
+
     </>
   );
 };

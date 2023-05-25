@@ -26,7 +26,7 @@ export const RequirementView = () => {
       {requirementList === undefined ? (
         <h4>Sorry no file found !!!"</h4>
       ) : (
-        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
+        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.6.172/build/pdf.worker.min.js">
           <Viewer
             fileUrl={`/requirements/${requirementList.requirement[0]}`}
             plugins={[defaultLayoutPluginInstance]}
