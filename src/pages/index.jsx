@@ -9,6 +9,7 @@ import { ViewNegotiable } from "./viewnegotiable";
 import { Login } from "./login";
 import { IssueInfo } from "./issueinfo";
 import { PageNotFound } from "./pageNotFound";
+import { Register } from "./Register";
 export {
   AdminHeropage,
   NegotiateForm,
@@ -21,4 +22,6 @@ export {
   Login,
   IssueInfo,
   PageNotFound,
+  
+  Register
 };

@@ -11,6 +11,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { LoginContext } from "../App";
 import { Navbar } from "../components";
+
 const tableHead = [
   "Issue",
   "Field",
@@ -27,7 +28,7 @@ export const User = () => {
 
   const { id } = useParams();
 
-  const [viewProfile, setViewProfile] = useState(false);
+  // const [viewProfile, setViewProfile] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [issueData, setIssueData] = useState({});
   const [userData, setUserData] = useState();
@@ -80,6 +81,16 @@ export const User = () => {
   }, [userID.length]);
   const userDataLength = Object.keys(issueData).length;
 
+
+  const handleLogout = () => {
+    console.log('Logoutttttt');
+    getLoggeout();
+  };
+  function getLoggeout() {
+    sessionStorage.clear();
+    window.location.reload();
+  }
+
   const notifyError = () => {
     toast.error("You must login first!!!", {
       position: "top-right",
@@ -101,9 +112,11 @@ export const User = () => {
     notifyError();
   } else {
     return (
+
       <>
         {/* ....top-navbar........ */}
         <Navbar />
+
         {/* <div className="user__title">
           <h2>Issue Tracker</h2>
 
@@ -119,15 +132,13 @@ export const User = () => {
         </div> */}
         <div className="user">
           <div className="user-title">
-            <h2>Negotiation List</h2>
-            <div className="user-nav">
-              <span>
-                <Link to={`/addissue/${id}`}>
-                  <i>
-                    <AddIcon />
-                  </i>
-                </Link>
-              </span>
+
+          <h1>Negotiation List</h1>
+          <div className="user-add">
+            <span>
+              <Link to={`/addissue/${id}`}><i><AddIcon/></i></Link>
+            </span>
+
 
               {/* <span>
               <Link to="/issueinfo">Issue Info</Link>
@@ -202,8 +213,10 @@ export const User = () => {
             </div>
           ) : (
             " "
+
           )}
         </div>
+
 
         <ToastContainer />
       </>

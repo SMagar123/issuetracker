@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { InputField } from "../components/InputField";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import userData from "../database/users.json";
 import PropTypes from "prop-types";
 import { Button } from "../components/Button";
@@ -79,6 +79,7 @@ export const Login = ({ user }) => {
     }
   };
   return (
+
     <div className="login">
       <div className="login__wrapper">
         <div className="login-head">
@@ -106,6 +107,7 @@ export const Login = ({ user }) => {
               handleInput={(e) => setPassword(e.target.value)}
               required
             />
+            <p>Don't have an account? <Link to='/register'>    Register Now</Link></p>
             <Button type="submit" name="Login" className="login-button" />
           </form>
         </div>

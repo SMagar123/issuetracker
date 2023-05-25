@@ -13,6 +13,7 @@ import {
   Login,
   User,
   PageNotFound,
+  Register,
 } from "./pages";
 
 const LoginContext = createContext();
@@ -24,9 +25,12 @@ function App() {
   };
 
   return (
+
     <LoginContext.Provider value={{ tokenString, userRole }}>
       <Routes>
         <Route path="/" element={<Login user={getUserRole} />} />
+
+        <Route path="/register" element={<Register/>}/>
         <Route path="/user/:id" element={<User />} />
         <Route path="/addissue/:id" element={<AddIssue />} />
         <Route path="/issueinfo" element={<IssueInfo />} />
@@ -34,7 +38,9 @@ function App() {
         <Route path="/admin/negotiate-form/:id" element={<NegotiateForm />} />
         <Route path="/admin/completion-form/:id" element={<CompletionForm />} />
         <Route path="/admin/cannot-resolve/:id" element={<SorryMessage />} />
+
         <Route path="/admin/requirement/:id" element={<RequirementView />} />
+
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </LoginContext.Provider>

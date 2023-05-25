@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useContext } from "react";
 import { CloseIcon, AccountCircleIcon } from "../assets/icons/icons";
 import { NavLink, Link, useParams } from "react-router-dom";
@@ -6,6 +7,7 @@ import { getSingleUserData } from "../service/api";
 import { getAdminDetail } from "../service/api";
 import { LoginContext } from "../App";
 import secureLocalStorage from "react-secure-storage";
+
 export const Navbar = () => {
   const { id } = useParams();
   const { userRole } = useContext(LoginContext);
@@ -14,12 +16,14 @@ export const Navbar = () => {
   const [viewProfile, setViewProfile] = useState(false);
   const [userData, setUserData] = useState();
 
+
   const getUsersData = async () => {
     const response = await getSingleUserData(id);
     setUserData(response?.data);
   };
   useEffect(() => {
     userRole === "user" ? getUsersData() : obtainAdminDetail();
+
   }, []);
 
   const obtainAdminDetail = async () => {
@@ -27,6 +31,7 @@ export const Navbar = () => {
     setAdminDetail(response.data);
   };
   const handleLogout = () => {
+
     console.log("Logout");
     getLoggeout();
   };
@@ -35,10 +40,12 @@ export const Navbar = () => {
     window.location.reload();
   }
 
+
   return (
     <>
       <div className="hero__admindetails">
         <div className="project-title">
+
           {userRole === "user" ? (
             <NavLink to={`/user/${id}`}>
               <h2>Negotiator App</h2>
@@ -52,6 +59,7 @@ export const Navbar = () => {
               <h2>Negotiator App</h2>
             </NavLink>
           )}
+
         </div>
         {userRole === "user" ? (
           <div className="user__name">

@@ -36,6 +36,9 @@
               }
               .reject-button{
                 background-color: $button-color2;
+                &:hover{
+                  background-color: white;
+                }
               }
             }
             
