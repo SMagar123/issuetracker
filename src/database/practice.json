@@ -16,6 +16,20 @@
           "sorryMessage": "",
           "completionMessage": "",
           "requirement": []
+        },
+        {
+          "desc": "We need phone loan feature in our mobil banking.",
+          "field": "Phone Loan ",
+          "status": "New",
+          "startingDate": "2023-05-26",
+          "endingDate": "",
+          "feasible": "",
+          "solvingtime": "",
+          "payment": "",
+          "acceptance": "",
+          "sorryMessage": "",
+          "completionMessage": "",
+          "requirement": []
         }
       ]
     },
@@ -129,62 +143,6 @@
       ]
     },
     {
-      "id": "dJ2O-v8",
-      "details": [
-        {
-          "desc": "anishako issue aayo hai",
-          "field": "issue ho naya",
-          "status": "New",
-          "startingDate": "2023-05-24",
-          "endingDate": "",
-          "feasible": "",
-          "solvingtime": "",
-          "payment": "",
-          "acceptance": "",
-          "sorryMessage": "",
-          "completionMessage": "",
-          "requirement": [
-            "Upload Requirement File"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "0QbORvu",
-      "details": [
-        {
-          "desc": "surajko issue \nagadi aayo ki issue harayo ",
-          "field": "issue solve garne manxe",
-          "status": "New",
-          "startingDate": "2023-05-24",
-          "endingDate": "",
-          "feasible": "",
-          "solvingtime": "",
-          "payment": "",
-          "acceptance": "",
-          "sorryMessage": "",
-          "completionMessage": "",
-          "requirement": [
-            "Upload Requirement File"
-          ]
-        },
-        {
-          "desc": "good guy",
-          "field": "Ravi",
-          "status": "New",
-          "startingDate": "2023-05-25",
-          "endingDate": "",
-          "feasible": "",
-          "solvingtime": "",
-          "payment": "",
-          "acceptance": "",
-          "sorryMessage": "",
-          "completionMessage": "",
-          "requirement": []
-        }
-      ]
-    },
-    {
       "id": "tb3pu2u",
       "details": [
         {
@@ -201,6 +159,22 @@
           "completionMessage": "",
           "requirement": [
             "phoneloanrequirement.pdf"
+          ]
+        },
+        {
+          "desc": "We want bold font size of the amount.",
+          "field": "Increase in fontsize of the balance amount in mobile baking.",
+          "status": "Pending",
+          "startingDate": "2023-05-26",
+          "endingDate": "",
+          "feasible": "Yes",
+          "solvingtime": "",
+          "payment": "",
+          "acceptance": "Yes",
+          "sorryMessage": "",
+          "completionMessage": "",
+          "requirement": [
+            "Unit 4-Object Oriented Database Systems.pdf"
           ]
         }
       ]

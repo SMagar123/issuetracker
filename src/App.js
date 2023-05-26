@@ -23,14 +23,14 @@ function App() {
   const getUserRole = (role) => {
     setUserRole(role);
   };
-
+  const userRoleString = secureLocalStorage.getItem("userrole");
+  console.log(userRoleString);
   return (
-
     <LoginContext.Provider value={{ tokenString, userRole }}>
       <Routes>
         <Route path="/" element={<Login user={getUserRole} />} />
 
-        <Route path="/register" element={<Register/>}/>
+        <Route path="/register" element={<Register />} />
         <Route path="/user/:id" element={<User />} />
         <Route path="/addissue/:id" element={<AddIssue />} />
         <Route path="/issueinfo" element={<IssueInfo />} />

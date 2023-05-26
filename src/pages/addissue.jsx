@@ -26,7 +26,7 @@ const detailsList = {
 };
 const issuedata = " http://127.0.0.1:3004/issues/";
 export const AddIssue = () => {
-  const loginContext = useContext(LoginContext);
+  const { tokenString, userRole } = useContext(LoginContext);
   const navigate = useNavigate();
   const { id } = useParams();
   const [issueList, setIssueList] = useState(detailsList);
@@ -50,6 +50,7 @@ export const AddIssue = () => {
   };
 
   const updateList = () => {
+    issueList.requirement.push(fileName);
     puranoData.details.push(issueList);
     axios.put(`${issuedata}/${id}`, puranoData);
     navigate(`/user/${id}`);
@@ -96,9 +97,7 @@ export const AddIssue = () => {
     handleUplaodPdf(e);
     puranoData === undefined ? addList() : updateList();
   };
-  if (!loginContext) {
-    navigate("/");
-  } else {
+  if (tokenString && userRole === "user") {
     return (
       <div className="issue__form">
         <Navbar />
@@ -150,5 +149,7 @@ export const AddIssue = () => {
         </div>
       </div>
     );
+  } else {
+    navigate("/");
   }
 };

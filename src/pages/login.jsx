@@ -60,8 +60,9 @@ export const Login = ({ user }) => {
       });
       setToken(token);
       user(result[0].role);
-      setRole(result[0].role);
+      // setRole(result[0].role);
       navigate(`/user/${result[0].id}`);
+      // window.location.reload();
     } else if (result.length !== 0 && result[0].role === "admin") {
       const token = await LoginAdmin({
         username,
@@ -69,8 +70,9 @@ export const Login = ({ user }) => {
       });
       setToken(token);
       user(result[0].role);
-      setRole(result[0].role);
+      // setRole(result[0].role);
       navigate(`/admin`);
+      // window.location.reload();
     } else {
       notifyError();
       console.log("sorry no token");
@@ -114,4 +116,5 @@ export const Login = ({ user }) => {
 };
 Login.propTypes = {
   settoken: PropTypes.func.isRequired,
+  setRole: PropTypes.func.isRequired,
 };

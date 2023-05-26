@@ -42,17 +42,17 @@ export const Navbar = () => {
         <div className="project-title">
           {userRole === "user" ? (
             <NavLink to={`/user/${id}`}>
-              <img src={logo} />
+              <img src={logo} alt="logo" />
               <h2>NTS</h2>
             </NavLink>
           ) : userRole === "admin" ? (
             <NavLink to="/admin">
-              <img src={logo} />
+              <img src={logo} alt="logo" />
               <h2>NTS</h2>
             </NavLink>
           ) : (
             <NavLink to="/">
-              <img src={logo} />
+              <img src={logo} alt="logo" />
               <h2>NTS</h2>
             </NavLink>
           )}
