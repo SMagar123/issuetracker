@@ -4,12 +4,11 @@ import { NavLink, Link, useParams, useNavigate } from "react-router-dom";
 import { Button } from "./Button";
 import { getSingleUserData } from "../service/api";
 import { getAdminDetail } from "../service/api";
-import { LoginContext } from "../App";
 import secureLocalStorage from "react-secure-storage";
 import logo from "../assets/images/logo.ico";
 export const Navbar = () => {
   const { id } = useParams();
-  const { userRole } = useContext(LoginContext);
+  const userRole = sessionStorage.getItem("role");
   const [adminDetail, setAdminDetail] = useState([]);
   const [closeModal, setCloseModal] = useState(false);
   const [viewProfile, setViewProfile] = useState(false);
@@ -32,10 +31,11 @@ export const Navbar = () => {
   };
   function getLoggeout() {
     secureLocalStorage.clear();
+    sessionStorage.clear();
     navigate("/");
     window.location.reload();
   }
-
+  console.log(userRole);
   return (
     <>
       <div className="hero__admindetails">

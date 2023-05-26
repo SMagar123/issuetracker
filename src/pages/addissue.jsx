@@ -26,7 +26,8 @@ const detailsList = {
 };
 const issuedata = " http://127.0.0.1:3004/issues/";
 export const AddIssue = () => {
-  const { tokenString, userRole } = useContext(LoginContext);
+  const { tokenString } = useContext(LoginContext);
+  const userRole = sessionStorage.getItem("role");
   const navigate = useNavigate();
   const { id } = useParams();
   const [issueList, setIssueList] = useState(detailsList);

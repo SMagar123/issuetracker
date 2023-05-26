@@ -20,7 +20,7 @@ const tableHead = [
 ];
 // const data = issueData.issues;
 export const User = () => {
-  const { tokenString, userRole } = useContext(LoginContext);
+  const { tokenString } = useContext(LoginContext);
   const navigate = useNavigate();
   const [currentIssueField, setCurrentIssueField] = useState("");
 
@@ -98,7 +98,8 @@ export const User = () => {
     setViewDetails(!viewDetails);
     setCurrentIssueField(field);
   };
-  if (!tokenString && userRole !== "user") {
+  const userRole = sessionStorage.getItem("role");
+  if (!tokenString || userRole !== "user") {
     navigate("/");
     notifyError();
   } else {

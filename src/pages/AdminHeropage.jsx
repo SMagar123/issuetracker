@@ -6,13 +6,14 @@ import { Navbar } from "../components";
 const issueTypes = ["New", "Pending", "Solved", "Reject"];
 export const AdminHeropage = () => {
   const navigate = useNavigate();
-  const { tokenString, userRole } = useContext(LoginContext);
+  const { tokenString } = useContext(LoginContext);
   const [issueType, setIssueType] = useState("New");
+  const userRole = sessionStorage.getItem("role");
   const handleTypes = (e) => {
     setIssueType(e.target.getAttribute("value"));
   };
   useEffect(() => {
-    if (!tokenString && userRole !== "admin") {
+    if (!tokenString || userRole !== "admin") {
       navigate("/");
     }
   }, []);
