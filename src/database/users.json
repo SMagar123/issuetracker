@@ -1,7 +1,80 @@
 {
-    "user-detail":[
-        {
-            "username":"admin123"
-        }
-    ]
+  "users": [
+    {
+      "id": "adminuser",
+      "username": "Admin",
+      "password": "admin",
+      "email": "youremail@gmail.com",
+      "role": "admin"
+    },
+    {
+      "id": "1",
+      "username": "Smriti",
+      "password": "smriti",
+      "email": "youremail@gmail.com",
+      "role": "user"
+    },
+    {
+      "id": "2",
+      "username": "yamima",
+      "password": "yamimamt",
+      "email": "youremail@gmail.com",
+      "role": "user"
+    },
+    {
+      "id": "3",
+      "username": "Kajol",
+      "password": "kajoldd",
+      "email": "youremail@gmail.com",
+      "role": "user"
+    },
+    {
+      "id": "dJ2O-v8",
+      "username": "Anisha",
+      "password": "anisha",
+      "email": "",
+      "role": "user",
+      "": "Anisha"
+    },
+    {
+      "id": "7d5SfPz",
+      "username": "",
+      "password": "",
+      "email": "",
+      "role": "user",
+      "name": "suraj"
+    },
+    {
+      "id": "cpAFhEB",
+      "username": "",
+      "password": "",
+      "email": "",
+      "role": "user",
+      "name": "Suraj"
+    },
+    {
+      "id": "9vaHpeH",
+      "username": "",
+      "password": "",
+      "email": "",
+      "role": "user",
+      "name": "Lalala"
+    },
+    {
+      "id": "0QbORvu",
+      "username": "suraj",
+      "password": "suraj",
+      "email": "suraj8@hotmail.com",
+      "role": "user",
+      "name": "Suraj"
+    },
+    {
+      "id": "tb3pu2u",
+      "username": "pulamiSuraj",
+      "password": "suraj",
+      "email": "suraj@gmail.com",
+      "role": "user",
+      "name": "Suraj Pulami Magar"
+    }
+  ]
 }

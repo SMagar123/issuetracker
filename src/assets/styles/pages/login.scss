@@ -1,0 +1,78 @@
+.login {
+  background-color: #eeeeee;
+  // background-color: rgba(0, 0, 0, 0.904);
+  height: 100vh;
+  .login__wrapper {
+    margin: auto;
+    position: relative;
+    top: 150px;
+    display: flex;
+    padding: 20px 0;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    box-shadow: 0 0 8px #b9b9b9;
+    border-radius: 10px;
+    background-color: #f0f0f0ec;
+    .login-head {
+      margin-bottom: 25px;
+      h1 {
+        font-weight: 700;
+        position: relative;
+        &::after {
+          content: "";
+          border: 2px solid lighten($color: $primary-color2, $amount: 10);
+          position: absolute;
+          width: 25%;
+          top: 40px;
+          left: 4px;
+        }
+      }
+    }
+    .login-form {
+      padding: 0 24px;
+      position: relative;
+      label {
+        font-size: 18px;
+        // font-weight: 600;
+        margin-bottom: 10px;
+      }
+      form {
+        padding: 5px 10px;
+        width: 100%;
+        input {
+          outline: none;
+          border: none;
+          width: 100%;
+          border-bottom: 1px solid $text-color2;
+          background-color: transparent;
+          padding: 8px;
+          margin-bottom: 16px;
+        }
+        p {
+          font-size: 14px;
+          margin-bottom: 16px;
+          a {
+            text-decoration: underline;
+            color: $primary-color2;
+          }
+        }
+        .login-button {
+          border-radius: 8px;
+          display: flex;
+          width: 100%;
+          justify-content: center;
+          transition: 250ms ease;
+          font-size: 16px;
+          overflow: hidden;
+          border: 1px solid $primary-color2;
+          &:hover {
+            border: 1px solid $primary-color2;
+            color: $primary-color2;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}

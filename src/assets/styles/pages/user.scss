@@ -1,0 +1,108 @@
+.user {
+  max-width: 1400px;
+  padding: $general-padding;
+  margin: 0 auto;
+  position: relative;
+  .user-title {
+    display: flex;
+    justify-content: center;
+    h1 {
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .user-add {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 16px;
+      position: absolute;
+      bottom: 0;
+      right: 15px;
+      svg {
+        border-radius: 25px;
+        font-size: 38px;
+        background-color: $primary-color2;
+        color: white;
+        &:hover {
+          background-color: whitesmoke;
+          border: 1px solid $primary-color2;
+
+          color: #333333;
+          transition: 250ms ease-out;
+        }
+      }
+    }
+  }
+
+  .user__table {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    // background-color:white;
+    border-top: 1px solid #d1d1d1;
+    border-right: 1px solid #d1d1d1;
+    // box-shadow: 0 0.15rem 1.75rem rgb(33, 40, 50, 0.15);
+    span {
+      padding: 8px 4px;
+      border-left: 1px solid #d1d1d1;
+      border-bottom: 1px solid #d1d1d1;
+      text-align: center;
+      // color: whitesmoke;
+    }
+    .negotiation-button {
+      padding: 8px 4px;
+      border-left: 1px solid #d1d1d1;
+      border-bottom: 1px solid #d1d1d1;
+      text-align: center;
+      .hover-text {
+        position: relative;
+        display: inline-block;
+        span {
+          display: none;
+          position: absolute;
+          top: 100%;
+          font-size: 15px;
+          left: 0;
+          font-family: bold;
+          border: 1px solid $primary-color2;
+          z-index: 2;
+          background-color: white;
+        }
+        &:hover {
+          span {
+            display: block;
+          }
+        }
+      }
+    }
+    .table-title {
+      background-color: $primary-color2;
+
+      color: white;
+      font-size: 18px;
+    }
+  }
+  .view-details {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.808);
+    inset: 0;
+    height: 100vh;
+    padding: $general-padding;
+    svg {
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 576px) {
+  .user__title {
+    text-align: center;
+  }
+  .user__table {
+    grid-template-columns: 1fr;
+  }
+  .user__button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+}

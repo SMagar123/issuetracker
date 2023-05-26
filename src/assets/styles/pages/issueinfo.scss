@@ -1,0 +1,13 @@
+.issue__info{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: $general-padding;
+    h1{
+        padding: $general-padding;
+    }
+    p{
+        background-color: whitesmoke;
+        padding: $general-padding;
+        gap: 16px;
+    }
+}
