@@ -11,9 +11,9 @@ import { LoginContext } from "../App";
 import { Navbar } from "../components";
 
 const tableHead = [
-  "Issue",
-  "Field",
-  "Start-Date",
+  "Description",
+  "Feature",
+  "Registered-Date",
   "End-Date",
   "Status",
   "Negotiation",
@@ -144,8 +144,9 @@ export const User = () => {
                     return (
                       <>
                         {/* <span>{issueData.id}</span> */}
-                        <span>{item?.desc?.slice(0, 50)}</span>
+
                         <span>{item.field}</span>
+                        <span>{item?.desc?.slice(0, 50)}</span>
                         <span>{item.startingDate}</span>
                         <span>
                           {item.endingDate === "" ? (

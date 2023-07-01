@@ -8,6 +8,8 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { Navbar } from "../components";
+import completion from "../assets/images/completion.png";
 const initialIssues = {
   desc: "",
   field: "",
@@ -40,49 +42,59 @@ export const CompletionForm = () => {
     navigate("/");
   };
   return (
-    <div className="negotiate">
-      <div className="negotiate__form">
-        <h4>Completion Information</h4>
-        <div className="form">
-          <form onSubmit={handleNegotiationQuery}>
-            <label>Issue Registered Date</label>
-            <p>{issueList.startingDate}</p>
-            <InputField
-              type="date"
-              name="endingDate"
-              label="Completed Date"
-              handleInput={(e) => handleIssueDetail(e)}
-              value={issueList.endingDate}
-              required
-            />
-            <label htmlFor="complete-message">Message</label>
-            <textarea
-              name="completionMessage"
-              onChange={(e) => handleIssueDetail(e)}
-              cols="30"
-              rows="5"
-              required
-            ></textarea>
-            <Box sx={{ minWidth: 120 }}>
-              <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Status</InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  label="Status"
-                  name="status"
-                  onChange={(e) => handleIssueDetail(e)}
-                >
-                  <MenuItem value={"Pending"}>Pending</MenuItem>
-                  <MenuItem value={"Solved"}>Solved</MenuItem>
-                  <MenuItem value={"Reject"}>Rejected</MenuItem>
-                </Select>
-              </FormControl>
-            </Box>
-            <Button type="submit" name="Completed" className="submit-button" />
-          </form>
+    <>
+      <Navbar />
+      <div className="negotiate">
+        <div className="negotiate__form">
+          <h4>Completion Information</h4>
+          <div className="form">
+            <div className="negotiate-image">
+              <img src={completion} alt="negotiate" />
+            </div>
+            <form onSubmit={handleNegotiationQuery}>
+              <label>Issue Registered Date</label>
+              <p>{issueList.startingDate}</p>
+              <InputField
+                type="date"
+                name="endingDate"
+                label="Completed Date"
+                handleInput={(e) => handleIssueDetail(e)}
+                value={issueList.endingDate}
+                required
+              />
+              <label htmlFor="complete-message">Message</label>
+              <textarea
+                name="completionMessage"
+                onChange={(e) => handleIssueDetail(e)}
+                cols="40"
+                rows="5"
+                required
+              ></textarea>
+              <Box sx={{ minWidth: 120 }}>
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">Status</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    label="Status"
+                    name="status"
+                    onChange={(e) => handleIssueDetail(e)}
+                  >
+                    <MenuItem value={"Pending"}>Pending</MenuItem>
+                    <MenuItem value={"Solved"}>Solved</MenuItem>
+                    <MenuItem value={"Reject"}>Rejected</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
+              <Button
+                type="submit"
+                name="Completed"
+                className="submit-button"
+              />
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };

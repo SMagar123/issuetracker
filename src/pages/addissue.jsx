@@ -6,6 +6,7 @@ import axios from "axios";
 import { addMultipleEntry, getissueData } from "../service/api";
 import { LoginContext } from "../App";
 import { Navbar } from "../components";
+import addissue from "../assets/images/addissue.png";
 const inputList = {
   id: "",
   details: [],
@@ -106,6 +107,9 @@ export const AddIssue = () => {
           <h1>Add the Feature Required</h1>
         </div>
         <div className="form">
+          <div className="issueadd-image">
+            <img src={addissue} alt="addisue" />
+          </div>
           <form onSubmit={handleSubmit}>
             <InputField
               label="Feature"
@@ -117,8 +121,8 @@ export const AddIssue = () => {
             <label>Description</label>
             <textarea
               name="desc"
-              cols="28"
-              rows="8"
+              cols="30"
+              rows="4"
               onChange={(e) => handleInputDetail(e)}
               required
             ></textarea>

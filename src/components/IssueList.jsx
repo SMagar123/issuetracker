@@ -26,6 +26,7 @@ export const IssueList = ({ issueType }) => {
     setUserId(received_id);
     setViewDetails(!viewDetails);
   };
+
   return (
     // <div className="issuelist">
     //   <div className="issuelist__display">
@@ -96,7 +97,7 @@ export const IssueList = ({ issueType }) => {
     //   {/* <DisplayDescription user_id={viewDescription} /> */}
     // </div>
     <>
-      <div className="issueList">
+      {/* <div className="issueList">
         <div className="status-new">
           <h4>New</h4>
           {issueDataList
@@ -150,6 +151,119 @@ export const IssueList = ({ issueType }) => {
           {issueDataList
             .filter((item) => {
               return item.status === "Solved";
+            })
+            .map((item) => {
+              return (
+                <div className="individualIssue">
+                  <h5>{item.field}</h5>
+                  <p>{item.desc.slice(0, 120)}</p>
+                  <i>
+                    <VisibilityOffIcon fontSize="small" className="off-icon" />
+                    <VisibilityIcon
+                      fontSize="small"
+                      className="on-icon"
+                      onClick={() => displayDetails(`${item.id}`)}
+                    />
+                  </i>
+                </div>
+              );
+            })}
+        </div>
+
+        <div className="status-reject">
+          <h4>Rejected</h4>
+          {issueDataList
+            .filter((item) => {
+              return item.status === "Rejected";
+            })
+            .map((item) => {
+              return (
+                <div className="individualIssue">
+                  <h5>{item.field}</h5>
+                  <p>{item.desc.slice(0, 120)}</p>
+                  <i>
+                    <VisibilityOffIcon fontSize="small" className="off-icon" />
+                    <VisibilityIcon
+                      fontSize="small"
+                      className="on-icon"
+                      onClick={() => displayDetails(`${item.id}`)}
+                    />
+                  </i>
+                </div>
+              );
+            })}
+        </div>
+        {viewDetails ? (
+          <div className="viewDetails">
+            <CloseIcon
+              fontSize="large"
+              onClick={() => setViewDetails(!viewDetails)}
+            />
+            <DisplayDescription user_id={user_id} />
+          </div>
+        ) : (
+          ""
+        )}
+      </div> */}
+      <div className="issueList">
+        <div className="status-new">
+          <h4>New</h4>
+          {issueDataList
+            .filter((item) => {
+              return item.status === "New";
+            })
+            .map((item) => {
+              return (
+                <div className="individualIssue">
+                  <h5>{item.field}</h5>
+                  <p>{item.desc.slice(0, 120)}</p>
+                  <i>
+                    <VisibilityOffIcon fontSize="small" className="off-icon" />
+                    <VisibilityIcon
+                      fontSize="small"
+                      className="on-icon"
+                      onClick={() => displayDetails(`${item.id}`)}
+                    />
+                  </i>
+                </div>
+              );
+            })}
+        </div>
+
+        <div className="status-pending">
+          <h4>Pending</h4>
+          {issueDataList
+            .filter((item) => {
+              return item.status === "Pending";
+            })
+            .map((item) => {
+              return (
+                <div className="individualIssue">
+                  <h5>{item.field}</h5>
+                  <p>{item.desc.slice(0, 120)}</p>
+                  <i>
+                    <VisibilityOffIcon fontSize="small" className="off-icon" />
+                    <VisibilityIcon
+                      fontSize="small"
+                      className="on-icon"
+                      onClick={() => displayDetails(`${item.id}`)}
+                    />
+                  </i>
+                </div>
+              );
+            })}
+        </div>
+
+        <div className="status-solved">
+          <h4>Solved</h4>
+          {issueDataList
+            // .filter((item) => {
+            //   return item.details.filter((items) => {
+            //     return items.status === "Solved";
+            //   });
+            // })
+            .filter((item) => {
+              return item.status === "New";
             })
             .map((item) => {
               return (

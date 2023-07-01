@@ -1,25 +1,26 @@
 {
   "issues": [
     {
-      "id": "1",
-      "desc": "description of issue is given here Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-      "field": "QR Payment",
-      "status": "New",
-      "startingDate": "2023-02-01",
+      "id": "QfGlqxL",
+      "desc": "We require phone loan feature in our mobile banking. As other banks are now offering this facility.",
+      "field": "PhoneLoan",
+      "status": "Solved",
+      "startingDate": "2023-06-20",
       "endingDate": "",
       "feasible": "Yes",
-      "solvingtime": "2023-05-15",
-      "payment": "350",
+      "solvingtime": "2023-07-10",
+      "payment": "500",
       "acceptance": "Yes",
       "sorryMessage": "sorry due to lack of infrastructure we are unable to include the feautre you want.",
       "requirement": [
         "sample.pdf"
-      ]
+      ],
+      "completionMessage": "Your Required Feature is added successfully."
     },
     {
       "id": "2",
-      "desc": "i need feature for the transportation facility",
-      "field": "transportation",
+      "desc": "We need QR payment integrated in our system.",
+      "field": "QR payment",
       "status": "New",
       "startingDate": "2021-02-01",
       "endingDate": "",
@@ -34,9 +35,9 @@
     },
     {
       "id": "3",
-      "desc": "description of issue is given here Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-      "field": "communication",
-      "status": "Solved",
+      "desc": "We need feature to view our statements not of only few months but of more than 1 year",
+      "field": "Financial Statement View",
+      "status": "Pending",
       "startingDate": "2020-08-01",
       "endingDate": "2020-09-06",
       "feasible": 1,
@@ -48,23 +49,9 @@
       "requirement": []
     },
     {
-      "id": "4",
-      "desc": "description of issue is given here Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-      "field": "eductaion",
-      "status": "New",
-      "startingDate": "2022-06-01",
-      "endingDate": "",
-      "feasible": "Yes",
-      "solvingtime": "2023-05-13",
-      "payment": "250",
-      "acceptance": "No",
-      "sorryMessage": "We are sorry again.",
-      "requirement": []
-    },
-    {
       "id": "5",
       "desc": "description of issue is given here Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-      "field": "eductaion",
+      "field": "Offline Services",
       "status": "Solved",
       "startingDate": "2023-02-01",
       "endingDate": "2023-04-06",
@@ -76,24 +63,9 @@
       "requirement": []
     },
     {
-      "id": "6",
-      "desc": "description of issue is given here Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-      "field": "eductaion",
-      "status": "Solved",
-      "startingDate": "2023-02-01",
-      "endingDate": "2023-04-15",
-      "feasible": 1,
-      "solvingtime": "",
-      "payment": "",
-      "acceptance": "",
-      "sorryMessage": "sorry ",
-      "completionMessage": "Your task has been done.",
-      "requirement": []
-    },
-    {
       "id": "7",
-      "desc": "description of issue is given here Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-      "field": "eductaion",
+      "desc": "Payment of Insurance Premium of multiple insurance compaines.",
+      "field": "Insurance Payment",
       "status": "Rejected",
       "startingDate": "2023-02-01",
       "endingDate": "",
@@ -105,24 +77,9 @@
       "requirement": []
     },
     {
-      "id": "8",
-      "desc": "description of issue is given here Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-      "field": "eductaion",
-      "status": "New",
-      "startingDate": "2023-02-01",
-      "endingDate": "",
-      "feasible": 1,
-      "solvingtime": "",
-      "payment": "",
-      "acceptance": "",
-      "sorryMessage": "",
-      "completionMessage": "heelo",
-      "requirement": []
-    },
-    {
       "id": "9",
       "desc": "description of issue is given here Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-      "field": "eductaion",
+      "field": "Education Loan",
       "status": "Solved",
       "startingDate": "2023-02-01",
       "endingDate": "2023-04-27",
@@ -132,19 +89,6 @@
       "acceptance": "",
       "sorryMessage": "",
       "completionMessage": "your feature is added"
-    },
-    {
-      "id": "10",
-      "desc": "description of issue is given here Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-      "field": "eductaion",
-      "status": "Pending",
-      "startingDate": "2023-02-01",
-      "endingDate": "2023-04-06",
-      "feasible": "Yes",
-      "solvingtime": "",
-      "payment": "",
-      "acceptance": "",
-      "sorryMessage": ""
     }
   ]
 }

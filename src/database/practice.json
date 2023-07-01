@@ -4,32 +4,34 @@
       "id": "1",
       "details": [
         {
-          "desc": "We require phone loan feature in our mobile banking.",
+          "desc": "We require phone loan feature in our mobile banking. As other banks are now offering this facility.",
           "field": "Phone Loan ",
-          "status": "Pending",
-          "startingDate": "2023-05-25",
+          "status": "New",
+          "startingDate": "2023-06-20",
           "endingDate": "",
-          "feasible": "Yes",
-          "solvingtime": "",
-          "payment": "",
-          "acceptance": "Yes",
+          "feasible": "No",
+          "solvingtime": "2023-7-10",
+          "payment": "500",
+          "acceptance": "",
           "sorryMessage": "",
           "completionMessage": "",
           "requirement": []
         },
         {
-          "desc": "We need phone loan feature in our mobil banking.",
-          "field": "Phone Loan ",
-          "status": "New",
+          "desc": "Help me i am QA BUT I DON'T KNOW WHAT IS QA.....",
+          "field": "QA full form",
+          "status": "Pending",
           "startingDate": "2023-05-26",
           "endingDate": "",
           "feasible": "Yes",
-          "solvingtime": "",
-          "payment": "",
-          "acceptance": "",
+          "solvingtime": "2023-08-15",
+          "payment": "450",
+          "acceptance": "Yes",
           "sorryMessage": "",
           "completionMessage": "",
-          "requirement": []
+          "requirement": [
+            "Upload Requirement File"
+          ]
         }
       ]
     },
@@ -175,6 +177,27 @@
           "completionMessage": "",
           "requirement": [
             "Unit 4-Object Oriented Database Systems.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "QfGlqxL",
+      "details": [
+        {
+          "desc": "We require a phone loan feature in our mobile banking. As other banks are now offering this facility.",
+          "field": "PhoneLoan",
+          "status": "New",
+          "startingDate": "2023-06-20",
+          "endingDate": "",
+          "feasible": "Yes",
+          "solvingtime": "2023-07-10",
+          "payment": "",
+          "acceptance": "",
+          "sorryMessage": "",
+          "completionMessage": "",
+          "requirement": [
+            "sample.pdf"
           ]
         }
       ]

@@ -69,6 +69,14 @@ export const Register = (id) => {
                 handleInput={(e) => handleInputUser(e)}
                 required
               />
+              <InputField
+                name="password"
+                label="Confirm Password"
+                type="password"
+                handleInput={(e) => handleInputUser(e)}
+                required
+              />
+
 
               <InputField
                 name="email"

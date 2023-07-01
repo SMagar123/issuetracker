@@ -75,6 +75,14 @@
       "email": "suraj@gmail.com",
       "role": "user",
       "name": "Suraj Pulami Magar"
+    },
+    {
+      "id": "QfGlqxL",
+      "username": "Smriti",
+      "password": "Smriti@123",
+      "email": "smritimaharjan345@gmail.com",
+      "role": "user",
+      "name": "Smriti Maharjan"
     }
   ]
 }

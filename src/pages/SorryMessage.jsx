@@ -8,6 +8,7 @@ import Select from "@mui/material/Select";
 import { Button } from "../components/Button";
 import { getSingleIssue, editIssueDetail } from "../service/api";
 import { Navbar } from "../components";
+import sorry from "../assets/images/sorry.png";
 const initialIssues = {
   desc: "",
   field: "",
@@ -47,6 +48,9 @@ export const SorryMessage = () => {
         <div className="negotiate__form">
           <h4>Negotiation Information</h4>
           <div className="form">
+            <div className="negotiate-image">
+              <img src={sorry} alt="negotiate" />
+            </div>
             <form onSubmit={handleNegotiationQuery}>
               <label>Issue Registered Date</label>
               <p>{issueList.startingDate}</p>
@@ -56,8 +60,8 @@ export const SorryMessage = () => {
               <textarea
                 name="sorryMessage"
                 onChange={(e) => handleIssueDetail(e)}
-                cols="30"
-                rows="10"
+                cols="50"
+                rows="5"
                 required
               ></textarea>
               <Box sx={{ minWidth: 120 }}>

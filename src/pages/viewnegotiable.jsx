@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Button } from "../components/Button";
 import axios from "axios";
 import issueData from "../database/practice.json";
+import contract from "../assets/images/contract.png";
 const issuedata = " http://127.0.0.1:3004/issues/";
 const detailsList = {
   desc: "",
@@ -69,7 +70,7 @@ export const ViewNegotiable = ({ id, issueField }) => {
     indexFinder();
   }, []);
 
-  //assigning the new value to the list to be passed as updated list
+  //assigning the new value to the list to be passed as updated list65
   const handleAcceptance = (e) => {
     e.target.value === "Yes"
       ? setUpdateList({
@@ -97,8 +98,19 @@ export const ViewNegotiable = ({ id, issueField }) => {
     <div className="view">
       <div className="view__wrapper">
         <div className="view-form">
+          <div className="contract-image">
+            <img src={contract} alt="contract" />
+          </div>
+
           <form onSubmit={handleUpdate}>
+            <h3>Negotiation Acceptance</h3>
             <div className="view-Details">
+              <label>Feature</label>
+              {requiredIssueDetails === undefined ? (
+                <p>-----</p>
+              ) : (
+                <p>{requiredIssueDetails[0]?.field}</p>
+              )}
               <label>Solving Time</label>
               {requiredIssueDetails === undefined ? (
                 <p>------</p>
@@ -110,7 +122,7 @@ export const ViewNegotiable = ({ id, issueField }) => {
               {requiredIssueDetails === undefined ? (
                 <p>-----</p>
               ) : (
-                <p>{requiredIssueDetails[0]?.payment}</p>
+                <p>${requiredIssueDetails[0]?.payment}</p>
               )}
               <Button
                 name="Accept"

@@ -11,6 +11,7 @@ import FormLabel from "@mui/material/FormLabel";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Navbar } from "../components";
+import negotiate from "../assets/images/negotiate.png";
 const initialIssues = {
   desc: "",
   field: "",
@@ -62,6 +63,9 @@ export const NegotiateForm = () => {
         <div className="negotiate__form">
           <h4>Negotiation Information</h4>
           <div className="form">
+            <div className="negotiate-image">
+              <img src={negotiate} alt="negotiate" />
+            </div>
             <form onSubmit={handleNegotiationQuery}>
               <label>Issue Registered Date</label>
               <p>{issueList.startingDate}</p>
