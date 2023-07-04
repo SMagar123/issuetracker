@@ -39,7 +39,7 @@ export const SorryMessage = () => {
   };
   const handleNegotiationQuery = () => {
     editIssueDetail(issueList, id);
-    navigate("/");
+    navigate("/admin");
   };
   return (
     <>
@@ -75,7 +75,7 @@ export const SorryMessage = () => {
                     onChange={(e) => handleIssueDetail(e)}
                   >
                     <MenuItem value={"Pending"}>Pending</MenuItem>
-                    <MenuItem value={"Reject"}>Rejected</MenuItem>
+                    <MenuItem value={"Rejected"}>Rejected</MenuItem>
                   </Select>
                 </FormControl>
               </Box>

@@ -83,6 +83,14 @@
       "email": "smritimaharjan345@gmail.com",
       "role": "user",
       "name": "Smriti Maharjan"
+    },
+    {
+      "id": "iiMgg-U",
+      "username": "surajmagar",
+      "password": "surajmaghar",
+      "email": "surajpulamim123@gmail.com",
+      "role": "user",
+      "name": "Suraj Pulami Magar"
     }
   ]
 }

@@ -26,7 +26,7 @@ export const IssueList = ({ issueType }) => {
     setUserId(received_id);
     setViewDetails(!viewDetails);
   };
-
+  console.log(issueDataList);
   return (
     // <div className="issuelist">
     //   <div className="issuelist__display">
@@ -263,7 +263,7 @@ export const IssueList = ({ issueType }) => {
             //   });
             // })
             .filter((item) => {
-              return item.status === "New";
+              return item.status === "Solved";
             })
             .map((item) => {
               return (

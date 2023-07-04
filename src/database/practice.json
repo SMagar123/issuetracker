@@ -4,33 +4,33 @@
       "id": "1",
       "details": [
         {
-          "desc": "We require phone loan feature in our mobile banking. As other banks are now offering this facility.",
-          "field": "Phone Loan ",
-          "status": "New",
-          "startingDate": "2023-06-20",
+          "desc": "We need feature to view our statements not of only few months but of more than 1 year",
+          "field": "Financial Statement View",
+          "status": "Pending",
+          "startingDate": "2020-08-01",
           "endingDate": "",
-          "feasible": "No",
-          "solvingtime": "2023-7-10",
-          "payment": "500",
-          "acceptance": "",
+          "feasible": "Yes",
+          "payment": "100",
+          "acceptance": "Yes",
           "sorryMessage": "",
-          "completionMessage": "",
+          "solvingtime": "2020-09-06",
+          "completionMessage": "Your feature is added",
           "requirement": []
         },
         {
-          "desc": "Help me i am QA BUT I DON'T KNOW WHAT IS QA.....",
-          "field": "QA full form",
-          "status": "Pending",
-          "startingDate": "2023-05-26",
+          "desc": "We require phone loan feature in our mobile banking.",
+          "field": "Phone Loan ",
+          "status": "New",
+          "startingDate": "2023-07-04",
           "endingDate": "",
-          "feasible": "Yes",
-          "solvingtime": "2023-08-15",
-          "payment": "450",
-          "acceptance": "Yes",
+          "feasible": "",
+          "solvingtime": "",
+          "payment": "",
+          "acceptance": "",
           "sorryMessage": "",
           "completionMessage": "",
           "requirement": [
-            "Upload Requirement File"
+            "Profile.pdf"
           ]
         }
       ]

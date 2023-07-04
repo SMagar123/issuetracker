@@ -39,7 +39,7 @@ export const CompletionForm = () => {
   };
   const handleNegotiationQuery = () => {
     editIssueDetail(issueList, id);
-    navigate("/");
+    navigate("/admin");
   };
   return (
     <>
