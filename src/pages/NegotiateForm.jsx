@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { InputField } from "../components/InputField";
 import { Button } from "../components/Button";
@@ -11,39 +11,75 @@ import FormLabel from "@mui/material/FormLabel";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Navbar } from "../components";
+import { LoginContext } from "../App";
 import negotiate from "../assets/images/negotiate.png";
+
+import issueData from "../database/practice.json";
 const initialIssues = {
-  desc: "",
-  field: "",
-  status: "",
-  startingDate: "",
-  endingDate: "",
   feasible: "",
   solvingtime: "",
   payment: "",
-  acceptance: "",
 };
 export const NegotiateForm = () => {
+  const { selectField } = useContext(LoginContext);
   const { id } = useParams();
   const navigate = useNavigate();
-  const [issueList, setIssueList] = useState(initialIssues);
+  const [issueList, setIssueList] = useState({});
+  const [modifiableIssueList, setModifiableIssueList] = useState({});
+  const [elementIndex, setElementIndex] = useState();
+  const [adminNegotiateList, setAdminNegotiateList] = useState(initialIssues);
 
   useEffect(() => {
     getIssueDetailofUser();
   }, []);
   const getIssueDetailofUser = async () => {
     let response = await getSingleIssue(id);
-    setIssueList(response.data);
+    const negotiateData = response.data;
+    setIssueList(
+      negotiateData?.details?.filter((item) => item.field === selectField)
+    );
+    setModifiableIssueList(negotiateData);
   };
+  const dataIndex = issueData?.issues?.findIndex((obj) => {
+    return obj.id === id;
+  });
+
+  const indexFinder = () => {
+    setElementIndex(
+      issueData?.issues[dataIndex]?.details.findIndex((obj) => {
+        return obj.field === selectField;
+      })
+    );
+  };
+  useEffect(() => {
+    indexFinder();
+  }, []);
 
   const handleIssueDetail = (e) => {
-    setIssueList({ ...issueList, [e.target.name]: e.target.value });
+    setAdminNegotiateList({
+      ...adminNegotiateList,
+      [e.target.name]: e.target.value,
+    });
   };
-  const handleNegotiationQuery = () => {
-    editIssueDetail(issueList, id);
+
+  const handleNegotiationQuery = (e) => {
+    e.preventDefault();
+
+    const finalAdminNegotiateList = {
+      ...modifiableIssueList?.details[elementIndex],
+      ...adminNegotiateList,
+    };
+    modifiableIssueList?.details?.splice(elementIndex, 1);
+    modifiableIssueList?.details?.splice(
+      elementIndex,
+      0,
+      finalAdminNegotiateList
+    );
+    editIssueDetail(modifiableIssueList, id);
     notify();
     navigate("/admin");
   };
+
   const notify = () => {
     toast.info("Negotiation request is sent to user", {
       position: "top-right",
@@ -56,6 +92,7 @@ export const NegotiateForm = () => {
       theme: "colored",
     });
   };
+
   return (
     <>
       <Navbar />
@@ -68,22 +105,35 @@ export const NegotiateForm = () => {
             </div>
             <form onSubmit={handleNegotiationQuery}>
               <label>Issue Registered Date</label>
-              <p>{issueList.startingDate}</p>
-              <InputField
-                type="date"
-                name="solvingtime"
-                label="Date To Solve"
-                handleInput={(e) => handleIssueDetail(e)}
-                value={issueList.solvingtime}
-                required
-              />
+              <p>{issueList[0]?.startingDate}</p>
+              {issueList[0]?.solvingtime.length === "" ? (
+                <InputField
+                  type="date"
+                  name="solvingtime"
+                  label="Date To Solve"
+                  handleInput={(e) => handleIssueDetail(e)}
+                  required
+                />
+              ) : (
+                <InputField
+                  type="date"
+                  name="solvingtime"
+                  label="Date To Solve"
+                  handleInput={(e) => handleIssueDetail(e)}
+                  value={issueList[0]?.solvingtime}
+                  required
+                />
+              )}
+
+              <label>Counter Amount</label>
+              <p>Rs.{issueList[0]?.renegotiateAmount}</p>
               <InputField
                 type="number"
                 name="payment"
-                label="Payment"
+                label="Propose Payment (Rs)"
                 required
                 handleInput={(e) => handleIssueDetail(e)}
-                value={issueList.payment}
+                // value={issueList[0]?.payment}
               />
               <FormControl>
                 <FormLabel id="demo-row-radio-buttons-group-label">

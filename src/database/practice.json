@@ -14,23 +14,45 @@
           "acceptance": "Yes",
           "sorryMessage": "",
           "solvingtime": "2020-09-06",
+          "approval": "Pending",
+          "renegotiateAmount": "90",
           "completionMessage": "Your feature is added",
           "requirement": []
         },
         {
-          "desc": "We require phone loan feature in our mobile banking.",
+          "desc": "We require phone loan feature in our mobile banking. As other banks are now offering this facility.",
           "field": "Phone Loan ",
-          "status": "New",
-          "startingDate": "2023-07-04",
-          "endingDate": "",
-          "feasible": "",
-          "solvingtime": "",
-          "payment": "",
-          "acceptance": "",
+          "status": "Solved",
+          "startingDate": "2023-07-07",
+          "endingDate": "2023-07-31",
+          "feasible": "Yes",
+          "solvingtime": "2023-07-30",
+          "payment": "900",
+          "acceptance": "Yes",
           "sorryMessage": "",
-          "completionMessage": "",
+          "approval": "Approved",
+          "renegotiateAmount": "900",
+          "completionMessage": "We have completed your task",
           "requirement": [
-            "Profile.pdf"
+            "PhoneLoanRequirement.pdf"
+          ]
+        },
+        {
+          "desc": "real time notification on balance change",
+          "field": "Notification on balance update.",
+          "status": "Solved",
+          "startingDate": "2023-07-17",
+          "endingDate": "2023-07-31",
+          "feasible": "Yes",
+          "solvingtime": "",
+          "payment": "45000",
+          "acceptance": "Yes",
+          "sorryMessage": "",
+          "approval": "Approved",
+          "renegotiateAmount": "40000",
+          "completionMessage": "Notification on balance update made.",
+          "requirement": [
+            "anu-srest-cv.pdf"
           ]
         }
       ]

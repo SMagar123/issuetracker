@@ -7,7 +7,7 @@ const userData = "http://127.0.0.1:3005/users";
 //get single issue data
 export const getSingleIssue = async (data) => {
   try {
-    return await axios.get(`${issueAPI_URL}/${data}`);
+    return await axios.get(`${issueData}/${data}`);
   } catch (error) {
     return error;
   }
@@ -15,7 +15,7 @@ export const getSingleIssue = async (data) => {
 //edit single issue with user_id "id"
 export const editIssueDetail = async (data, id) => {
   try {
-    return await axios.put(`${issueAPI_URL}/${id}`, data);
+    return await axios.put(`${issueData}/${id}`, data);
   } catch (e) {
     console.log("Error while ", e.message);
   }
@@ -72,11 +72,10 @@ export const addMultipleEntry = async (id) => {
   }
 };
 
-export const addUser = async (id)=>{
-  try{
+export const addUser = async (id) => {
+  try {
     return await axios.post(`${userData}/${id}`);
-  }
-  catch(error){
+  } catch (error) {
     console.error(error);
   }
-}
+};

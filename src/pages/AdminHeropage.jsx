@@ -4,10 +4,11 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { LoginContext } from "../App";
 import { Navbar } from "../components";
 const issueTypes = ["New", "Pending", "Solved", "Reject"];
-export const AdminHeropage = () => {
+export const AdminHeropage = ({ getSelectedField }) => {
   const navigate = useNavigate();
-  const { tokenString } = useContext(LoginContext);
+  const { tokenString, selectField } = useContext(LoginContext);
   const [issueType, setIssueType] = useState("New");
+  const [userSelectField, setUserSelectField] = useState();
   const userRole = sessionStorage.getItem("role");
   const handleTypes = (e) => {
     setIssueType(e.target.getAttribute("value"));
@@ -17,7 +18,12 @@ export const AdminHeropage = () => {
       navigate("/");
     }
   }, []);
-
+  useEffect(() => {
+    getSelectedField(userSelectField);
+  }, [userSelectField]);
+  useEffect(() => {
+    document.title = "Admin | NTS"; // Change 'New Page Title' to your desired title
+  }, []);
   return (
     <>
       <Navbar />
@@ -44,7 +50,7 @@ export const AdminHeropage = () => {
         </nav> */}
         </div>
         <div className="hero__issuelist">
-          <IssueList issueType={issueType} />
+          <IssueList selectField={setUserSelectField} issueType={issueType} />
         </div>
       </div>
     </>

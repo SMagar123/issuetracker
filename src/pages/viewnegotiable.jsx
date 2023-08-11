@@ -19,6 +19,8 @@ const detailsList = {
   payment: "",
   acceptance: "",
   sorryMessage: "",
+  approval: "",
+  renegotiateAmount: "",
   completionMessage: "",
   requirement: [],
 };
@@ -27,6 +29,7 @@ export const ViewNegotiable = ({ id, issueField }) => {
   const [elementIndex, setElementIndex] = useState();
   const [issueList, setIssueList] = useState({}); //purano data ho
   const [updateList, setUpdateList] = useState(detailsList);
+  const [renegotiateAmount, setRenegotiateAmount] = useState();
   //obtaining the data from database of respective ID
   const getIssueDetail = async () => {
     let response = await getissueData(id);
@@ -59,6 +62,7 @@ export const ViewNegotiable = ({ id, issueField }) => {
   const dataIndex = issueData.issues.findIndex((obj) => {
     return obj.id === id;
   });
+
   const indexFinder = () => {
     setElementIndex(
       issueData.issues[dataIndex].details.findIndex((obj) => {
@@ -70,6 +74,14 @@ export const ViewNegotiable = ({ id, issueField }) => {
     indexFinder();
   }, []);
 
+  const negotiationAmount = (e) => {
+    e.preventDefault();
+    if (e.target.value === "") {
+      setRenegotiateAmount(0);
+    } else {
+      setRenegotiateAmount(e.target.value);
+    }
+  };
   //assigning the new value to the list to be passed as updated list65
   const handleAcceptance = (e) => {
     e.target.value === "Yes"
@@ -77,17 +89,27 @@ export const ViewNegotiable = ({ id, issueField }) => {
           ...issueList.details[elementIndex],
           ["acceptance"]: e.target.value,
           ["status"]: "Pending",
+          ["approval"]: "Approved",
         })
-      : setUpdateList({
+      : e.target.value === "No"
+      ? setUpdateList({
           ...issueList.details[elementIndex],
           ["acceptance"]: e.target.value,
           ["status"]: "Rejected",
+          ["approval"]: "Rejected",
+        })
+      : setUpdateList({
+          ...issueList.details[elementIndex],
+          ["acceptance"]: "Yes",
+          ["status"]: "New",
+          ["renegotiateAmount"]: renegotiateAmount,
         });
 
     notifyAcceptance();
   };
   //making the update request through axios
-  const handleUpdate = () => {
+  const handleUpdate = (e) => {
+    e.preventDefault();
     issueList.details.splice(elementIndex, 1);
     issueList.details.splice(elementIndex, 0, updateList);
     axios.put(`${issuedata}/${id}`, issueList);
@@ -104,37 +126,101 @@ export const ViewNegotiable = ({ id, issueField }) => {
 
           <form onSubmit={handleUpdate}>
             <h3>Negotiation Acceptance</h3>
-            <div className="view-Details">
-              <label>Feature</label>
-              {requiredIssueDetails === undefined ? (
-                <p>-----</p>
-              ) : (
-                <p>{requiredIssueDetails[0]?.field}</p>
-              )}
-              <label>Solving Time</label>
-              {requiredIssueDetails === undefined ? (
-                <p>------</p>
-              ) : (
-                <p>{requiredIssueDetails[0]?.solvingtime}</p>
-              )}
+            <div className="negotiation-dealing">
+              <div className="view-Details">
+                <label>Feature</label>
+                {requiredIssueDetails === undefined ? (
+                  <p>-----</p>
+                ) : (
+                  <p>{requiredIssueDetails[0]?.field}</p>
+                )}
+                <label>Proposed Solving Time</label>
+                {requiredIssueDetails === undefined ? (
+                  <p>------</p>
+                ) : (
+                  <p>{requiredIssueDetails[0]?.solvingtime}</p>
+                )}
+                <label>Approval Status</label>
+                {requiredIssueDetails === undefined ||
+                requiredIssueDetails[0]?.approval.length === 0 ? (
+                  <p>------</p>
+                ) : (
+                  <p>{requiredIssueDetails[0]?.approval}</p>
+                )}
 
-              <label>Payment Amount</label>
-              {requiredIssueDetails === undefined ? (
-                <p>-----</p>
-              ) : (
-                <p>${requiredIssueDetails[0]?.payment}</p>
-              )}
-              <Button
-                name="Accept"
-                value="Yes"
-                handleClick={(e) => handleAcceptance(e)}
-              />
-              <Button
-                name="Reject"
-                value="No"
-                handleClick={(e) => handleAcceptance(e)}
-                className="reject-button"
-              />
+                <label>Proposed Amount </label>
+                {requiredIssueDetails === undefined ? (
+                  <p>-----</p>
+                ) : (
+                  <p>Rs.{requiredIssueDetails[0]?.payment}</p>
+                )}
+                <Button
+                  name="Accept"
+                  value="Yes"
+                  handleClick={(e) => handleAcceptance(e)}
+                />
+
+                <Button
+                  name="Reject"
+                  value="No"
+                  handleClick={(e) => handleAcceptance(e)}
+                  className="reject-button"
+                />
+              </div>
+              <div className="renegotiate">
+                <label htmlFor="description">Description</label>
+                <p>
+                  {requiredIssueDetails === undefined ? (
+                    <p>------</p>
+                  ) : (
+                    <p>{requiredIssueDetails[0]?.desc}</p>
+                  )}
+                </p>
+                <label htmlFor="description">Status of Project</label>
+                <p>
+                  {requiredIssueDetails === undefined ? (
+                    <p>------</p>
+                  ) : (
+                    <p>{requiredIssueDetails[0]?.status}</p>
+                  )}
+                </p>
+
+                <label htmlFor="description">Counter Amount</label>
+                <p>
+                  {requiredIssueDetails === undefined ||
+                  requiredIssueDetails[0]?.renegotiateAmount.length === 0 ? (
+                    <p>Rs.0</p>
+                  ) : (
+                    // {requiredIssueDetails[0]?.renegotiateAmount.length===0?<p>Rs.0<p/>:
+
+                    <p>Rs.{requiredIssueDetails[0]?.renegotiateAmount}</p>
+                  )}
+                </p>
+                <label>Renegotiate</label>
+                <input
+                  type="number"
+                  name="renegotiateAmount"
+                  placeholder="Enter counter amount"
+                  onChange={(e) => negotiationAmount(e)}
+                />
+                {requiredIssueDetails === undefined ||
+                requiredIssueDetails[0]?.approval === "Approved" ||
+                requiredIssueDetails[0]?.approval === "Rejected" ? (
+                  <Button
+                    name="Renegotiate"
+                    handleClick={(e) => handleAcceptance(e)}
+                    // className="reject-button"
+                    disabled="true"
+                    type="submit"
+                  />
+                ) : (
+                  <Button
+                    name="Renegotiate"
+                    handleClick={(e) => handleAcceptance(e)}
+                    type="submit"
+                  />
+                )}
+              </div>
             </div>
           </form>
         </div>

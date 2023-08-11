@@ -35,7 +35,7 @@ export const Navbar = () => {
     navigate("/");
     window.location.reload();
   }
-  console.log(userRole);
+
   return (
     <>
       <div className="hero__admindetails">

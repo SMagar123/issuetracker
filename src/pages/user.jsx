@@ -11,8 +11,8 @@ import { LoginContext } from "../App";
 import { Navbar } from "../components";
 
 const tableHead = [
-  "Description",
   "Feature",
+  "Description",
   "Registered-Date",
   "End-Date",
   "Status",
@@ -94,6 +94,10 @@ export const User = () => {
       theme: "dark",
     });
   };
+  useEffect(() => {
+    // This effect will run whenever the component is mounted or updated
+    document.title = "User | NTS"; // Change 'New Page Title' to your desired title
+  }, []);
   const handleView = (field) => {
     setViewDetails(!viewDetails);
     setCurrentIssueField(field);

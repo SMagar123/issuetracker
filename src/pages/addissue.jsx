@@ -22,6 +22,8 @@ const detailsList = {
   payment: "",
   acceptance: "",
   sorryMessage: "",
+  approval: "",
+  renegotiateAmount: "",
   completionMessage: "",
   requirement: [],
 };
@@ -40,6 +42,8 @@ export const AddIssue = () => {
       ...issueList,
       [e.target.name]: e.target.value,
       ["status"]: "New",
+      ["approval"]: "Pending",
+      ["renegotiateAmount"]: "0",
     });
   };
   useEffect(() => {

@@ -4,12 +4,12 @@
       "id": "QfGlqxL",
       "desc": "We require phone loan feature in our mobile banking. As other banks are now offering this facility.",
       "field": "PhoneLoan",
-      "status": "Rejected",
+      "status": "New",
       "startingDate": "2023-06-20",
       "endingDate": "",
       "feasible": "Yes",
       "solvingtime": "2023-07-10",
-      "payment": "500",
+      "payment": "600",
       "acceptance": "Yes",
       "sorryMessage": "sorry due to lack of infrastructure we are unable to include the feautre you want.",
       "requirement": [
@@ -21,14 +21,14 @@
       "id": "2",
       "desc": "We need QR payment integrated in our system.",
       "field": "QR payment",
-      "status": "New",
+      "status": "Rejected",
       "startingDate": "2021-02-01",
       "endingDate": "",
       "feasible": "Yes",
-      "payment": "600",
+      "payment": "400",
       "acceptance": "",
-      "sorryMessage": "sorry we are unable to accept this feature request for now.",
-      "solvingtime": "2023-05-17",
+      "sorryMessage": "we are sorry as of now.",
+      "solvingtime": "2023-05-18",
       "requirement": [
         "largefile.pdf"
       ]
@@ -45,7 +45,7 @@
       "acceptance": "Yes",
       "sorryMessage": "",
       "solvingtime": "2020-09-06",
-      "completionMessage": "Your feature requested is embedd.",
+      "completionMessage": "your request has been done.",
       "requirement": []
     },
     {
@@ -75,6 +75,20 @@
       "acceptance": "",
       "sorryMessage": "",
       "requirement": []
+    },
+    {
+      "id": "9",
+      "desc": "description of issue is given here Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
+      "field": "Education Loan",
+      "status": "Rejected",
+      "startingDate": "2023-02-01",
+      "endingDate": "2023-04-27",
+      "feasible": 1,
+      "solvingtime": "",
+      "payment": "",
+      "acceptance": "",
+      "sorryMessage": "we are unable to add this feature request for now.",
+      "completionMessage": "your feature is added"
     },
     {
       "id": "9",

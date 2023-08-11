@@ -1,82 +1,87 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { getSingleIssue } from "../service/api";
 import { Link } from "react-router-dom";
 import { Button } from "./Button";
-export const DisplayDescription = ({ user_id }) => {
-  const [issueDesc, setIssueDesc] = useState();
-  const getIssueDescriptionofUser = async () => {
+
+export const DisplayDescription = ({ user_id, selectedField }) => {
+  const [issueDesc, setissueDesc] = useState();
+  const getissueDescofUser = async () => {
     let response = await getSingleIssue(user_id);
-    setIssueDesc(response.data);
+    setissueDesc(response.data);
   };
   useEffect(() => {
-    getIssueDescriptionofUser();
+    getissueDescofUser();
   }, [user_id]);
+  const issueDescription = issueDesc?.details.filter(
+    (item) => item?.field === selectedField
+  );
   return (
     <>
-      {issueDesc === undefined ? (
+      {issueDescription === undefined ? (
         ""
       ) : (
         <div className="description-model">
           <div className="field">
-            <h3>{issueDesc.field}</h3>
+            <h3>{selectedField}</h3>
           </div>
           <div className="details">
             <div className="details-viewing">
-              <div className="id">
-                <label htmlFor="id">User_id</label>
-                <h5>{issueDesc.id}</h5>
+              <div className="user_id">
+                <label htmlFor="user_id">user_id</label>
+                <h5>{user_id}</h5>
               </div>
               <div className="registeredDate">
                 <label htmlFor="Registered Date">Registered Date</label>
-                <h5>{issueDesc.startingDate}</h5>
+                <h5>{issueDescription[0]?.startingDate}</h5>
               </div>
               <div className="solvedDate">
                 <label htmlFor="Solved Date">Solved Date</label>
-                {issueDesc.endingDate === "" ? (
+                {issueDescription[0]?.endingDate === "" ? (
                   <h5>----</h5>
                 ) : (
-                  <h5>{issueDesc.endingDate}</h5>
+                  <h5>{issueDescription[0]?.endingDate}</h5>
                 )}
               </div>
               <div className="status">
                 <label htmlFor="Status">Status</label>
-                <h5>{issueDesc.status}</h5>
+                <h5>{issueDescription[0]?.status}</h5>
               </div>
             </div>
             <div className="details-handling">
               <div className="description">
                 <label htmlFor="description">Description</label>
-                <p>{issueDesc.desc}</p>
+                <p>{issueDescription[0]?.desc}</p>
               </div>
               <div className="viewRequirements">
-                <Link to={`/admin/requirement/${issueDesc.id}`}>
+                <Link to={`/admin/requirement/${user_id}`}>
                   <button>View Requirements</button>
                 </Link>
               </div>
               <div className="feasible">
-                <label htmlFor="feasible">Feasible</label>
-                {/* <button>Yes</button>
-                <button>No</button> */}
-                {issueDesc.status === "Solved" ||
-                issueDesc.status === "Rejected" ? (
+              
+                {issueDescription[0]?.status === "Solved" ||
+                issueDescription[0]?.status === "Rejected" ? (
                   <>
+                    <label htmlFor="feasible">Completion</label>
                     <h4>Done it</h4>
                   </>
-                ) : `${issueDesc.status}` === "Pending" ? (
+                ) : `${issueDescription[0]?.status}` === "Pending" ? (
                   <>
-                    <Link to={`/admin/completion-form/${issueDesc.id}`}>
+                    <label htmlFor="feasible">Completion</label>
+                    <Link to={`/admin/completion-form/${user_id}`}>
                       <Button name="Yes" className="pending-yes" />
                     </Link>
-                    <Link to={`/admin/cannot-resolve/${issueDesc.id}`}>
+                    <Link to={`/admin/cannot-resolve/${user_id}`}>
                       <Button name="No" className="pending-no" />
                     </Link>
                   </>
                 ) : (
                   <>
-                    <Link to={`/admin/negotiate-form/${issueDesc.id}`}>
+                    <label htmlFor="feasible">Feasible</label>
+                    <Link to={`/admin/negotiate-form/${user_id}`}>
                       <Button name="Yes" className="pending-yes" />
                     </Link>
-                    <Link to={`/admin/cannot-resolve/${issueDesc.id}`}>
+                    <Link to={`/admin/cannot-resolve/${user_id}`}>
                       <Button name="No" className="pending-no" />
                     </Link>
                   </>
