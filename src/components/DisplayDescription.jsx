@@ -58,7 +58,6 @@ export const DisplayDescription = ({ user_id, selectedField }) => {
                 </Link>
               </div>
               <div className="feasible">
-              
                 {issueDescription[0]?.status === "Solved" ||
                 issueDescription[0]?.status === "Rejected" ? (
                   <>
@@ -77,13 +76,13 @@ export const DisplayDescription = ({ user_id, selectedField }) => {
                   </>
                 ) : (
                   <>
-                    <label htmlFor="feasible">Feasible</label>
+                    <label htmlFor="feasible">Feasible/Negotiate</label>
                     <Link to={`/admin/negotiate-form/${user_id}`}>
-                      <Button name="Yes" className="pending-yes" />
+                      <Button name="Negotiate" className="pending-yes" />
                     </Link>
-                    <Link to={`/admin/cannot-resolve/${user_id}`}>
+                    {/* <Link to={`/admin/cannot-resolve/${user_id}`}>
                       <Button name="No" className="pending-no" />
-                    </Link>
+                    </Link> */}
                   </>
                 )}
               </div>

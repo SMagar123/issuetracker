@@ -36,24 +36,6 @@
           "requirement": [
             "PhoneLoanRequirement.pdf"
           ]
-        },
-        {
-          "desc": "real time notification on balance change",
-          "field": "Notification on balance update.",
-          "status": "Solved",
-          "startingDate": "2023-07-17",
-          "endingDate": "2023-07-31",
-          "feasible": "Yes",
-          "solvingtime": "",
-          "payment": "45000",
-          "acceptance": "Yes",
-          "sorryMessage": "",
-          "approval": "Approved",
-          "renegotiateAmount": "40000",
-          "completionMessage": "Notification on balance update made.",
-          "requirement": [
-            "anu-srest-cv.pdf"
-          ]
         }
       ]
     },
@@ -81,15 +63,15 @@
         {
           "desc": "Feri try gareko maile hai abatah milla ki entry bhaeni",
           "field": "Feri try gareko",
-          "status": "Pending",
+          "status": "Solved",
           "startingDate": "2023-05-23",
-          "endingDate": "",
+          "endingDate": "2023-08-24",
           "feasible": "Yes",
           "solvingtime": "2023-08-17",
           "payment": "500",
           "acceptance": "Yes",
           "sorryMessage": "",
-          "completionMessage": "",
+          "completionMessage": "your try is successful",
           "requirement": [
             "Upload Requirement File"
           ]
@@ -137,9 +119,9 @@
           "status": "New",
           "startingDate": "2023-05-22",
           "endingDate": "",
-          "feasible": "",
-          "solvingtime": "",
-          "payment": "",
+          "feasible": "Yes",
+          "solvingtime": "2023-08-30",
+          "payment": "30000",
           "acceptance": "",
           "sorryMessage": "",
           "completionMessage": "",
@@ -220,6 +202,47 @@
           "completionMessage": "",
           "requirement": [
             "sample.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "LPcbyV3",
+      "details": [
+        {
+          "desc": "We require an internet bill payment feature in our app.",
+          "field": "Internet Bill Payment",
+          "status": "Pending",
+          "startingDate": "2023-08-11",
+          "endingDate": "",
+          "feasible": "Yes",
+          "solvingtime": "",
+          "payment": "75000",
+          "acceptance": "Yes",
+          "sorryMessage": "",
+          "approval": "Approved",
+          "renegotiateAmount": "75000",
+          "completionMessage": "Your feature has been added. Let us serve you more .",
+          "requirement": [
+            "Negotiation Ticketing System.pdf"
+          ]
+        },
+        {
+          "desc": "notification on balance update",
+          "field": "Notification on balance update.",
+          "status": "Solved",
+          "startingDate": "2023-08-12",
+          "endingDate": "2023-08-29",
+          "feasible": "Yes",
+          "solvingtime": "2023-08-24",
+          "payment": "60000",
+          "acceptance": "Yes",
+          "sorryMessage": "",
+          "approval": "Approved",
+          "renegotiateAmount": "50000",
+          "completionMessage": "done it\n",
+          "requirement": [
+            "PhoneLoanRequirement.pdf"
           ]
         }
       ]

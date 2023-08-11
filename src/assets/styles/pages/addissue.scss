@@ -13,9 +13,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     box-shadow: 0 0 5px gray;
     border-radius: 10px;
-    width: max-content;
+    // width: max-content;
     margin: auto;
     .issueadd-image {
       width: 450px;

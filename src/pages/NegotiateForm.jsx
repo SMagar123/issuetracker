@@ -106,7 +106,7 @@ export const NegotiateForm = () => {
             <form onSubmit={handleNegotiationQuery}>
               <label>Issue Registered Date</label>
               <p>{issueList[0]?.startingDate}</p>
-              {issueList[0]?.solvingtime.length === "" ? (
+              {issueList[0]?.solvingtime.length === 0 ? (
                 <InputField
                   type="date"
                   name="solvingtime"

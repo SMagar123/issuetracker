@@ -104,7 +104,6 @@ export const ViewNegotiable = ({ id, issueField }) => {
           ["status"]: "New",
           ["renegotiateAmount"]: renegotiateAmount,
         });
-
     notifyAcceptance();
   };
   //making the update request through axios
@@ -123,7 +122,6 @@ export const ViewNegotiable = ({ id, issueField }) => {
           <div className="contract-image">
             <img src={contract} alt="contract" />
           </div>
-
           <form onSubmit={handleUpdate}>
             <h3>Negotiation Acceptance</h3>
             <div className="negotiation-dealing">
@@ -197,12 +195,24 @@ export const ViewNegotiable = ({ id, issueField }) => {
                   )}
                 </p>
                 <label>Renegotiate</label>
-                <input
-                  type="number"
-                  name="renegotiateAmount"
-                  placeholder="Enter counter amount"
-                  onChange={(e) => negotiationAmount(e)}
-                />
+                {requiredIssueDetails === undefined ||
+                requiredIssueDetails[0]?.approval === "Approved" ||
+                requiredIssueDetails[0]?.approval === "Rejected" ? (
+                  <input
+                    type="number"
+                    name="renegotiateAmount"
+                    placeholder="Enter counter amount"
+                    onChange={(e) => negotiationAmount(e)}
+                    disabled
+                  />
+                ) : (
+                  <input
+                    type="number"
+                    name="renegotiateAmount"
+                    placeholder="Enter counter amount"
+                    onChange={(e) => negotiationAmount(e)}
+                  />
+                )}
                 {requiredIssueDetails === undefined ||
                 requiredIssueDetails[0]?.approval === "Approved" ||
                 requiredIssueDetails[0]?.approval === "Rejected" ? (

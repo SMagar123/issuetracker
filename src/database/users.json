@@ -91,6 +91,14 @@
       "email": "surajpulamim123@gmail.com",
       "role": "user",
       "name": "Suraj Pulami Magar"
+    },
+    {
+      "id": "LPcbyV3",
+      "username": "ramkumar@123",
+      "password": "ramkumar",
+      "email": "ramkumar@gmail.com",
+      "role": "user",
+      "name": "Ramkumar Shrestha"
     }
   ]
 }
